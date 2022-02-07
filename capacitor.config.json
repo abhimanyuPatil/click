@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "click",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

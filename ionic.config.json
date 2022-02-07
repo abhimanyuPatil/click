@@ -1,0 +1,8 @@
+{
+  "name": "click",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue",
+  "id": "1e7dad7b"
+}
