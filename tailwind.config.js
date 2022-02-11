@@ -1,12 +1,21 @@
 module.exports = {
   mode: "jit",
   purge: ["./src/**/*.vue"],
-  content: [],
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      colors: {
-        primary: "#A020F0",
-        secondary: "#320C54",
+      backgroundColor: {
+        primary: "#6317A7",
+        secondary: "#6317A7",
+        light: "#B163E2",
+      },
+      borderColor: {
+        primary: "#6317A7",
+        secondary: "#6317A7",
+      },
+      textColor: {
+        primary: "#6317A7",
+        secondary: "#6317A7",
       },
     },
   },
