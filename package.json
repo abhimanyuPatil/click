@@ -27,6 +27,7 @@
     "vue": "^3.2.30",
     "vue-router": "^4.0.12",
     "vue-virtual-scroller": "^2.0.0-alpha.1",
+    "vue3-virtual-scroller": "^0.2.3",
     "yarn": "^1.22.17"
   },
   "devDependencies": {
