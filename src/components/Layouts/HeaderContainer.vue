@@ -67,14 +67,88 @@
               A
             </div>
           </div>
-          <div class="flex items-center gap-4">
-            <div
-              class="flex items-center justify-center rounded-full bg-[#E1E1E1] fill-white w-11 h-11"
+          <Popover class="relative" v-slot="{ open }">
+            <PopoverButton
+              :class="[
+                open ? 'text-gray-900' : 'text-gray-500',
+                'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
+              ]"
             >
-              <img src="../../../resources/user-icon.svg" alt="" />
-            </div>
-            <h3 class="text-[#5E5C5C] text-sm font-semibold">John Doe</h3>
-          </div>
+              <div class="flex items-center gap-4">
+                <div
+                  class="flex items-center justify-center rounded-full bg-[#E1E1E1] fill-white w-11 h-11"
+                >
+                  <img src="../../../resources/user-icon.svg" alt="" />
+                </div>
+                <h3 class="text-[#5E5C5C] text-sm font-semibold">John Doe</h3>
+              </div>
+            </PopoverButton>
+            <transition
+              enter-active-class="transition ease-out duration-200"
+              enter-from-class="opacity-0 translate-y-1"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-active-class="transition ease-in duration-150"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 translate-y-1"
+            >
+              <PopoverPanel
+                class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-100 max-w-md sm:px-0"
+              >
+                <div
+                  class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden"
+                >
+                  <div
+                    class="relative bg-white px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center"
+                  >
+                    <img src="../../../resources/user-icon.svg" alt="" />
+                    <p class="text-black text-xs">John Dess</p>
+                    <p class="text-black text-xs">Mumbai</p>
+                  </div>
+                  <div
+                    class="relative grid gap-6 bg-white px-2 py-2 sm:gap-3 sm:p-3"
+                  >
+                    <div class="ml-4 pr-4">
+                      <p class="text-base font-medium text-gray-900">Profile</p>
+                    </div>
+                  </div>
+                  <div
+                    class="relative grid gap-6 bg-white px-2 py-2 sm:gap-3 sm:p-3"
+                  >
+                    <div class="ml-4 pr-4">
+                      <p class="text-base font-medium text-gray-900">
+                        Subscription
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="relative grid gap-6 bg-white px-2 py-2 sm:gap-3 sm:p-3"
+                  >
+                    <div class="ml-4 pr-4">
+                      <p class="text-base font-medium text-gray-900">Payment</p>
+                    </div>
+                  </div>
+                  <div
+                    class="relative grid gap-6 bg-white px-2 py-2 sm:gap-3 sm:p-3"
+                  >
+                    <div class="ml-4 pr-4">
+                      <p class="text-base font-medium text-gray-900">
+                        Langugae
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="relative grid gap-6 bg-white px-2 py-2 sm:gap-3 sm:p-3"
+                  >
+                    <div class="ml-4 pr-4">
+                      <p class="text-base font-medium text-gray-900">
+                        Settings
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </PopoverPanel>
+            </transition>
+          </Popover>
           <div class="relative">
             <button
               class="text-sm uppercase text-center pb-1 w-24 h-11 font-semibold text-black rounded-3xl bg-[#FBBB0B]"
@@ -297,10 +371,23 @@
 </template>
 
 <script>
+import {
+  Popover,
+  PopoverButton,
+  // PopoverGroup,
+  PopoverPanel,
+} from "@headlessui/vue";
+
 export default {
   name: "HeaderContainer",
   props: {
     title: String,
+  },
+  components: {
+    Popover,
+    PopoverButton,
+    // PopoverGroup,
+    PopoverPanel,
   },
 };
 </script>
