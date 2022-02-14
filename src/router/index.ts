@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from "@ionic/vue-router";
 import { RouteRecordRaw } from "vue-router";
-import Tab1Page from "../views/Tab1Page.vue";
 import Auth from "../views/Auth.vue";
 import HomeNormalGrid from "../views/Home-Normal-Grid.vue";
 const routes: Array<RouteRecordRaw> = [
@@ -11,29 +10,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/home",
     component: Auth,
-    // children: [
-    //   {
-    //     path: '',
-    //     redirect: '/tabs/tab1'
-    //   },
-    //   {
-    //     path: 'tab1',
-    //     component: () => import('@/views/Tab1Page.vue')
-    //   },
-    //   {
-    //     path: 'tab2',
-    //     component: () => import('@/views/Tab2Page.vue')
-    //   },
-    //   {
-    //     path: 'tab3',
-    //     component: () => import('@/views/Tab3Page.vue')
-    //   }
-    // ]
   },
   {
     path: "/home-1",
-    component: HomeNormalGrid
-  }
+    component: HomeNormalGrid,
+  },
 ];
 
 const router = createRouter({
