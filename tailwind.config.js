@@ -3,6 +3,9 @@ module.exports = {
   purge: ["./src/**/*.vue"],
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      sans: ['Aileron', 'sans-serif'],
+    },
     extend: {
       backgroundColor: {
         primary: "#6317A7",

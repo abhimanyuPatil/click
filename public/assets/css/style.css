@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root{
+    --primary-color: #6317A7;
+    --secondary-color: #ED4E94;
+    --text-color: #343434;
+    --link-color: #6317A7;
+    --heading-color: #343434;
+    --yellow-color: #FBBB0B;
+}
+
+/*=========================================================
+HEADER CSS
+=========================================================*/
+
+.logo{
+    width: 120px;
+}
+.custom-navbar a {
+    color: var(--text-color);
+}
+.custom-navbar button span{
+    color: var(--text-color);
+}

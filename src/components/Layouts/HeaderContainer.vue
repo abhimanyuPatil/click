@@ -1,12 +1,12 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <Popover class="relative bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-        <div class="flex justify-start lg:w-0 lg:flex-1">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-2">
+      <div class="flex justify-between items-center md:justify-start md:space-x-10">
+        <div class="flex">
           <a href="#">
             <span class="sr-only">{{title}}</span>
-            <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="" />
+            <img class="logo" src="../../../resources/logo/Cllct-Logo.svg" alt="" />
           </a>
         </div>
         <div class="-mr-2 -my-2 md:hidden">
@@ -15,7 +15,7 @@
             <MenuIcon class="h-6 w-6" aria-hidden="true" />
           </PopoverButton>
         </div>
-        <PopoverGroup as="nav" class="hidden md:flex space-x-10">
+        <PopoverGroup as="nav" class="hidden md:flex space-x-10 custom-navbar">
           <Popover class="relative" v-slot="{ open }">
             <PopoverButton :class="[open ? 'text-gray-900' : 'text-gray-500', 'group bg-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500']">
               <span>Solutions</span>
@@ -151,6 +151,24 @@
       </PopoverPanel>
     </transition>
   </Popover>
+
+
+    <div class="container max-w-7xl mx-auto px-4 sm:px-6 py-2">
+        <div class="grid grid-cols-1 gap-4">
+            <div class="search-bar">
+                <div class="w-full">
+                  <form class="search-form-wrap">
+                    <div class="mb-4 relative">
+                      
+                      <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="search_input" type="text" placeholder="Web">
+                    </div>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
 </template>
 
 <script>
