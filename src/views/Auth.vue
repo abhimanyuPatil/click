@@ -20,7 +20,7 @@
       class="container flex lg:flex-1 md:flex-1 justify-center items-center lg:items-stretch lg:p-10 lg:pb-32 md:p-10"
     >
       <div
-        class="bg-white w-3/4 rounded-3xl lg:p-5 pt-10 h-auto flex flex-col justify-evenly"
+        class="bg-white w-3/4 rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly"
       >
         <div class="flex justify-center lg:justify-start space-x-4 lg:pl-4">
           <button
@@ -70,9 +70,9 @@
           <AppInput label="Password" />
         </div>
         <div
-          class="flex flex-col lg:flex-row justify-between lg:items-center lg:pl-4"
+          class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4"
         >
-          <div class="py-4">
+          <div class="py-2">
             <div class="flex items-center mr-4 mb-2">
               <input
                 type="checkbox"
@@ -117,16 +117,16 @@
           </button>
         </div>
         <div
-          class="flex flex-col lg:flex-row justify-between lg:items-center lg:pl-4"
+          class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4 mt-5 lg:mt-0"
         >
           <button
             class="flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
           >
             Login
           </button>
-          <div class="text-black flex flex-initial text-xs">
+          <div class="text-black flex flex-initial text-xs mt-2 lg:mt-0">
             Don't have an account?
-            <div class="text-orange hover:pointer">Cllct Account?</div>
+            <div class="text-orange hover:cursor-pointer">Cllct Account?</div>
           </div>
         </div>
       </div>
