@@ -16,8 +16,19 @@
           </div>
         </div>
         <div class="mobmenu-icon md:hidden">
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="{2}"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
           </svg>
         </div>
         <div class="flex items-center gap-7 hidden md:flex">
@@ -79,7 +90,9 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border hidden md:flex">
+      <div
+        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border hidden md:flex"
+      >
         <div class="flex items-center w-full gap-3">
           <div class="flex items-center ml-4">
             <img
@@ -95,8 +108,12 @@
             class="w-12/12 h-full border-none outline-none bg-transparent"
           />
         </div>
-        <div class="flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3">
-          <div class="h-6 mx-2 pt-0.5 text-xs font-bold text w-14 bg-[#ECEFF4] rounded-3xl text-center text-black">
+        <div
+          class="flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3"
+        >
+          <div
+            class="h-6 mx-2 pt-0.5 text-xs font-bold text w-14 bg-[#ECEFF4] rounded-3xl text-center text-black"
+          >
             All
           </div>
           <div class="text-xs font-bold text text-black">Collections</div>
@@ -106,72 +123,180 @@
 
       <div class="flex items-center justify-between w-full hidden md:flex">
         <div class="header-badges-wrap flex items-center gap-3">
-          <span class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-black-600 rounded flex">
-              All 
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+          <span
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+          >
+            All
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </span>
-          <span class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-black-600 rounded flex">
-              Location
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+          <span
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+          >
+            Location
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </span>
-          <span class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-black-600 rounded flex">
-              Sites
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+          <span
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+          >
+            Sites
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </span>
-          <span class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-black-600 rounded flex">
-              Books 
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+          <span
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+          >
+            Books
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </span>
-          <span class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-black-600 rounded">
-              Movies
+          <span
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded"
+          >
+            Movies
           </span>
-          <span class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-black-600 rounded flex">
-              Songs
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
+          <span
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+          >
+            Songs
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </span>
-          <span class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-black-600 rounded">
-              News
+          <span
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded"
+          >
+            News
           </span>
         </div>
         <div class="sort-filters flex items-center gap-3">
-            <div class="sort-filter-item">
-              <span class="text-grey font-light">Zoom</span>
-              <p>100% <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg></p>
-            </div>
-            <div class="sort-filter-item">
-              <span class="text-grey font-light">Sort</span>
-              <p>Most Popular <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg></p>
-            </div>
-            <div class="sort-filter-item">
-              <span class="text-grey font-light">Zoom</span>
-              <p>List View <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg></p>
-            </div>
+          <div class="sort-filter-item">
+            <span class="text-grey font-light">Zoom</span>
+            <p>
+              100%
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="{2}"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </p>
+          </div>
+          <div class="sort-filter-item">
+            <span class="text-grey font-light">Sort</span>
+            <p>
+              Most Popular
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="{2}"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </p>
+          </div>
+          <div class="sort-filter-item">
+            <span class="text-grey font-light">Zoom</span>
+            <p>
+              List View
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="{2}"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </p>
+          </div>
         </div>
-          
       </div>
-
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
   name: "HeaderContainer",
   props: {
