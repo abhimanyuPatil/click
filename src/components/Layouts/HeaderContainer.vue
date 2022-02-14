@@ -10,12 +10,28 @@
             width="78"
             height="48"
           />
-          <div class="flex items-center ml-10 gap-9">
+          <div class="flex items-center ml-10 gap-9 hidden md:flex">
             <h5 class="text-lg font-semibold text-black">Collections</h5>
             <h5 class="text-lg font-semibold text-black">Projects</h5>
           </div>
         </div>
-        <div class="flex items-center gap-7">
+        <div class="mobmenu-icon md:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="{2}"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </div>
+        <div class="flex items-center gap-7 hidden md:flex">
           <div
             class="relative flex items-center justify-center fill-white bg-[#6317A7] w-11 h-11 rounded-full"
           >
@@ -73,8 +89,9 @@
           </div>
         </div>
       </div>
+
       <div
-        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border"
+        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border hidden md:flex"
       >
         <div class="flex items-center w-full gap-3">
           <div class="flex items-center ml-4">
@@ -104,7 +121,7 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-between w-full">
+      <div class="flex items-center justify-between w-full hidden md:flex">
         <div class="header-badges-wrap flex items-center gap-3">
           <span
             class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
@@ -254,7 +271,7 @@
             </p>
           </div>
           <div class="sort-filter-item">
-            <span class="text-grey font-light">View</span>
+            <span class="text-grey font-light">Zoom</span>
             <p>
               List View
               <svg

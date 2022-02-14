@@ -22,7 +22,9 @@
       <div
         class="bg-white w-3/4 rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly"
       >
-        <div class="flex justify-center lg:justify-start space-x-4 lg:pl-4">
+        <div
+          class="flex justify-center lg:justify-start space-x-4 lg:pl-4 mb-5 lg:mb-0"
+        >
           <button
             :class="checkAuthType('login')"
             @click="toggleAuth('login')"
@@ -38,6 +40,7 @@
             register
           </button>
         </div>
+        <!-- social icons -->
         <div v-if="authType === 'login'" class="flex justify-start px-4 lg:p-0">
           <img
             class="h-8 w-16 lg:h-10 lg:w-15 object-contain"
@@ -194,14 +197,16 @@
           >
             Login
           </button>
-          <div class="text-black flex flex-initial text-xs mt-2 lg:mt-0">
+          <div
+            class="text-black flex flex-wrap justify-center text-xs mt-2 lg:mt-0"
+          >
             Don't have an account?
-            <div
+            <span
               @click="toggleAuth('register')"
               class="text-orange hover:cursor-pointer"
             >
               &nbsp; Cllct Account?
-            </div>
+            </span>
           </div>
         </div>
         <!--  -->
@@ -217,10 +222,10 @@
           </button>
           <div
             @click="toggleAuth('login')"
-            class="text-black flex flex-initial text-xs mt-2 lg:mt-0"
+            class="text-black flex flex-wrap justify-center text-xs mt-2 lg:mt-0"
           >
             Already a member?
-            <div class="text-orange hover:cursor-pointer">&nbsp; Login?</div>
+            <span class="text-orange hover:cursor-pointer">&nbsp; Login?</span>
           </div>
         </div>
         <!--  -->
