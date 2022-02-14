@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "@ionic/vue-router";
 import { RouteRecordRaw } from "vue-router";
 import Tab1Page from "../views/Tab1Page.vue";
 import Auth from "../views/Auth.vue";
+import HomeNormalGrid from "../views/Home-Normal-Grid.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -29,6 +30,10 @@ const routes: Array<RouteRecordRaw> = [
     //   }
     // ]
   },
+  {
+    path: "/home-1",
+    component: HomeNormalGrid
+  }
 ];
 
 const router = createRouter({
