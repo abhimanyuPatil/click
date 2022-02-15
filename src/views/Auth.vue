@@ -3,7 +3,7 @@
     <ion-content :fullscreen="true">
       <HeaderContainer title="Cllct" />
       <div
-        class="min-h-screen flex bg-gradient-to-r from-[#A020F0] to-[#320C54]"
+        class="flex min-h-[80vh] bg-gradient-to-r from-[#A020F0] to-[#320C54]"
       >
         <!-- first section -->
         <div
@@ -27,7 +27,7 @@
           class="container flex lg:flex-1 md:flex-1 justify-center items-start lg:items-stretch lg:p-10 lg:pb-32 md:p-10 mx-auto"
         >
           <div
-            class="bg-white w-3/4 sm:w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
+            class="bg-white md:w-3/4 w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
           >
             <div
               class="flex justify-center lg:justify-start space-x-4 lg:pl-4 mb-5 lg:mb-0"
