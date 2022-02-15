@@ -24,10 +24,10 @@
         <!--  -->
         <!-- second section -->
         <div
-          class="container flex lg:flex-1 md:flex-1 justify-center items-start lg:items-stretch lg:p-10 lg:pb-32 md:p-10"
+          class="container flex lg:flex-1 md:flex-1 justify-center items-start lg:items-stretch lg:p-10 lg:pb-32 md:p-10 mx-auto"
         >
           <div
-            class="bg-white w-3/4 rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
+            class="bg-white w-3/4 sm:w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
           >
             <div
               class="flex justify-center lg:justify-start space-x-4 lg:pl-4 mb-5 lg:mb-0"
@@ -50,7 +50,7 @@
             <!-- social icons -->
             <div
               v-if="authType === 'login'"
-              class="flex justify-start px-4 lg:p-0"
+              class="flex lg:justify-start justify-center px-4 lg:p-0"
             >
               <img
                 class="h-8 w-16 lg:h-10 lg:w-15 object-contain"

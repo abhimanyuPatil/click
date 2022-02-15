@@ -65,10 +65,10 @@ module.exports = {
         '.container': {
           maxWidth: '90%',
           '@screen sm': {
-            maxWidth: '640px',
+            maxWidth: '90%',
           },
           '@screen md': {
-            maxWidth: '768px',
+            maxWidth: '90%',
           },
           '@screen lg': {
             maxWidth: '1280px',

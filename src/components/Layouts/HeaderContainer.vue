@@ -94,8 +94,14 @@
               <PopoverPanel
                 class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-100 max-w-md sm:px-0"
               >
+
+              <!--====================================================================
+              NAV PROFILE VIEW START
+              =====================================================================-->
+
                 <div
                   class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden"
+                  v-if="isProfileScreen === 'nav'"
                 >
                   <div
                     class="relative bg-white px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center"
@@ -108,7 +114,7 @@
                     class="relative grid gap-6 bg-white px-2 py-2 sm:gap-3 sm:p-3"
                   >
                     <div class="ml-4 pr-4">
-                      <p class="text-base font-medium text-gray-900">Profile</p>
+                      <p @click="toggleProfile('profileView')" class="text-base font-medium text-gray-900">Profile</p>
                     </div>
                   </div>
                   <div
@@ -146,6 +152,72 @@
                     </div>
                   </div>
                 </div>
+
+              <!--====================================================================
+              NAV PROFILE VIEW END
+              =====================================================================-->
+
+              <!--====================================================================
+              PROFILE VIEW START
+              =====================================================================-->
+                <div
+                  class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden bg-white w-[250px]"
+                  v-if="isProfileScreen === 'profileView'"
+                >
+                  <div class="profile-nav-back flex justify-between items-center p-2 text-center border-b">
+                      <p @click="toggleProfile('nav')">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                      </svg>
+                      </p>
+                      <h5 class="m-0 flex-1">Profile</h5>
+                  </div>
+                  <div class="profile-menu-content-wrap">
+                      <div class="relative bg-white px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center">
+                        <img src="../../../resources/user-icon.svg" alt="" />
+                        <p class="text-black text-xs">John Dess</p>
+                        <p class="text-black text-xs">Mumbai</p>
+                      </div>
+                      <div class="edit-profile-btn text-center">
+                        <button class="inline-block lg:mx-0 bg-[#707070] text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs">Edit Profile</button>
+                      </div>
+
+                      <div class="proile-details p-3">
+                        <div class="profile-details-wrap p-4  bg-[#EFEFEF] rounded-md">
+                            <div class="profile-details-item mb-3">
+                              <h5 class="text-[#7630B4] text-sm mb-1">Email</h5>
+                              <p class="m-0 text-xs">johndoe0007 @gmail.com</p>
+                            </div>
+                            <div class="profile-details-item mb-3">
+                              <h5 class="text-[#7630B4] text-sm mb-1">Name</h5>
+                              <p class="m-0 text-xs">John Doe</p>
+                            </div>
+                            <div class="profile-details-item mb-3">
+                              <h5 class="text-[#7630B4] text-sm mb-1">User Name</h5>
+                              <p class="m-0 text-xs">Qrsedwert</p>
+                            </div>
+                            <div class="profile-details-item mb-3">
+                              <h5 class="text-[#7630B4] text-sm mb-1">Gender</h5>
+                              <p class="m-0 text-xs">Male</p>
+                            </div>
+                            <div class="profile-details-item mb-3">
+                              <h5 class="text-[#7630B4] text-sm mb-1">About Me</h5>
+                              <p class="m-0 text-xs">Loren Ispusm dssadg adgsadgsagsg</p>
+                            </div>
+                            <div class="profile-details-item mb-3">
+                              <h5 class="text-[#7630B4] text-sm mb-1">Location</h5>
+                              <p class="m-0 text-xs">Mumbai</p>
+                            </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                    
+              <!--====================================================================
+              PROFILE VIEW END
+              =====================================================================-->
+
               </PopoverPanel>
             </transition>
           </Popover>
@@ -371,6 +443,7 @@
 </template>
 
 <script>
+import { defineComponent } from "vue";
 import {
   Popover,
   PopoverButton,
@@ -378,8 +451,18 @@ import {
   PopoverPanel,
 } from "@headlessui/vue";
 
-export default {
+export default defineComponent ({
   name: "HeaderContainer",
+  data() {
+    return {
+      isProfileScreen: "nav",
+    };
+  },
+  methods: {
+    toggleProfile(state){
+        this.isProfileScreen = state;
+    }
+  },
   props: {
     title: String,
   },
@@ -389,5 +472,5 @@ export default {
     // PopoverGroup,
     PopoverPanel,
   },
-};
+});
 </script>
