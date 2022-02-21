@@ -7,7 +7,7 @@
 <style>
 html,
 body {
-  font-family: "Aileron";
+  font-family: "Aileron", sans-serif;
 }
 </style>
 
