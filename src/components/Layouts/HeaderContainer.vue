@@ -33,13 +33,12 @@
         </div>
         <div class="flex items-center gap-7 hidden md:flex">
           <div
-            class="relative flex items-center justify-center fill-white bg-[#6317A7] w-11 h-11 rounded-full"
+            class="relative flex items-center justify-center bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer w-11 h-11 rounded-full group transition ease-out duration-200"
           >
             <img
               src="../../../resources/brush-icon.svg"
               alt=""
-              width="20"
-              height="20"
+              class="group-hover:brightness-0 group-hover:invert"
             />
             <div
               class="absolute w-5 h-5 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-sm"
@@ -48,9 +47,9 @@
             </div>
           </div>
           <div
-            class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] fill-white w-11 h-11"
+            class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer fill-white w-11 h-11 group transition ease-out duration-200"
           >
-            <img src="../../../resources/string-icon.svg" alt="" class="" />
+            <img src="../../../resources/string-icon.svg" alt="" class="group-hover:brightness-0 group-hover:invert" />
             <div
               class="absolute w-5 h-5 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-sm"
             >
@@ -58,9 +57,9 @@
             </div>
           </div>
           <div
-            class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] fill-white w-11 h-11"
+            class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer fill-white w-11 h-11 group transition ease-out duration-200"
           >
-            <img src="../../../resources/box-icon.svg" alt="" />
+            <img class="group-hover:brightness-0 group-hover:invert" src="../../../resources/box-icon.svg" alt="" />
             <div
               class="absolute w-5 h-5 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-sm"
             >
@@ -228,7 +227,7 @@
               create
             </button>
             <div
-              class="absolute w-6 h-6 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1"
+              class="absolute cursor-pointer w-6 h-6 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1"
             >
               +
             </div>
@@ -255,15 +254,16 @@
           />
         </div>
         <div
-          class="flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3"
+          class="flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3 pl-3"
         >
           <div
-            class="h-6 mx-2 pt-0.5 text-xs font-bold text w-14 bg-[#ECEFF4] rounded-3xl text-center text-black"
+          :class="checkSearchType('all')"
+            @click="toggleSearchType('all')"
           >
             All
           </div>
-          <div class="text-xs font-bold text text-black">Collections</div>
-          <div class="text-xs font-bold text text-black">Project</div>
+          <div :class="checkSearchType('collections')" @click="toggleSearchType('collections')">Collections</div>
+          <div :class="checkSearchType('project')" @click="toggleSearchType('project')">Project</div>
         </div>
       </div>
 
@@ -442,7 +442,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import {
   Popover,
@@ -456,11 +456,20 @@ export default defineComponent ({
   data() {
     return {
       isProfileScreen: "nav",
+      searchType:"all"
     };
   },
   methods: {
-    toggleProfile(state){
+    toggleProfile(state:"nav"|"profileView"){
         this.isProfileScreen = state;
+    },
+    toggleSearchType(type:string){
+      this.searchType = type;
+    },
+    checkSearchType(type:string){
+      if(type===this.searchType){
+        return "h-6 pt-0.5 px-2 text-xs font-bold text w-auto bg-[#6317A7] rounded-3xl text-center text-white cursor-pointer"
+      }else return "text-xs h-6 w-auto px-2 pt-0.5 font-bold text text-black cursor-pointer"
     }
   },
   props: {
