@@ -8,11 +8,11 @@ const routes: Array<RouteRecordRaw> = [
     redirect: "/home",
   },
   {
-    path: "/home",
+    path: "/auth",
     component: Auth,
   },
   {
-    path: "/home-1",
+    path: "/home",
     component: HomeNormalGrid,
   },
 ];

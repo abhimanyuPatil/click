@@ -27,7 +27,7 @@
           class="container flex lg:flex-1 md:flex-1 justify-center items-start lg:items-stretch lg:p-10 lg:pb-32 md:p-10 mx-auto"
         >
           <div
-            class="bg-white md:w-3/4 w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
+            class="bg-white xl:w-500 md:w-3/4 w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
           >
             <div
               class="flex justify-center lg:justify-start space-x-4 lg:pl-4 mb-5 lg:mb-0"
@@ -50,26 +50,26 @@
             <!-- social icons -->
             <div
               v-if="authType === 'login'"
-              class="flex lg:justify-start justify-center px-4 lg:p-0"
+              class="flex lg:justify-start justify-center px-4 lg:p-0 lg:pt-3"
             >
               <img
-                class="h-8 w-16 lg:h-10 lg:w-15 object-contain"
+                class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/facebook-with-circle.png"
               />
               <img
-                class="h-8 w-16 lg:h-10 lg:w-15 object-contain"
+                class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/twitter-with-circle.png"
               />
               <img
-                class="h-8 w-16 lg:h-10 lg:w-15 object-contain"
+                class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/linkedin-with-circle.png"
               />
               <img
-                class="h-8 w-16 lg:h-10 lg:w-15 object-contain"
+                class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/google-with-circle.png"
               />
               <img
-                class="h-8 w-16 lg:h-10 lg:w-15 object-contain"
+                class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/github-with-circle.png"
               />
             </div>
@@ -82,7 +82,10 @@
               <div class="bg-[#707070] h-0.5 w-5/12 opacity-20"></div>
             </div>
             <!-- register form -->
-            <div v-if="authType === 'register'">
+            <div
+              class="flex flex-col justify-center px-8 lg:px-0 pt-6"
+              v-if="authType === 'register'"
+            >
               <AppInput :placeholder="EnterName" label="Name" />
               <AppInput :placeholder="UserName" label="User Name" />
               <AppInput :placeholder="Email" label="Email" />
@@ -153,7 +156,7 @@
               class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4"
             >
               <div class="py-2">
-                <div class="flex items-center mr-4 mb-2">
+                <div class="flex items-center mr-4 mb-2 cursor-pointer">
                   <input
                     type="checkbox"
                     id="A3-yes"
@@ -162,7 +165,7 @@
                     class="opacity-0 absolute h-8 w-8"
                   />
                   <div
-                    class="bg-white border-2 rounded-md border-blue-400 w-4 h-4 lg:w-6 lg:h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
+                    class="cursor-pointer bg-white border-2 rounded-md border-blue-400 w-4 h-4 lg:w-6 lg:h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
                   >
                     <svg
                       class="fill-current hidden w-3 h-3 text-blue-600 pointer-events-none"
@@ -185,7 +188,7 @@
                   </div>
                   <label
                     for="A3-yes"
-                    class="select-none text-black text-xs lg:text-sm"
+                    class="select-none text-black text-xs lg:text-sm cursor-pointer"
                     >Remember Me</label
                   >
                 </div>
@@ -203,6 +206,7 @@
               class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4 mt-5 lg:mt-0"
             >
               <button
+              @click="login()"
                 class="flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
               >
                 Login
@@ -254,6 +258,7 @@ import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
 // import PopHeaderContainer from "@/components/Layouts/PopoverHeader.vue";
 import { ArrowLeftIcon } from "@heroicons/vue/outline";
 import AppInput from "@/components/Input.vue";
+import { mapActions } from "vuex";
 export default defineComponent({
   name: "AuthView",
   components: { HeaderContainer, ArrowLeftIcon, AppInput },
@@ -271,6 +276,7 @@ export default defineComponent({
         return "bg-primary";
       } else return "border border-solid border-primary text-primary";
     },
+    ...mapActions(["login"]),
   },
 });
 </script>

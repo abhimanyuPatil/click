@@ -9,10 +9,15 @@
             alt=""
             width="78"
             height="48"
+            class="cursor-pointer"
           />
           <div class="flex items-center ml-10 gap-9 hidden md:flex">
-            <h5 class="text-lg font-semibold text-black">Collections</h5>
-            <h5 class="text-lg font-semibold text-black">Projects</h5>
+            <h5 class="text-lg font-semibold text-black cursor-pointer">
+              Collections
+            </h5>
+            <h5 class="text-lg font-semibold text-black cursor-pointer">
+              Projects
+            </h5>
           </div>
         </div>
         <div class="mobmenu-icon md:hidden">
@@ -49,7 +54,11 @@
           <div
             class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer fill-white w-11 h-11 group transition ease-out duration-200"
           >
-            <img src="../../../resources/string-icon.svg" alt="" class="group-hover:brightness-0 group-hover:invert" />
+            <img
+              src="../../../resources/string-icon.svg"
+              alt=""
+              class="group-hover:brightness-0 group-hover:invert"
+            />
             <div
               class="absolute w-5 h-5 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-sm"
             >
@@ -59,14 +68,26 @@
           <div
             class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer fill-white w-11 h-11 group transition ease-out duration-200"
           >
-            <img class="group-hover:brightness-0 group-hover:invert" src="../../../resources/box-icon.svg" alt="" />
+            <img
+              class="group-hover:brightness-0 group-hover:invert"
+              src="../../../resources/box-icon.svg"
+              alt=""
+            />
             <div
               class="absolute w-5 h-5 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-sm"
             >
               A
             </div>
           </div>
-          <Popover class="relative" v-slot="{ open }">
+          <button
+            v-if="!isLoggedIn"
+            @click="() => router.push('/auth')"
+            class="w-24 h-11 px-2 bg-primary uppercase text-xs text-white text-center justify-center font-bold rounded-full shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+          >
+            Login
+          </button>
+
+          <Popover v-if="isLoggedIn" class="relative" v-slot="{ open }">
             <PopoverButton
               :class="[
                 open ? 'text-gray-900' : 'text-gray-500',
@@ -93,8 +114,7 @@
               <PopoverPanel
                 class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-100 max-w-md sm:px-0"
               >
-
-              <!--====================================================================
+                <!--====================================================================
               NAV PROFILE VIEW START
               =====================================================================-->
 
@@ -113,7 +133,12 @@
                     class="relative grid gap-6 bg-white px-2 py-2 sm:gap-3 sm:p-3"
                   >
                     <div class="ml-4 pr-4">
-                      <p @click="toggleProfile('profileView')" class="text-base font-medium text-gray-900">Profile</p>
+                      <p
+                        @click="toggleProfile('profileView')"
+                        class="text-base font-medium text-gray-900"
+                      >
+                        Profile
+                      </p>
                     </div>
                   </div>
                   <div
@@ -152,71 +177,92 @@
                   </div>
                 </div>
 
-              <!--====================================================================
+                <!--====================================================================
               NAV PROFILE VIEW END
               =====================================================================-->
 
-              <!--====================================================================
+                <!--====================================================================
               PROFILE VIEW START
               =====================================================================-->
                 <div
                   class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden bg-white w-[250px]"
                   v-if="isProfileScreen === 'profileView'"
                 >
-                  <div class="profile-nav-back flex justify-between items-center p-2 text-center border-b">
-                      <p @click="toggleProfile('nav')">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 flex-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                  <div
+                    class="profile-nav-back flex justify-between items-center p-2 text-center border-b"
+                  >
+                    <p @click="toggleProfile('nav')">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-6 w-6 flex-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M10 19l-7-7m0 0l7-7m-7 7h18"
+                        />
                       </svg>
-                      </p>
-                      <h5 class="m-0 flex-1">Profile</h5>
+                    </p>
+                    <h5 class="m-0 flex-1">Profile</h5>
                   </div>
                   <div class="profile-menu-content-wrap">
-                      <div class="relative bg-white px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center">
-                        <img src="../../../resources/user-icon.svg" alt="" />
-                        <p class="text-black text-xs">John Dess</p>
-                        <p class="text-black text-xs">Mumbai</p>
-                      </div>
-                      <div class="edit-profile-btn text-center">
-                        <button class="inline-block lg:mx-0 bg-[#707070] text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs">Edit Profile</button>
-                      </div>
+                    <div
+                      class="relative bg-white px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center"
+                    >
+                      <img src="../../../resources/user-icon.svg" alt="" />
+                      <p class="text-black text-xs">John Dess</p>
+                      <p class="text-black text-xs">Mumbai</p>
+                    </div>
+                    <div class="edit-profile-btn text-center">
+                      <button
+                        class="inline-block lg:mx-0 bg-[#707070] text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
+                      >
+                        Edit Profile
+                      </button>
+                    </div>
 
-                      <div class="proile-details p-3">
-                        <div class="profile-details-wrap p-4  bg-[#EFEFEF] rounded-md">
-                            <div class="profile-details-item mb-3">
-                              <h5 class="text-[#7630B4] text-sm mb-1">Email</h5>
-                              <p class="m-0 text-xs">johndoe0007 @gmail.com</p>
-                            </div>
-                            <div class="profile-details-item mb-3">
-                              <h5 class="text-[#7630B4] text-sm mb-1">Name</h5>
-                              <p class="m-0 text-xs">John Doe</p>
-                            </div>
-                            <div class="profile-details-item mb-3">
-                              <h5 class="text-[#7630B4] text-sm mb-1">User Name</h5>
-                              <p class="m-0 text-xs">Qrsedwert</p>
-                            </div>
-                            <div class="profile-details-item mb-3">
-                              <h5 class="text-[#7630B4] text-sm mb-1">Gender</h5>
-                              <p class="m-0 text-xs">Male</p>
-                            </div>
-                            <div class="profile-details-item mb-3">
-                              <h5 class="text-[#7630B4] text-sm mb-1">About Me</h5>
-                              <p class="m-0 text-xs">Loren Ispusm dssadg adgsadgsagsg</p>
-                            </div>
-                            <div class="profile-details-item mb-3">
-                              <h5 class="text-[#7630B4] text-sm mb-1">Location</h5>
-                              <p class="m-0 text-xs">Mumbai</p>
-                            </div>
+                    <div class="proile-details p-3">
+                      <div
+                        class="profile-details-wrap p-4 bg-[#EFEFEF] rounded-md"
+                      >
+                        <div class="profile-details-item mb-3">
+                          <h5 class="text-[#7630B4] text-sm mb-1">Email</h5>
+                          <p class="m-0 text-xs">johndoe0007 @gmail.com</p>
+                        </div>
+                        <div class="profile-details-item mb-3">
+                          <h5 class="text-[#7630B4] text-sm mb-1">Name</h5>
+                          <p class="m-0 text-xs">John Doe</p>
+                        </div>
+                        <div class="profile-details-item mb-3">
+                          <h5 class="text-[#7630B4] text-sm mb-1">User Name</h5>
+                          <p class="m-0 text-xs">Qrsedwert</p>
+                        </div>
+                        <div class="profile-details-item mb-3">
+                          <h5 class="text-[#7630B4] text-sm mb-1">Gender</h5>
+                          <p class="m-0 text-xs">Male</p>
+                        </div>
+                        <div class="profile-details-item mb-3">
+                          <h5 class="text-[#7630B4] text-sm mb-1">About Me</h5>
+                          <p class="m-0 text-xs">
+                            Loren Ispusm dssadg adgsadgsagsg
+                          </p>
+                        </div>
+                        <div class="profile-details-item mb-3">
+                          <h5 class="text-[#7630B4] text-sm mb-1">Location</h5>
+                          <p class="m-0 text-xs">Mumbai</p>
                         </div>
                       </div>
-
                     </div>
                   </div>
-                    
-              <!--====================================================================
+                </div>
+
+                <!--====================================================================
               PROFILE VIEW END
               =====================================================================-->
-
               </PopoverPanel>
             </transition>
           </Popover>
@@ -256,21 +302,28 @@
         <div
           class="flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3 pl-3"
         >
-          <div
-          :class="checkSearchType('all')"
-            @click="toggleSearchType('all')"
-          >
+          <div :class="checkSearchType('all')" @click="toggleSearchType('all')">
             All
           </div>
-          <div :class="checkSearchType('collections')" @click="toggleSearchType('collections')">Collections</div>
-          <div :class="checkSearchType('project')" @click="toggleSearchType('project')">Project</div>
+          <div
+            :class="checkSearchType('collections')"
+            @click="toggleSearchType('collections')"
+          >
+            Collections
+          </div>
+          <div
+            :class="checkSearchType('project')"
+            @click="toggleSearchType('project')"
+          >
+            Project
+          </div>
         </div>
       </div>
 
       <div class="flex items-center justify-between w-full hidden md:flex">
         <div class="header-badges-wrap flex items-center gap-3">
           <span
-            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer"
           >
             All
             <svg
@@ -289,7 +342,7 @@
             </svg>
           </span>
           <span
-            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer"
           >
             Location
             <svg
@@ -308,7 +361,7 @@
             </svg>
           </span>
           <span
-            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer"
           >
             Sites
             <svg
@@ -327,7 +380,7 @@
             </svg>
           </span>
           <span
-            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer"
           >
             Books
             <svg
@@ -346,12 +399,26 @@
             </svg>
           </span>
           <span
-            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded"
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer"
           >
             Movies
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </span>
           <span
-            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex"
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer"
           >
             Songs
             <svg
@@ -370,9 +437,23 @@
             </svg>
           </span>
           <span
-            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded"
+            class="text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer"
           >
             News
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
           </span>
         </div>
         <div class="sort-filters flex items-center gap-3">
@@ -450,27 +531,32 @@ import {
   // PopoverGroup,
   PopoverPanel,
 } from "@headlessui/vue";
-
-export default defineComponent ({
+import { mapGetters, mapActions } from "vuex";
+import { useRouter } from "vue-router";
+export default defineComponent({
   name: "HeaderContainer",
   data() {
     return {
       isProfileScreen: "nav",
-      searchType:"all"
+      searchType: "all",
     };
   },
   methods: {
-    toggleProfile(state:"nav"|"profileView"){
-        this.isProfileScreen = state;
+    toggleProfile(state: "nav" | "profileView") {
+      this.isProfileScreen = state;
     },
-    toggleSearchType(type:string){
+    toggleSearchType(type: string) {
       this.searchType = type;
     },
-    checkSearchType(type:string){
-      if(type===this.searchType){
-        return "h-6 pt-0.5 px-2 text-xs font-bold text w-auto bg-[#6317A7] rounded-3xl text-center text-white cursor-pointer"
-      }else return "text-xs h-6 w-auto px-2 pt-0.5 font-bold text text-black cursor-pointer"
-    }
+    checkSearchType(type: string) {
+      if (type === this.searchType) {
+        return "h-6 pt-0.5 px-2 text-xs font-bold text w-auto bg-[#6317A7] rounded-3xl text-center text-white cursor-pointer";
+      } else
+        return "text-xs h-6 w-auto px-2 pt-0.5 font-bold text text-black cursor-pointer";
+    },
+  },
+  computed: {
+    ...mapGetters(["isLoggedIn"]),
   },
   props: {
     title: String,
@@ -480,6 +566,10 @@ export default defineComponent ({
     PopoverButton,
     // PopoverGroup,
     PopoverPanel,
+  },
+  setup() {
+    const router = useRouter();
+    return { router };
   },
 });
 </script>
