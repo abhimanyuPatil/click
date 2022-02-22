@@ -34,6 +34,10 @@ ion-scroll[direction=y] {
   height: 100vh;
 }
 
+a:hover{
+  border-bottom: unset !important;
+}
+
 /*=========================================================
 HEADER CSS
 =========================================================*/

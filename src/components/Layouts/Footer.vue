@@ -172,10 +172,22 @@
 </template>
 
 <script>
+import { defineComponent } from "vue";
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+} from "@headlessui/vue";
+import { useRouter } from "vue-router";
 export default {
-  name: "FooterContainer",
+  name: "Footer",
   props: {
     title: String,
+  },
+    components: {
+    Popover,
+    PopoverButton,
+    PopoverPanel,
   },
 };
 </script>
