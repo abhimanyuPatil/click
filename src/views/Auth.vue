@@ -3,13 +3,13 @@
     <ion-content>
       <HeaderContainer title="Cllct" />
       <div
-        class="flex min-h-[80vh] bg-gradient-to-r from-[#A020F0] to-[#320C54]"
+        class="flex min-h-[80vh] bg-gradient-to-r from-[#6317A7] to-[#320C54]"
       >
         <!-- first section -->
         <div
           class="hidden lg:flex flex-1 flex-col justify-start items-center p-3"
         >
-          <ArrowLeftIcon class="h-6 w-6 relative self-start" />
+          <ArrowLeftIcon @click="() => router.push('/home')" class="h-6 w-6 relative self-start cursor-pointer" />
           <div class="flex flex-col justify-start mt-20">
             <img
               class="h-30 w-60 object-cover"
@@ -260,6 +260,7 @@ import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
 import { ArrowLeftIcon } from "@heroicons/vue/outline";
 import AppInput from "@/components/Input.vue";
 import { mapActions } from "vuex";
+import { useRouter } from "vue-router";
 export default defineComponent({
   name: "AuthView",
   components: { HeaderContainer, ArrowLeftIcon, AppInput, IonPage, IonContent },
@@ -278,6 +279,10 @@ export default defineComponent({
       } else return "border border-solid border-primary text-primary";
     },
     ...mapActions(["login"]),
+  },
+   setup() {
+    const router = useRouter();
+    return { router };
   },
 });
 </script>
