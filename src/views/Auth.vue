@@ -293,6 +293,7 @@
         </div>
         <!--  -->
       </div>
+      <Footer />
     </ion-content>
   </ion-page>
 </template>
@@ -300,6 +301,7 @@
 import { defineComponent } from "vue";
 import { IonPage, IonContent } from "@ionic/vue";
 import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
+import Footer from "@/components/Layouts/Footer.vue";
 // import PopHeaderContainer from "@/components/Layouts/PopoverHeader.vue";
 import { ArrowLeftIcon } from "@heroicons/vue/outline";
 import AppInput from "@/components/Input.vue";
@@ -307,7 +309,7 @@ import { mapActions } from "vuex";
 import { useRouter } from "vue-router";
 export default defineComponent({
   name: "AuthView",
-  components: { HeaderContainer, ArrowLeftIcon, AppInput, IonPage, IonContent },
+  components: { HeaderContainer, ArrowLeftIcon, AppInput, IonPage, IonContent, Footer },
   data() {
     return {
       authType: "login",

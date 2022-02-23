@@ -32,6 +32,7 @@
         </div>
       </div>
       <!-- <Footer /> -->
+      <Footer />
     </ion-content>
   </ion-page>
 </template>
@@ -40,12 +41,13 @@
 import { defineComponent } from "vue";
 import { IonPage, IonContent } from "@ionic/vue";
 import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
+import Footer from "@/components/Layouts/Footer.vue";
 import HeroCard from "@/components/Hero-Card.vue";
 import { ArrowLeftIcon } from "@heroicons/vue/outline";
 
 export default defineComponent({
   name: "HomeNormalGrid",
-  components: { HeaderContainer, HeroCard, IonPage, IonContent },
+  components: { HeaderContainer, HeroCard, IonPage, IonContent, Footer },
   methods: {
     getColor() {
       return {

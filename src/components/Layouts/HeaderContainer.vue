@@ -314,7 +314,7 @@
       </div>
 
       <div
-        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border hidden md:flex"
+        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block"
       >
         <div class="flex items-center w-full gap-3">
           <div class="flex items-center ml-4">

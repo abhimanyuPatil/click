@@ -2,7 +2,7 @@
 <template>
   <div class="flex w-full items-center hero-section text-center h-3/6">
     <div class="md:container mx-auto">
-      <div class="hero-content-wrap w-1/2 mx-auto w-full">
+      <div class="hero-content-wrap md:w-1/2 mx-auto w-full">
         <h1 class="text-white font-semibold font-poppins">
           Create your cards without limits
         </h1>
