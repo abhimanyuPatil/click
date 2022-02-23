@@ -11,7 +11,7 @@
         >
           <ArrowLeftIcon
             @click="() => router.push('/home')"
-            class="h-6 w-6 relative self-start cursor-pointer"
+            class="h-6 w-6 relative text-white self-start cursor-pointer"
           />
           <div class="flex flex-col justify-start mt-20">
             <img
