@@ -5,7 +5,6 @@
 To build and run this app locally you will need a few things:
 
 - Install [Node.js](https://nodejs.org/en/)
-- Ionic
 
 # Getting started
 
@@ -28,4 +27,20 @@ npm install
 ionic serve
 ```
 
-Finally, navigate to `http://localhost:5000/` and you should see the app running!
+if the this doesn't work update the serve and build script in package.json as below:
+```
+{
+  "name": "click",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "ionic:serve": "vue-cli-service serve",
+    "ionic:build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint"
+  },
+  .....
+```
+
+Finally, navigate to `http://localhost:8080/` and you should see the app running!
