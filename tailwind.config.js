@@ -19,6 +19,7 @@ module.exports = {
       "6xl": "4rem",
     },
     extend: {
+      screens: { '3xl': '1600px' },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
         aileron: ["Aileron", "sans-serif"]
