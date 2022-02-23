@@ -1,4 +1,6 @@
 // const colors = require("tailwindcss/colors");
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   mode: "jit",
   purge: ["./src/**/*.vue"],
@@ -17,12 +19,16 @@ module.exports = {
       "6xl": "4rem",
     },
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+        aileron: ["Aileron", "sans-serif"]
+      },
       backgroundColor: {
         primary: "#6317A7",
         secondary: "#6317A7",
         light: "#B163E2",
         orange: "#EA5E5D",
-        pink:"#ED4E94"
+        pink: "#ED4E94"
       },
       borderColor: {
         primary: "#6317A7",
@@ -75,10 +81,13 @@ module.exports = {
             maxWidth: '90%',
           },
           '@screen xl': {
-            maxWidth: '1400px',
+            maxWidth: '90%',
+          },
+          '@screen 2xl': {
+            maxWidth: '90%',
           },
         }
       })
-    }
+    },
   ]
 };

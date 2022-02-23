@@ -1,40 +1,44 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* @layer base {
+  @font-face {
+    font-family: "Aileron";
+    src: url("/fonts/Aileron-Regular-webfont.woff") format("woff");
+  }
+} */
 @variants responsive {
   .masonry {
-      column-gap: 1.5em;
-      column-count: 1;
+    column-gap: 1.5em;
+    column-count: 1;
   }
   .masonry-sm {
-      column-gap: 1.5em;
-      column-count: 2;
+    column-gap: 1.5em;
+    column-count: 2;
   }
   .masonry-md {
-      column-gap: 1.5em;
-      column-count: 3;
+    column-gap: 1.5em;
+    column-count: 3;
   }
   .break-inside {
-      break-inside: avoid;
+    break-inside: avoid;
   }
-
 }
 
-:root{
-    --primary-color: #6317A7;
-    --secondary-color: #ED4E94;
-    --text-color: #343434;
-    --link-color: #6317A7;
-    --heading-color: #343434;
-    --yellow-color: #FBBB0B;
+:root {
+  --primary-color: #6317a7;
+  --secondary-color: #ed4e94;
+  --text-color: #343434;
+  --link-color: #6317a7;
+  --heading-color: #343434;
+  --yellow-color: #fbbb0b;
 }
 
-ion-scroll[direction=y] {
+ion-scroll[direction="y"] {
   height: 100vh;
 }
 
-a:hover{
+a:hover {
   border-bottom: unset !important;
 }
 
@@ -42,14 +46,14 @@ a:hover{
 HEADER CSS
 =========================================================*/
 
-.logo{
-    width: 120px;
+.logo {
+  width: 120px;
 }
 .custom-navbar a {
-    color: var(--text-color);
+  color: var(--text-color);
 }
-.custom-navbar button span{
-    color: var(--text-color);
+.custom-navbar button span {
+  color: var(--text-color);
 }
 input:checked + div {
   @apply border-blue-500;
@@ -72,13 +76,12 @@ a:hover {
   @apply my-6;
 }
 
-
 /*===================================================
 HEADER BADGES CSS
 ===================================================*/
 
 .header-badges-wrap span {
-  background-color: #ECEFF4;
+  background-color: #eceff4;
   padding: 10px 15px;
   border-radius: 30px;
   box-shadow: 0px 2px 0px rgb(0 0 0 / 16%);
@@ -92,8 +95,8 @@ HEADER BADGES CSS
   width: 40px;
 }
 
-.sort-filter-item{
-  margin-right: 10px
+.sort-filter-item {
+  margin-right: 10px;
 }
 .sort-filter-item span {
   font-size: 14px;
@@ -104,7 +107,7 @@ HEADER BADGES CSS
 }
 .sort-filter-item svg {
   width: 15px;
-  margin-left: 5px
+  margin-left: 5px;
 }
 
 /*======================================================
@@ -112,12 +115,14 @@ HERO SECTION CSSS
 ======================================================*/
 
 .hero-section {
-  background-color: #A020F0;
-  background-image: url('/resources/home-page/Group\ 1334.png');
+  background-color: #a020f0;
+  background-image: url("/resources/home-page/Group\ 1334.png");
   background-position: center;
 }
-.hero-content-wrap {}
-.hero-content-wrap h1{
-    font-size: 36px;
+.hero-content-wrap {
 }
-.hero-content-wrap p{}
+.hero-content-wrap h1 {
+  font-size: 36px;
+}
+.hero-content-wrap p {
+}

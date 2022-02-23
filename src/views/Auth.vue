@@ -9,7 +9,10 @@
         <div
           class="hidden lg:flex flex-1 flex-col justify-start items-center p-3"
         >
-          <ArrowLeftIcon @click="() => router.push('/home')" class="h-6 w-6 relative self-start cursor-pointer" />
+          <ArrowLeftIcon
+            @click="() => router.push('/home')"
+            class="h-6 w-6 relative self-start cursor-pointer"
+          />
           <div class="flex flex-col justify-start mt-20">
             <img
               class="h-30 w-60 object-cover"
@@ -40,6 +43,13 @@
                 login
               </button>
               <button
+                :class="checkAuthType('otp')"
+                @click="toggleAuth('otp')"
+                class="py-2 px-4 rounded-3xl uppercase text-white"
+              >
+                login with otp
+              </button>
+              <button
                 :class="checkAuthType('register')"
                 @click="toggleAuth('register')"
                 class="py-2 px-4 rounded-3xl uppercase"
@@ -49,7 +59,7 @@
             </div>
             <!-- social icons -->
             <div
-              v-if="authType === 'login'"
+              v-if="authType === 'login' || authType === 'otp'"
               class="flex lg:justify-start justify-center px-4 lg:p-0 lg:pt-3"
             >
               <img
@@ -74,7 +84,7 @@
               />
             </div>
             <div
-              v-if="authType === 'login'"
+              v-if="authType === 'login' || authType === 'otp'"
               class="flex items-center justify-between mt-6 pl-4"
             >
               <div class="bg-[#707070] h-0.5 w-5/12 opacity-20"></div>
@@ -101,7 +111,14 @@
               <AppInput label="Password" />
             </div>
             <!--  -->
-
+            <!-- otp -->
+            <div
+              v-if="authType === 'otp'"
+              class="flex flex-col justify-center px-8 lg:px-0 pt-6"
+            >
+              <AppInput :placeholder="Email" label="Email" />
+              <AppInput label="Password" />
+            </div>
             <!-- register checkobox -->
             <div
               v-if="authType === 'register'"
@@ -152,7 +169,7 @@
             <!--  -->
             <!-- login Remember me checkbox -->
             <div
-              v-if="authType === 'login'"
+              v-if="authType === 'login' || authType === 'otp'"
               class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4"
             >
               <div class="py-2">
@@ -202,11 +219,11 @@
 
             <!-- login button -->
             <div
-              v-if="authType === 'login'"
+              v-if="authType === 'login' || authType === 'otp'"
               class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4 mt-5 lg:mt-0"
             >
               <button
-              @click="login()"
+                @click="login()"
                 class="flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
               >
                 Login
@@ -254,7 +271,7 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
- import { IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent } from "@ionic/vue";
 import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
 // import PopHeaderContainer from "@/components/Layouts/PopoverHeader.vue";
 import { ArrowLeftIcon } from "@heroicons/vue/outline";
@@ -280,7 +297,7 @@ export default defineComponent({
     },
     ...mapActions(["login"]),
   },
-   setup() {
+  setup() {
     const router = useRouter();
     return { router };
   },
