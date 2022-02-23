@@ -1,12 +1,31 @@
-# click
+# Click App
 
-A vue js project with tailwind css styling
+# Prerequisites
 
-Note: This is an ionic project so make sure you have installed ionic globall in your npm packages.
-to install ionic globally
+To build and run this app locally you will need a few things:
 
+- Install [Node.js](https://nodejs.org/en/)
+- Ionic
 
-After Cloning:
-Step 1: Skip this step if `Ionic` is globally installed, else run `npm install -g @ionic/cli` 
-Step 2: run `npm install` to install dependencies.
-Step 3: run `ionic serve` to start the application.
+# Getting started
+
+- Clone the repository
+
+```
+git clone https://github.com/abhimanyuPatil/mmc-api.git
+```
+
+- Install dependencies
+
+```
+cd <project_name>
+npm install
+```
+
+- Build and run the project
+
+```
+ionic serve
+```
+
+Finally, navigate to `http://localhost:5000/` and you should see the app running!
