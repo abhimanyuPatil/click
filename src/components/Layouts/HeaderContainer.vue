@@ -316,7 +316,7 @@
       <div
         class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block"
       >
-        <div class="flex items-center w-full gap-3">
+        <div class="flex items-center w-full gap-3 h-11">
           <div class="flex items-center ml-4">
             <img
               src="../../../resources/search-icon.svg"
@@ -332,7 +332,7 @@
           />
         </div>
         <div
-          class="flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3 pl-3"
+          class="hidden md:flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3 pl-3"
         >
           <div :class="checkSearchType('all')" @click="toggleSearchType('all')">
             All
@@ -351,7 +351,25 @@
           </div>
         </div>
       </div>
-
+      <div
+        class="flex md:hidden items-center gap-3 h-full justify-center border-[#9B9B9B] mr-3 pl-3"
+      >
+        <div :class="checkSearchType('all')" @click="toggleSearchType('all')">
+          All
+        </div>
+        <div
+          :class="checkSearchType('collections')"
+          @click="toggleSearchType('collections')"
+        >
+          Collections
+        </div>
+        <div
+          :class="checkSearchType('project')"
+          @click="toggleSearchType('project')"
+        >
+          Project
+        </div>
+      </div>
       <div class="flex items-center justify-between w-full hidden md:flex">
         <div class="header-badges-wrap flex items-center gap-3">
           <span
