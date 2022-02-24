@@ -33,26 +33,26 @@
             class="bg-white 2xl:w-[600px] xl:w-[600px] lg:w-3/4 md:w-3/4 w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
           >
             <div
-              class="flex justify-center lg:justify-start space-x-4 lg:pl-4 mb-5 lg:mb-0"
+              class="grid grid-cols-1 md:flex justify-center lg:justify-start space-x-0 md:space-x-4 px-20 lg:px-0 lg:pl-4 mb-5 lg:mb-0"
             >
               <button
                 :class="checkAuthType('login')"
                 @click="toggleAuth('login')"
-                class="py-2 px-4 rounded-3xl uppercase text-white font-aileron"
+                class="py-2 px-4 rounded-3xl uppercase text-white font-aileron text-base md:text-xs"
               >
                 login
               </button>
               <button
                 :class="checkAuthType('otp')"
                 @click="toggleAuth('otp')"
-                class="py-2 px-4 rounded-3xl uppercase text-white font-aileron"
+                class="py-2 px-4 rounded-3xl uppercase text-white font-aileron mt-5 md:mt-0 text-base md:text-xs"
               >
                 login with otp
               </button>
               <button
                 :class="checkAuthType('register')"
                 @click="toggleAuth('register')"
-                class="py-2 px-4 rounded-3xl uppercase font-aileron"
+                class="py-2 px-4 rounded-3xl uppercase text-white font-aileron mt-5 md:mt-0 text-base md:text-xs"
               >
                 register
               </button>
@@ -309,7 +309,14 @@ import { mapActions } from "vuex";
 import { useRouter } from "vue-router";
 export default defineComponent({
   name: "AuthView",
-  components: { HeaderContainer, ArrowLeftIcon, AppInput, IonPage, IonContent, Footer },
+  components: {
+    HeaderContainer,
+    ArrowLeftIcon,
+    AppInput,
+    IonPage,
+    IonContent,
+    Footer,
+  },
   data() {
     return {
       authType: "login",
