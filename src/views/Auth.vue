@@ -9,13 +9,16 @@
         <div
           class="hidden lg:flex flex-1 flex-col justify-start items-center p-3"
         >
-          <ArrowLeftIcon @click="() => router.push('/home')" class="h-6 w-6 relative self-start cursor-pointer" />
+          <ArrowLeftIcon
+            @click="() => router.push('/home')"
+            class="h-6 w-6 relative text-white self-start cursor-pointer"
+          />
           <div class="flex flex-col justify-start mt-20">
             <img
               class="h-30 w-60 object-cover"
               src="../../resources/logo/Cllct-Logo-White.svg"
             />
-            <h5 class="text-4xl font-light text-white">
+            <h5 class="text-4xl font-light text-white font-aileron">
               Create your cards <br />
               without limits
             </h5>
@@ -27,29 +30,36 @@
           class="container flex lg:flex-1 md:flex-1 justify-center items-start lg:items-stretch lg:p-10 lg:pb-32 md:p-10 mx-auto"
         >
           <div
-            class="bg-white xl:w-500 md:w-3/4 w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
+            class="bg-white 2xl:w-[600px] xl:w-[600px] lg:w-3/4 md:w-3/4 w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
           >
             <div
-              class="flex justify-center lg:justify-start space-x-4 lg:pl-4 mb-5 lg:mb-0"
+              class="grid grid-cols-1 md:flex justify-center lg:justify-start space-x-0 md:space-x-4 px-20 lg:px-0 lg:pl-4 mb-5 lg:mb-0"
             >
               <button
                 :class="checkAuthType('login')"
                 @click="toggleAuth('login')"
-                class="py-2 px-4 rounded-3xl uppercase text-white"
+                class="py-2 px-4 rounded-3xl uppercase text-white font-aileron text-base md:text-xs"
               >
                 login
               </button>
               <button
+                :class="checkAuthType('otp')"
+                @click="toggleAuth('otp')"
+                class="py-2 px-4 rounded-3xl uppercase text-white font-aileron mt-5 md:mt-0 text-base md:text-xs"
+              >
+                login with otp
+              </button>
+              <button
                 :class="checkAuthType('register')"
                 @click="toggleAuth('register')"
-                class="py-2 px-4 rounded-3xl uppercase"
+                class="py-2 px-4 rounded-3xl uppercase text-white font-aileron mt-5 md:mt-0 text-base md:text-xs"
               >
                 register
               </button>
             </div>
             <!-- social icons -->
             <div
-              v-if="authType === 'login'"
+              v-if="authType === 'login' || authType === 'otp'"
               class="flex lg:justify-start justify-center px-4 lg:p-0 lg:pt-3"
             >
               <img
@@ -74,7 +84,7 @@
               />
             </div>
             <div
-              v-if="authType === 'login'"
+              v-if="authType === 'login' || authType === 'otp'"
               class="flex items-center justify-between mt-6 pl-4"
             >
               <div class="bg-[#707070] h-0.5 w-5/12 opacity-20"></div>
@@ -101,7 +111,32 @@
               <AppInput label="Password" />
             </div>
             <!--  -->
-
+            <!-- otp -->
+            <div
+              v-if="authType === 'otp'"
+              class="flex flex-col justify-center px-8 lg:px-0 pt-6"
+            >
+              <AppInput :placeholder="Email" label="Email" />
+              <div class="flex flex-col pl-4">
+                <span class="font-aileron"
+                  >Enter the OTP you received at above email</span
+                >
+              </div>
+              <div
+                id="otp"
+                class="flex flex-row justify-start text-center px-2"
+              >
+                <input
+                  v-for="item in 5"
+                  :key="item"
+                  class="m-2 border border-primary h-10 w-10 text-center form-control rounded bg-white"
+                  type="text"
+                  :id="item"
+                  maxlength="1"
+                  @keyup="(e) => keyPress(e, item)"
+                />
+              </div>
+            </div>
             <!-- register checkobox -->
             <div
               v-if="authType === 'register'"
@@ -140,11 +175,13 @@
                   </div>
                   <label
                     for="A3-yes"
-                    class="select-none text-black text-xs lg:text-sm"
+                    class="font-aileron select-none text-black text-xs lg:text-sm"
                     >Creating an account means you’re okay with our
-                    <span class="text-orange">Terms of Service</span>,
-                    <span class="text-orange">Privacy Policy</span>, and our
-                    default Notification Settings.</label
+                    <span class="font-aileron text-orange"
+                      >Terms of Service</span
+                    >,
+                    <span class="font-aileron text-orange">Privacy Policy</span
+                    >, and our default Notification Settings.</label
                   >
                 </div>
               </div>
@@ -152,7 +189,7 @@
             <!--  -->
             <!-- login Remember me checkbox -->
             <div
-              v-if="authType === 'login'"
+              v-if="authType === 'login' || authType === 'otp'"
               class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4"
             >
               <div class="py-2">
@@ -188,36 +225,43 @@
                   </div>
                   <label
                     for="A3-yes"
-                    class="select-none text-black text-xs lg:text-sm cursor-pointer"
+                    class="font-aileron select-none text-black text-xs lg:text-sm cursor-pointer"
                     >Remember Me</label
                   >
                 </div>
               </div>
               <button
-                class="lg:mx-0 bg-orange text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
+                v-if="authType === 'login'"
+                class="lg:mx-0 font-aileron bg-orange text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
               >
                 Forgot Password?
+              </button>
+              <button
+                v-if="authType === 'otp'"
+                class="lg:mx-0 font-aileron bg-orange text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
+              >
+                Resend OTP
               </button>
             </div>
 
             <!-- login button -->
             <div
-              v-if="authType === 'login'"
+              v-if="authType === 'login' || authType === 'otp'"
               class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4 mt-5 lg:mt-0"
             >
               <button
-              @click="login()"
-                class="flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
+                @click="login()"
+                class="flex font-aileron flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
               >
                 Login
               </button>
               <div
-                class="text-black flex flex-wrap justify-center text-xs mt-2 lg:mt-0"
+                class="font-aileron text-black flex flex-wrap justify-center text-xs mt-2 lg:mt-0"
               >
                 Don't have an account?
                 <span
                   @click="toggleAuth('register')"
-                  class="text-orange hover:cursor-pointer"
+                  class="font-aileron text-orange hover:cursor-pointer"
                 >
                   &nbsp; Cllct Account?
                 </span>
@@ -230,16 +274,16 @@
               class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4 mt-5 lg:mt-0"
             >
               <button
-                class="flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
+                class="font-aileron flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
               >
                 Register
               </button>
               <div
                 @click="toggleAuth('login')"
-                class="text-black flex flex-wrap justify-center text-xs mt-2 lg:mt-0"
+                class="font-aileron text-black flex flex-wrap justify-center text-xs mt-2 lg:mt-0"
               >
                 Already a member?
-                <span class="text-orange hover:cursor-pointer"
+                <span class="font-aileron text-orange hover:cursor-pointer"
                   >&nbsp; Login?</span
                 >
               </div>
@@ -249,13 +293,15 @@
         </div>
         <!--  -->
       </div>
+      <Footer />
     </ion-content>
   </ion-page>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
- import { IonPage, IonContent } from '@ionic/vue';
+import { IonPage, IonContent } from "@ionic/vue";
 import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
+import Footer from "@/components/Layouts/Footer.vue";
 // import PopHeaderContainer from "@/components/Layouts/PopoverHeader.vue";
 import { ArrowLeftIcon } from "@heroicons/vue/outline";
 import AppInput from "@/components/Input.vue";
@@ -263,7 +309,14 @@ import { mapActions } from "vuex";
 import { useRouter } from "vue-router";
 export default defineComponent({
   name: "AuthView",
-  components: { HeaderContainer, ArrowLeftIcon, AppInput, IonPage, IonContent },
+  components: {
+    HeaderContainer,
+    ArrowLeftIcon,
+    AppInput,
+    IonPage,
+    IonContent,
+    Footer,
+  },
   data() {
     return {
       authType: "login",
@@ -275,12 +328,40 @@ export default defineComponent({
     },
     checkAuthType(state: string) {
       if (state === this.authType) {
-        return "bg-primary";
+        return "bg-primary text-white";
       } else return "border border-solid border-primary text-primary";
+    },
+    keyPress(event: KeyboardEvent, index: any) {
+      let input = <HTMLInputElement>document.getElementById(index);
+      if (event.key === "Backspace") {
+        input?.setAttribute("value", "");
+        if (index !== 1) {
+          let prevIndex: any = index - 1;
+          document.getElementById(prevIndex)?.focus();
+        }
+      } else {
+        if (index === 5 && input.value !== "") {
+          return true;
+        } else if (event.keyCode > 47 && event.keyCode < 58) {
+          input?.setAttribute("value", event.key);
+          if (index !== 5) {
+            let nextindex: any = index + 1;
+            document.getElementById(nextindex)?.focus();
+            event.preventDefault();
+          }
+        } else if (event.keyCode > 64 && event.keyCode < 91) {
+          input?.setAttribute("value", String.fromCharCode(event.keyCode));
+          if (index !== 5) {
+            let nextindex: any = index + 1;
+            document.getElementById(nextindex)?.focus();
+            event.preventDefault();
+          }
+        }
+      }
     },
     ...mapActions(["login"]),
   },
-   setup() {
+  setup() {
     const router = useRouter();
     return { router };
   },
