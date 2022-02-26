@@ -8,17 +8,25 @@
   }
 } */
 @variants responsive {
-  .masonry {
-    column-gap: 1.5em;
-    column-count: 1;
+  .masonry-5-col {
+    column-count: 5;
+    column-gap: 1em;
   }
-  .masonry-sm {
-    column-gap: 1.5em;
-    column-count: 2;
+  .masonry-4-col {
+    column-count: 4;
+    column-gap: 1em;
   }
-  .masonry-md {
-    column-gap: 1.5em;
+  .masonry-3-col {
     column-count: 3;
+    column-gap: 1em;
+  }
+  .masonry-2-col {
+    column-count: 2;
+    column-gap: 1em;
+  }
+  .masonry-1-col {
+    column-count: 2;
+    column-gap: 1em;
   }
   .break-inside {
     break-inside: avoid;
