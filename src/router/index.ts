@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "@ionic/vue-router";
 import { RouteRecordRaw } from "vue-router";
 import Auth from "../views/Auth.vue";
 import HomeNormalGrid from "../views/Home-Normal-Grid.vue";
+import Home from "../views/Home.vue";
 import HomeRegularGrid from "../views/Home-Regular-Grid.vue";
 const routes: Array<RouteRecordRaw> = [
   {
@@ -14,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: "/home",
-    component: HomeNormalGrid,
+    component: Home,
   },
   {
     path: "/home-regular",

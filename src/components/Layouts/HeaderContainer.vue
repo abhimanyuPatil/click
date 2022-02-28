@@ -508,8 +508,8 @@
         </div>
         <div class="sort-filters flex items-center gap-3">
           <ViewDropdown
-            @onChange="changeLayout"
-            :selected="{ label: '100%', value: '100' }"
+            @onChange="changeZoom"
+            :selected="zoom"
             :label="'Zoom'"
             :options="[
               { label: '100%', value: '100' },
@@ -518,7 +518,8 @@
             ]"
           />
           <ViewDropdown
-            :selected="{ label: 'Latest', value: 'latest' }"
+            @onChange="changeSort"
+            :selected="sort"
             :label="'Sort By'"
             :options="[
               { label: 'Latest', value: 'latest' },
@@ -527,6 +528,7 @@
             ]"
           />
           <ViewDropdown
+            @onChange="changeLayout"
             :selected="layout"
             :label="'View'"
             :options="[
@@ -540,7 +542,6 @@
     </div>
   </div>
 </template>
-
 <script lang="ts">
 import { defineComponent } from "vue";
 import {
@@ -573,13 +574,13 @@ export default defineComponent({
       } else
         return "font-aileron text-xs h-6 w-auto px-2 pt-0.5 font-bold text text-black cursor-pointer";
     },
-    changeLayout(layout: any) {
-      console.log("layout", layout);
-    },
+    ...mapActions("layout", { changeLayout: "changeLayout",changeZoom:"changeZoom",changeSort:"changeSort" }),
   },
   computed: mapState({
     isLoggedIn: (state: any) => state.user.isLoggedIn,
     layout: (state: any) => state.layout.layout,
+    zoom:(state:any)=>state.layout.zoom,
+    sort:(state:any)=>state.layout.sort
   }),
   props: {
     title: String,

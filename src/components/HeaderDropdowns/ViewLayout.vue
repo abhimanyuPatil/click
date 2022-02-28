@@ -8,30 +8,13 @@
         ]"
       >
         <span
-          class="
-            flex
-            font-aileron
-            text-[14px]
-            font-bold
-            text-grey
-            font-light
-            cursor-pointer
-            text-left
-          "
-          >{{label}}</span
+          class="flex font-aileron text-[14px] font-bold text-grey font-light cursor-pointer text-left"
+          >{{ label }}</span
         >
         <p
-          class="
-            cursor-pointer
-            items-center
-            text-grey
-            font-aileron
-            flex
-            text-[12px]
-            mt-2
-          "
+          class="cursor-pointer items-center text-grey font-aileron flex text-[12px] mt-2"
         >
-          {{selected.label}}
+          {{ selected.label }}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="15"
@@ -58,28 +41,20 @@
         leave-to-class="opacity-0 translate-y-1"
       >
         <PopoverPanel
-          class="
-            absolute
-            bg-white
-            z-10
-            left-1/2
-            transform
-            -translate-x-1/2
-            mt-3
-            w-28
-            text-center
-            flex
-            justify-center
-            flex-col
-            px-3
-          "
+          class="absolute bg-white z-10 left-1/2 transform -translate-x-1/2 mt-3 w-28 text-center flex justify-center flex-col px-3"
         >
-          <p @click="$emit('onChange',item)" v-for="item in options" :key="item" class="cursor-pointer text-black font-aileron my-2 text-sm">
-            {{item.label}}
-          </p>
+          <PopoverButton
+            @click="$emit('onChange', item)"
+            v-for="item in options"
+            :key="item"
+            class="cursor-pointer text-black font-aileron my-2 text-sm"
+          >
+            <p>
+              {{ item.label }}
+            </p>
+          </PopoverButton>
         </PopoverPanel>
-        </transition
-      >
+      </transition>
     </div>
   </Popover>
 </template>
