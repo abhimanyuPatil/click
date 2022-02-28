@@ -40,6 +40,7 @@ module.exports = {
         secondary: "#6317A7",
         light: "#B163E2",
         orange: "#EA5E5D",
+        grey:'#878787'
       },
       colors: {
         gray: {

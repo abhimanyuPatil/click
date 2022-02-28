@@ -507,72 +507,9 @@
           </span>
         </div>
         <div class="sort-filters flex items-center gap-3">
-          <div class="sort-filter-item">
-            <span class="font-aileron text-grey font-light cursor-pointer"
-              >Zoom</span
-            >
-            <p class="cursor-pointer">
-              100%
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="{2}"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </p>
-          </div>
-          <div class="sort-filter-item">
-            <span class="font-aileron text-grey font-light cursor-pointer"
-              >Sort</span
-            >
-            <p class="cursor-pointer">
-              Most Popular
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="{2}"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </p>
-          </div>
-          <div class="sort-filter-item">
-            <span class="font-aileron text-grey font-light cursor-pointer"
-              >Zoom</span
-            >
-            <p class="cursor-pointer">
-              List View
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="{2}"
-                  d="M19 9l-7 7-7-7"
-                />
-              </svg>
-            </p>
-          </div>
+          <ViewDropdown @onChange="changeLayout" :selected="{label:'100%',value:'100'}" :label="'Zoom'" :options="[{label:'100%',value:'100'},{label:'80%',value:'80'},{label:'50%',value:'50'}]" />
+          <ViewDropdown :selected="{label:'Latest',value:'latest'}" :label="'Sort By'" :options="[{label:'Latest',value:'latest'},{label:'Relevance',value:'relevance'},{label:'Popular',value:'popular'}]" />
+          <ViewDropdown :selected="layout" :label="'View'" :options="[{label:'List View',value:'list'},{label:'Card View',value:'card'},{label:'Grid View',value:'grid'}]" />
         </div>
       </div>
     </div>
@@ -587,7 +524,8 @@ import {
   // PopoverGroup,
   PopoverPanel,
 } from "@headlessui/vue";
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions,mapState } from "vuex";
+import ViewDropdown  from "../HeaderDropdowns/ViewLayout.vue"
 import { useRouter } from "vue-router";
 export default defineComponent({
   name: "HeaderContainer",
@@ -610,18 +548,22 @@ export default defineComponent({
       } else
         return "font-aileron text-xs h-6 w-auto px-2 pt-0.5 font-bold text text-black cursor-pointer";
     },
+    changeLayout(layout:any){
+      console.log("layout",layout);
+    }
   },
-  computed: {
-    ...mapGetters(["isLoggedIn"]),
-  },
+  computed: mapState({
+    isLoggedIn:(state:any)=>state.user.isLoggedIn,
+    layout:(state:any)=>state.layout.layout
+  }),
   props: {
     title: String,
   },
   components: {
     Popover,
     PopoverButton,
-    // PopoverGroup,
     PopoverPanel,
+    ViewDropdown
   },
   setup() {
     const router = useRouter();

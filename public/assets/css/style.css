@@ -103,21 +103,6 @@ HEADER BADGES CSS
   width: 40px;
 }
 
-.sort-filter-item {
-  margin-right: 10px;
-}
-.sort-filter-item span {
-  font-size: 14px;
-}
-.sort-filter-item p {
-  font-size: 14px;
-  display: flex;
-}
-.sort-filter-item svg {
-  width: 15px;
-  margin-left: 5px;
-}
-
 /*======================================================
 HERO SECTION CSSS
 ======================================================*/
