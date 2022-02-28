@@ -7,7 +7,7 @@
         astro phiyics
       </li>
     </ul> -->
-  <ion-row class="container mx-auto">
+  <ion-row class="container mx-auto bg-white">
     <ion-row
       class="flex items-center w-full mx-8 text-center h-12 text-white bg-[#6317A7] rounded-3xl mt-12"
     >
