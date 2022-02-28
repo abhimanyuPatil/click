@@ -124,6 +124,10 @@ export default defineComponent({
           owner: "Alex",
           isGroup: true,
           category: "project",
+           likes: 125145,
+          views: 1245811212,
+          rating: 3.5,
+          timesRated: 2544125,
         },
         {
           image: require("../../resources/home-page/portfolios/Portfolio-1.jpg"),

@@ -1,5 +1,5 @@
 const state = {
-  layout: {label:"List View",value:"list"},
+  layout: {label:"Grid View",value:"grid"},
   zoom:{ label: '100%', value: '100' },
   sort:{ label: 'Latest', value: 'latest' }
 };

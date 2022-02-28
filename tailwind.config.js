@@ -19,6 +19,9 @@ module.exports = {
       "6xl": "4rem",
     },
     extend: {
+      boxShadow:{
+        'custom':'0px 0px 5px 0.5px rgba(0,0,0,0.28)'
+      },
       screens: { '3xl': '1600px' },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
