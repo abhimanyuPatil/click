@@ -1,12 +1,4 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <!--
-<div class="cookie-btn-wrap fixed left-[5%] bottom-[5%] ">
-  <button class="rounded-full border-2 bg-black border-black-500 px-4 py-4 text-white w-[200px]">
-      Cookies
-  </button>
-</div>
--->
   <footer class="bg-white border-t-2 border-gray-500 py-3">
     <div class="container sm:container mx-auto">
       <div
@@ -19,7 +11,7 @@
               src="../../../resources/Cllct-black.png"
               alt="black-logo"
             />
-            <p class="text-black text-xs">
+            <p class="text-black text-xs font-poppins">
               © {{ new Date().getFullYear() }} Cllct. All rights reserved.
             </p>
           </div>
@@ -27,10 +19,10 @@
         <div class="grid-2 flex items-center">
           <div class="flex items-center">
             <ul class="md:flex block items-center justify-between gap-6">
-              <li><a class="text-black text-xs">About Us</a></li>
-              <li><a class="text-black text-xs">Help</a></li>
-              <li><a class="text-black text-xs">Terms of Service</a></li>
-              <li><a class="text-black text-xs">Privacy Policy</a></li>
+              <li><a class="text-black text-xs font-poppins cursor-pointer">About Us</a></li>
+              <li><a class="text-black text-xs font-poppins cursor-pointer">Help</a></li>
+              <li><a class="text-black text-xs font-poppins cursor-pointer">Terms of Service</a></li>
+              <li><a class="text-black text-xs font-poppins cursor-pointer">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
@@ -52,7 +44,7 @@
               </svg>
               <div>
                 <span class="text-xs text-white">Available on</span>
-                <p class="text-xs text-white">Google Play</p>
+                <p class="text-base font-semiBold font-poppins text-white">Google Play</p>
               </div>
             </button>
             <button
@@ -71,13 +63,13 @@
               </svg>
               <div>
                 <span class="text-xs text-white">Available on</span>
-                <p class="text-xs text-white">App Store</p>
+                <p class="text-base font-semiBold font-poppins text-white">App Store</p>
               </div>
             </button>
           </div>
         </div>
-        <div class="grid-4 flex items-center sm:justify-end">
-          <div class="flex items-center gap-5 justify-end">
+        <div class="grid-4 flex items-center justify-start lg:justify-end">
+          <div class="flex items-center gap-5 justify-start lg:justify-end">
             <button
               class="rounded-full bg-pink flex justify-center items-center w-[35px] h-[35px] p-2"
             >
