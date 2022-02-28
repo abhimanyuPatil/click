@@ -29,3 +29,13 @@ npm-debug.log*
 /platforms
 /plugins
 /www
+.tmp/
+.versions/
+tmp/
+temp/
+hooks/
+plugins/android.json
+plugins/ios.json
+$RECYCLE.BIN/
+
+
