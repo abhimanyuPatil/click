@@ -27,7 +27,7 @@
               </div>
               <!-- title -->
               <h3
-                class="text-[14px] md:text-[18px] font-aileron text-[#181819] font-semibold mb-0"
+                class="text-[14px] md:text-[18px] font-aileron text-[#181819] font-semibold mb-0 mt-3"
               >
                 {{ item.title }}
               </h3>
@@ -77,6 +77,16 @@
                       d="M21.947 9.179a1.001 1.001 0 0 0-.868-.676l-5.701-.453-2.467-5.461a.998.998 0 0 0-1.822-.001L8.622 8.05l-5.701.453a1 1 0 0 0-.619 1.713l4.213 4.107-1.49 6.452a1 1 0 0 0 1.53 1.057L12 18.202l5.445 3.63a1.001 1.001 0 0 0 1.517-1.106l-1.829-6.4 4.536-4.082c.297-.268.406-.686.278-1.065z"
                     ></path>
                   </svg>
+                </div>
+              </div>
+              <!-- user view -->
+              <div class="flex items-center justify-start border-t-[1px] border-grey pt-2">
+                <div>
+                  <img class="h-10 w-10 object-scale-down" src="../../resources/dp.png" />
+                </div>
+                <div class="px-2">
+                  <h4 class="text-[#504E4E] font-aileron font-semibold text-base mb-1">{{item.owner}}</h4>
+                  <p class="capitalize text-[#7E7E7E] font-aileron text-xs">{{item.category}}</p>
                 </div>
               </div>
             </div>

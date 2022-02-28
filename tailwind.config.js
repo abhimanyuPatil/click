@@ -34,6 +34,7 @@ module.exports = {
       borderColor: {
         primary: "#6317A7",
         secondary: "#6317A7",
+        grey:"#707070"
       },
       textColor: {
         primary: "#6317A7",
