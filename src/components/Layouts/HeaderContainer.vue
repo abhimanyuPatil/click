@@ -44,43 +44,43 @@
         </div>
         <div class="flex items-center gap-7 hidden md:flex">
           <div
-            class="relative flex items-center justify-center bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer w-11 h-11 rounded-full group transition ease-out duration-200"
+            class="relative flex items-center justify-center bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer w-10 h-10 rounded-full group transition ease-out duration-200"
           >
             <img
               src="../../../resources/brush-icon.svg"
               alt=""
-              class="group-hover:brightness-0 group-hover:invert"
+              class="w-[40%] group-hover:brightness-0 group-hover:invert"
             />
             <div
-              class="absolute font-aileron w-5 h-5 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-sm"
+              class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
               T
             </div>
           </div>
           <div
-            class="relative font-aileron flex items-center justify-center rounded-full bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer fill-white w-11 h-11 group transition ease-out duration-200"
+            class="relative font-aileron flex items-center justify-center rounded-full bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer fill-white w-10 h-10 group transition ease-out duration-200"
           >
             <img
               src="../../../resources/string-icon.svg"
               alt=""
-              class="group-hover:brightness-0 group-hover:invert"
+              class="w-[40%] group-hover:brightness-0 group-hover:invert"
             />
             <div
-              class="absolute font-aileron w-5 h-5 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-sm"
+              class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
               S
             </div>
           </div>
           <div
-            class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer fill-white w-11 h-11 group transition ease-out duration-200"
+            class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] hover:bg-[#6317A7] cursor-pointer fill-white w-10 h-10 group transition ease-out duration-200"
           >
             <img
-              class="group-hover:brightness-0 group-hover:invert"
+              class="w-[40%] group-hover:brightness-0 group-hover:invert"
               src="../../../resources/box-icon.svg"
               alt=""
             />
             <div
-              class="absolute font-aileron w-5 h-5 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-sm"
+              class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
               A
             </div>
@@ -88,7 +88,7 @@
           <button
             v-if="!isLoggedIn"
             @click="() => router.push('/auth')"
-            class="font-aileron w-24 h-11 px-2 bg-primary uppercase text-xs text-white text-center justify-center font-bold rounded-full shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            class="font-aileron w-24 h-9 px-2 bg-primary uppercase text-xs text-white text-center justify-center font-bold rounded-full shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
           >
             Login
           </button>
@@ -300,7 +300,7 @@
           </Popover>
           <div class="relative">
             <button
-              class="font-aileron text-sm uppercase text-center pb-1 w-24 h-11 font-semibold text-black rounded-3xl bg-[#FBBB0B]"
+              class="font-aileron text-sm uppercase text-center pb-1 w-24 h-9 font-semibold text-black rounded-3xl bg-[#FBBB0B]"
             >
               create
             </button>
@@ -373,12 +373,12 @@
       <div class="flex items-center justify-between w-full hidden md:flex">
         <div class="header-badges-wrap flex items-center gap-3">
           <span
-            class="font-aileron text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer hover:bg-primary hover:text-[#fff]"
+            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
           >
             All
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              class="h-4 w-4 ml-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -392,12 +392,12 @@
             </svg>
           </span>
           <span
-            class="font-aileron text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer hover:bg-primary hover:text-[#fff]"
+            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
           >
             Location
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              class="h-4 w-4 ml-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -411,12 +411,12 @@
             </svg>
           </span>
           <span
-            class="font-aileron text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer hover:bg-primary hover:text-[#fff]"
+            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
           >
             Sites
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              class="h-4 w-4 ml-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -430,12 +430,12 @@
             </svg>
           </span>
           <span
-            class="font-aileron text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer hover:bg-primary hover:text-[#fff]"
+            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
           >
             Books
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              class="h-4 w-4 ml-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -449,12 +449,12 @@
             </svg>
           </span>
           <span
-            class="font-aileron text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer hover:bg-primary hover:text-[#fff]"
+            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
           >
             Movies
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              class="h-4 w-4 ml-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -468,12 +468,12 @@
             </svg>
           </span>
           <span
-            class="font-aileron text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer hover:bg-primary hover:text-[#fff]"
+            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
           >
             Songs
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              class="h-4 w-4 ml-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -487,12 +487,12 @@
             </svg>
           </span>
           <span
-            class="font-aileron text-xs px-2 py-0.5 font-bold bg-gray-100 text-[#373636] rounded flex cursor-pointer hover:bg-primary hover:text-[#fff]"
+            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
           >
             News
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              class="h-4 w-4 ml-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -507,9 +507,34 @@
           </span>
         </div>
         <div class="sort-filters flex items-center gap-3">
-          <ViewDropdown @onChange="changeLayout" :selected="{label:'100%',value:'100'}" :label="'Zoom'" :options="[{label:'100%',value:'100'},{label:'80%',value:'80'},{label:'50%',value:'50'}]" />
-          <ViewDropdown :selected="{label:'Latest',value:'latest'}" :label="'Sort By'" :options="[{label:'Latest',value:'latest'},{label:'Relevance',value:'relevance'},{label:'Popular',value:'popular'}]" />
-          <ViewDropdown :selected="layout" :label="'View'" :options="[{label:'List View',value:'list'},{label:'Card View',value:'card'},{label:'Grid View',value:'grid'}]" />
+          <ViewDropdown
+            @onChange="changeLayout"
+            :selected="{ label: '100%', value: '100' }"
+            :label="'Zoom'"
+            :options="[
+              { label: '100%', value: '100' },
+              { label: '80%', value: '80' },
+              { label: '50%', value: '50' },
+            ]"
+          />
+          <ViewDropdown
+            :selected="{ label: 'Latest', value: 'latest' }"
+            :label="'Sort By'"
+            :options="[
+              { label: 'Latest', value: 'latest' },
+              { label: 'Relevance', value: 'relevance' },
+              { label: 'Popular', value: 'popular' },
+            ]"
+          />
+          <ViewDropdown
+            :selected="layout"
+            :label="'View'"
+            :options="[
+              { label: 'List View', value: 'list' },
+              { label: 'Card View', value: 'card' },
+              { label: 'Grid View', value: 'grid' },
+            ]"
+          />
         </div>
       </div>
     </div>
@@ -524,8 +549,8 @@ import {
   // PopoverGroup,
   PopoverPanel,
 } from "@headlessui/vue";
-import { mapGetters, mapActions,mapState } from "vuex";
-import ViewDropdown  from "../HeaderDropdowns/ViewLayout.vue"
+import { mapGetters, mapActions, mapState } from "vuex";
+import ViewDropdown from "../HeaderDropdowns/ViewLayout.vue";
 import { useRouter } from "vue-router";
 export default defineComponent({
   name: "HeaderContainer",
@@ -548,13 +573,13 @@ export default defineComponent({
       } else
         return "font-aileron text-xs h-6 w-auto px-2 pt-0.5 font-bold text text-black cursor-pointer";
     },
-    changeLayout(layout:any){
-      console.log("layout",layout);
-    }
+    changeLayout(layout: any) {
+      console.log("layout", layout);
+    },
   },
   computed: mapState({
-    isLoggedIn:(state:any)=>state.user.isLoggedIn,
-    layout:(state:any)=>state.layout.layout
+    isLoggedIn: (state: any) => state.user.isLoggedIn,
+    layout: (state: any) => state.layout.layout,
   }),
   props: {
     title: String,
@@ -563,7 +588,7 @@ export default defineComponent({
     Popover,
     PopoverButton,
     PopoverPanel,
-    ViewDropdown
+    ViewDropdown,
   },
   setup() {
     const router = useRouter();

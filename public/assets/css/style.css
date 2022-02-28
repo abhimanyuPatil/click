@@ -88,17 +88,6 @@ a:hover {
 HEADER BADGES CSS
 ===================================================*/
 
-.header-badges-wrap span {
-  background-color: #eceff4;
-  padding: 10px 15px;
-  border-radius: 30px;
-  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.22);
-}
-.header-badges-wrap span svg {
-  width: 15px;
-  margin-left: 5px;
-}
-
 .mobmenu-icon svg {
   width: 40px;
 }
