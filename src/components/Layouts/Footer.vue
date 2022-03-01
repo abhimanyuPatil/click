@@ -44,7 +44,7 @@
               </svg>
               <div>
                 <span class="text-xs text-white">Available on</span>
-                <p class="text-base font-semiBold font-poppins text-white">Google Play</p>
+                <p class="text-base lg:text-sm font-semiBold font-poppins text-white">Google Play</p>
               </div>
             </button>
             <button
@@ -63,7 +63,7 @@
               </svg>
               <div>
                 <span class="text-xs text-white">Available on</span>
-                <p class="text-base font-semiBold font-poppins text-white">App Store</p>
+                <p class="text-base lg:text-sm font-semiBold font-poppins text-white">App Store</p>
               </div>
             </button>
           </div>

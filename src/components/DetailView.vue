@@ -9,7 +9,11 @@
         class="break-inside shadow-md rounded mb-5 hover:scale-105 duration-300 ease-in-out cursor-pointer"
       >
         <div class="portfolio-image">
-          <img :src="item.image" class="w-full" />
+          <img
+            :class="getImageClass(item.height)"
+            :src="item.image"
+            class="w-full"
+          />
         </div>
         <div class="portfolio-content py-4 px-3">
           <!-- from content -->
@@ -37,7 +41,7 @@
               :key="tag"
               class="font-aileron text-[#7E7E7E] text-[10px] md:text-xs flex mt-2"
             >
-              #{{tag}} &nbsp;
+              #{{ tag }} &nbsp;
             </p>
           </div>
 
@@ -114,9 +118,9 @@ import ViewsBox from "@/components/Views.vue";
 
 export default defineComponent({
   name: "DetailView",
-  components:{
+  components: {
     LikesBox,
-    ViewsBox
+    ViewsBox,
   },
   props: {
     cards: Array,
@@ -131,6 +135,13 @@ export default defineComponent({
       return require("../../resources/home-page/portfolios/Portfolio-" +
         item +
         ".jpg");
+    },
+    getImageClass(height: boolean) {
+      if (height) {
+        return "h-[300px]";
+      } else {
+        return "";
+      }
     },
   },
 });
