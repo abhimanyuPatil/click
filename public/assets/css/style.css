@@ -108,3 +108,98 @@ HERO SECTION CSSS
 }
 .hero-content-wrap p {
 }
+
+/*===================================================
+List View Responsive
+Temporary css changes to be cleaned
+===================================================*/
+
+@media only screen and (max-width: 1034px) {
+  #list-view-header {
+  }
+
+  #list-view-head-category {
+    display: none;
+  }
+
+  #list-view-head-title,
+  #list-view-head-actions,
+  #list-view-head-tags,
+  #list-view-head-name {
+    flex-basis: 25%;
+  }
+
+  #list-view-row {
+  }
+
+  #list-view-category {
+    display: none;
+  }
+
+  #list-view-title,
+  #list-view-tags,
+  #list-view-name,
+  #list-view-actions {
+    flex-basis: 25%;
+  }
+
+  #list-view-tags {
+    padding-left: 0;
+  }
+
+  #list-view-act-share,
+  #list-view-act-edit,
+  #list-view-act-save {
+    display: none;
+  }
+
+  #list-view-act-likes,
+  #list-view-act-views,
+  #list-view-act-rating {
+    flex-basis: 25%;
+  }
+}
+
+@media only screen and (max-width: 611px) {
+  #list-view-header {
+    display: none;
+  }
+
+  #list-view-row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #list-view-category {
+    display: flex;
+    width: 10rem;
+    align-self: flex-start;
+  }
+
+  #list-view-name {
+    align-self: flex-start;
+  }
+
+  /* #list-view-title,
+  #list-view-tags,
+  #list-view-name,
+  #list-view-actions {
+    flex-basis: 25%;
+  } */
+
+  /* #list-view-tags {
+    padding-left: 0;
+  }
+
+  #list-view-act-share,
+  #list-view-act-edit,
+  #list-view-act-save {
+    display: flex;
+  }
+
+  #list-view-act-likes,
+  #list-view-act-views,
+  #list-view-act-rating {
+    flex-basis: 25%;
+  } */
+}
