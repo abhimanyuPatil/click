@@ -10,39 +10,51 @@
   <div id="list-view" class="bg-white">
     <div class="container mx-auto bg-white py-[4rem]">
       <div
-        class="flex items-center w-full mx-8 text-left h-12 text-white bg-[#6317A7] rounded-3xl mt-12 px-5"
+        id="list-view-header"
+        class="flex items-center mx-8 text-center h-12 text-white bg-[#6317A7] rounded-3xl mt-12 px-2"
       >
-        <p class="basis-1/12">Category</p>
-        <p class="basis-2/12">Title</p>
-        <p class="basis-5/12">Tags</p>
-        <p class="basis-1/12">Name</p>
-        <p class="basis-3/12">Actions</p>
+        <p id="list-view-head-category" class="w-1/12 text-left pl-2">
+          Category
+        </p>
+        <p id="list-view-head-title" class="w-2/12 text-left pl-2">Title</p>
+        <p id="list-view-head-tags" class="w-4/12">Tags</p>
+        <p id="list-view-head-name" class="w-1/12">Name</p>
+        <p id="list-view-head-actions" class="w-4/12">Actions</p>
       </div>
       <div
+        id="list-view-row"
         v-for="item in cards"
         :key="item"
-        class="flex items-center text-center mx-8 w-full rounded-3xl my-4 shadow-custom px-5 py-2"
+        class="flex items-center text-center mx-8 rounded-3xl my-4 shadow-custom px-2 py-1"
       >
-        <div class="basis-1/12 h-fit overflow-hidden truncate cursor-pointer">
+        <div
+          id="list-view-category"
+          class="flex lg:w-1/12 h-fit cursor-pointer"
+        >
           <div
-            class="bg-[#6317A7] w-2/3 shadow text-white rounded-2xl uppercase py-2 text-sm"
+            class="font-aileron basis-3/5 bg-[#6317A7] w-2/3 text-xs p-1.5 text-white uppercase py-1 truncate shadow rounded-lg"
           >
             {{ item.category }}
           </div>
         </div>
-        <div class="basis-2/12 h-fit overflow-hidden flex item-center px-2">
-          <img src="../../resources/gallery.png" alt="title-avatar" />
+        <div id="list-view-title" class="lg:w-2/12 flex item-center">
+          <img
+            class="h-1/2"
+            src="../../resources/gallery.png"
+            alt="title-avatar"
+          />
           <p
-            class="font-aileron text-[#181819] flex-wrap text-left text-xs ml-2 pr-20"
+            class="font-aileron text-[#181819] overflow-hidden text-ellipsis flex-wrap text-left text-xs ml-2"
           >
             {{ item.title }}
           </p>
         </div>
         <div
-          class="basis-5/12 h-fit flex justify-start overflow-hidden truncate cursor-pointer"
+          id="list-view-tags"
+          class="lg:w-4/12 h-fit flex justify-start pl-36 lg:pl-8 truncate cursor-pointer"
         >
           <div
-            class="bg-[#ECEFF4] shadow text-xs h-fit rounded-2xl p-2 mx-1"
+            class="bg-[#ECEFF4] shadow text-xs h-fit rounded-lg p-2 mx-1"
             v-for="itemTag in item.tags"
             :key="itemTag"
           >
@@ -51,13 +63,15 @@
             </p>
           </div>
         </div>
-        <div class="basis-1/12 flex justify-start cursor-pointer">
+        <div
+          id="list-view-name"
+          class="lg:w-1/12 flex justify-center cursor-pointer"
+        >
           <img :src="item.image" class="h-8 w-8 inline-flex rounded-full" />
         </div>
-        <div
-          class="basis-3/12 flex h-fit overflow-hidden truncate justify-between"
-        >
+        <div id="list-view-actions" class="lg:w-4/12 flex h-fit justify-around">
           <div
+            id="list-view-act-share"
             class="basis-1/12 bg-[#6317A7] shadow justify-center flex items-center rounded-2xl py-2 cursor-pointer"
           >
             <img
@@ -67,7 +81,8 @@
             />
           </div>
           <div
-            class="basis-1.5/12 px-2 bg-[#ECEFF4] shadow flex justify-center items-center rounded-2xl cursor-pointer"
+            id="list-view-act-likes"
+            class="basis-2/12 px-2 bg-[#ECEFF4] shadow flex justify-center items-center rounded-2xl cursor-pointer"
           >
             <img
               class="h-3 w-3 object-fit"
@@ -79,7 +94,8 @@
             </p>
           </div>
           <div
-            class="basis-1.5/12 px-2 bg-[#ECEFF4] shadow flex justify-center items-center rounded-2xl cursor-pointer"
+            id="list-view-act-views"
+            class="basis-2/12 px-2 bg-[#ECEFF4] shadow flex justify-center items-center rounded-2xl cursor-pointer"
           >
             <img
               class="h-3 w-3 object-fit"
@@ -91,7 +107,8 @@
             </p>
           </div>
           <div
-            class="basis-2/12 px-2 bg-[#ECEFF4] shadow flex items-center justify-center rounded-2xl cursor-pointer"
+            id="list-view-act-rating"
+            class="basis-3/12 px-2 bg-[#ECEFF4] shadow flex items-center justify-center rounded-2xl cursor-pointer"
           >
             <svg
               v-for="item in 5"
@@ -111,6 +128,7 @@
             </p>
           </div>
           <div
+            id="list-view-act-edit"
             class="basis-1/12 bg-[#ECEFF4] shadow items-center rounded-2xl flex justify-center cursor-pointer"
           >
             <img
@@ -120,6 +138,7 @@
             />
           </div>
           <div
+            id="list-view-act-save"
             class="basis-1/12 bg-[#ECEFF4] shadow items-center rounded-2xl flex justify-center cursor-pointer"
           >
             <img
