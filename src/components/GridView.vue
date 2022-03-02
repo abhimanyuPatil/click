@@ -33,6 +33,7 @@ export default defineComponent({
   name: "GridView",
   props: {
     cards: Array,
+    isMinimal:Boolean
   },
   methods: {
     getColor() {

@@ -2,11 +2,149 @@
   <ion-page>
     <ion-content :fullscreen="true">
       <HeaderContainer title="Cllct" />
-      <HeroCard />
+      <HeroCard v-if="!isMinimal" />
       <GridView v-if="layout.value === 'card'" :cards="cardsItems" />
       <ListView v-if="layout.value === 'list'" :cards="cardsItems" />
       <DetailView v-if="layout.value === 'grid'" :cards="cardsItems" />
       <Footer />
+      <TransitionRoot appear :show="isOpen" as="template">
+        <Dialog as="div" @close="closeModal">
+          <div class="fixed inset-0 z-10 overflow-y-auto">
+            <div class="min-h-screen px-4 text-center">
+              <TransitionChild
+                as="template"
+                enter="duration-300 ease-out"
+                enter-from="opacity-0"
+                enter-to="opacity-100"
+                leave="duration-200 ease-in"
+                leave-from="opacity-100"
+                leave-to="opacity-30"
+              >
+                <DialogOverlay
+                  class="fixed inset-0 bg-black opacity-30 pointer-events-none"
+                />
+              </TransitionChild>
+
+              <span
+                class="inline-block h-screen align-middle"
+                aria-hidden="true"
+              >
+                &#8203;
+              </span>
+
+              <TransitionChild
+                as="template"
+                enter="duration-300 ease-out"
+                enter-from="opacity-0 scale-95"
+                enter-to="opacity-100 scale-100"
+                leave="duration-200 ease-in"
+                leave-from="opacity-100 scale-100"
+                leave-to="opacity-0 scale-95"
+              >
+                <div
+                  class="inline-block w-full max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl rounded-2xl"
+                >
+                  <DialogTitle
+                    as="h3"
+                    class="text-lg font-bold leading-6 text-gray-900 font-poppins"
+                  >
+                    Please select your view preference
+                  </DialogTitle>
+                  <div class="w-full max-w-md mx-auto">
+                    <RadioGroup v-model="selected">
+                      <RadioGroupLabel class="sr-only"
+                        >Server size</RadioGroupLabel
+                      >
+                      <div class="space-y-2">
+                        <RadioGroupOption
+                          as="template"
+                          v-for="view in views"
+                          :key="view.name"
+                          :value="view"
+                          v-slot="{ active, checked }"
+                        >
+                          <div
+                            :class="[
+                              active
+                                ? 'ring-1 ring-offset-1 ring-offset-[#ED4E94] ring-white ring-opacity-60'
+                                : '',
+                              checked
+                                ? 'bg-pink bg-opacity-80 text-white '
+                                : 'bg-white ',
+                            ]"
+                            class="relative flex px-5 py-4 rounded-lg shadow-md cursor-pointer focus:outline-none"
+                          >
+                            <div
+                              class="flex items-center justify-between w-full"
+                            >
+                              <div class="flex items-center">
+                                <div class="text-sm">
+                                  <RadioGroupLabel
+                                    as="p"
+                                    :class="
+                                      checked ? 'text-white' : 'text-gray-900'
+                                    "
+                                    class="font-bold font-poppins"
+                                  >
+                                    {{ view.name }}
+                                  </RadioGroupLabel>
+                                  <RadioGroupDescription
+                                    as="span"
+                                    :class="
+                                      checked ? 'text-sky-100' : 'text-gray-500'
+                                    "
+                                    class="inline font-poppins"
+                                  >
+                                    <span> {{ view.desc }}</span>
+                                  </RadioGroupDescription>
+                                </div>
+                              </div>
+                              <div
+                                v-show="checked"
+                                class="flex-shrink-0 text-white"
+                              >
+                                <svg
+                                  class="w-6 h-6"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                >
+                                  <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="12"
+                                    fill="#fff"
+                                    fill-opacity="0.2"
+                                  />
+                                  <path
+                                    d="M7 13l3 3 7-7"
+                                    stroke="#fff"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </RadioGroupOption>
+                      </div>
+                    </RadioGroup>
+                  </div>
+                  <div class="mt-4">
+                    <button
+                      type="button"
+                      class="inline-flex bg-primary justify-center px-5 py-3 text-sm font-bold text-blue-900 text-[#fff] font-poppins border border-transparent rounded-3xl focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                      @click="selectView"
+                    >
+                      Confirm
+                    </button>
+                  </div>
+                </div>
+              </TransitionChild>
+            </div>
+          </div>
+        </Dialog>
+      </TransitionRoot>
     </ion-content>
   </ion-page>
 </template>
@@ -22,10 +160,66 @@ import ListView from "@/components/ListView.vue";
 import ViewsBox from "@/components/Views.vue";
 import { IonContent, IonPage } from "@ionic/vue";
 import { defineComponent } from "vue";
-import { mapState } from "vuex";
-
+import { mapActions, mapState } from "vuex";
+import { ref } from "vue";
+import {
+  TransitionRoot,
+  TransitionChild,
+  Dialog,
+  DialogOverlay,
+  DialogTitle,
+  RadioGroup,
+  RadioGroupLabel,
+  RadioGroupDescription,
+  RadioGroupOption,
+} from "@headlessui/vue";
+const views = [
+  {
+    name: "Normal",
+    value: "normal",
+    desc: "Normal View with Hero Section",
+  },
+  {
+    name: "Minimal View",
+    value: "minimal",
+    desc: "Minimal View without Hero Section",
+  },
+];
 export default defineComponent({
   name: "HomeRegularGrid",
+  created() {},
+  setup() {
+    const view = sessionStorage.getItem("view");
+    let isOpen = ref(false);
+
+    if (!view) {
+      isOpen.value = true;
+    }
+    const selected = ref(views[0]);
+    return {
+      isOpen,
+      closeModal() {
+        isOpen.value = false;
+      },
+      openModal() {
+        isOpen.value = true;
+      },
+      selected,
+      views,
+    };
+  },
+  methods:{
+    selectView(view:string){
+      sessionStorage.setItem("view",view)
+      if(view === "minimal"){
+        // set isminimal in store
+        this.setMinimalView()
+        this.closeModal()
+      }
+    },
+    ...mapActions("layout", { setMinimalView: "setMinimalView"}),
+
+  },
   components: {
     HeaderContainer,
     HeroCard,
@@ -37,6 +231,15 @@ export default defineComponent({
     DetailView,
     GridView,
     ListView,
+    TransitionRoot,
+    TransitionChild,
+    Dialog,
+    DialogOverlay,
+    DialogTitle,
+    RadioGroup,
+    RadioGroupLabel,
+    RadioGroupDescription,
+    RadioGroupOption,
   },
   data() {
     return {
@@ -250,6 +453,7 @@ export default defineComponent({
   },
   computed: mapState({
     layout: (state: any) => state.layout.layout,
+    isMinimal: (state: any) => state.layout.isMinimal,
   }),
 });
 </script>
