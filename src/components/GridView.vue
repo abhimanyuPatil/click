@@ -2,7 +2,7 @@
   <div class="bg-white" id="square-grid">
     <div class="container mx-auto bg-white py-[4rem]">
       <div
-        class="grid grid-cols-2 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:md:grid-cols-3 gap-4"
+        class="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:md:grid-cols-2 gap-4"
       >
         <div
           class="portfolio-box shadow-md rounded mb-5 hover:scale-105 duration-300 ease-in-out cursor-pointer"
