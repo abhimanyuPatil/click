@@ -16,10 +16,10 @@
         <p id="list-view-head-category" class="w-1/12 text-left pl-2">
           Category
         </p>
-        <p id="list-view-head-title" class="w-2/12 text-left pl-2">Title</p>
-        <p id="list-view-head-tags" class="w-4/12">Tags</p>
-        <p id="list-view-head-name" class="w-1/12">Name</p>
-        <p id="list-view-head-actions" class="w-4/12">Actions</p>
+        <p id="list-view-head-title" class="w-2/12 text-left pl-2 font-aileron">Title</p>
+        <p id="list-view-head-tags" class="w-4/12 font-aileron">Tags</p>
+        <p id="list-view-head-name" class="w-1/12 font-aileron">Name</p>
+        <p id="list-view-head-actions" class="w-4/12 font-aileron">Actions</p>
       </div>
       <div
         id="list-view-row"

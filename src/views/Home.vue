@@ -214,8 +214,8 @@ export default defineComponent({
       if(view === "minimal"){
         // set isminimal in store
         this.setMinimalView()
-        this.closeModal()
       }
+      this.closeModal()
     },
     ...mapActions("layout", { setMinimalView: "setMinimalView"}),
 
