@@ -111,7 +111,7 @@ Temporary css changes to be cleaned
 ===================================================*/
 
 @media only screen and (max-width: 1034px) {
-  #list-view-header {
+  /* #list-view-header {
   }
 
   #list-view-head-category {
@@ -153,11 +153,11 @@ Temporary css changes to be cleaned
   #list-view-act-views,
   #list-view-act-rating {
     flex-basis: 25%;
-  }
+  } */
 }
 
 @media only screen and (max-width: 611px) {
-  #list-view-header {
+  /* #list-view-header {
     display: none;
   }
 
@@ -174,7 +174,7 @@ Temporary css changes to be cleaned
 
   #list-view-name {
     align-self: flex-start;
-  }
+  } */
 
   /* #list-view-title,
   #list-view-tags,
