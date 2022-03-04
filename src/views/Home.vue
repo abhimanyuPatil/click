@@ -219,7 +219,7 @@ const views = [
   },
 ];
 export default defineComponent({
-  name: "HomeRegularGrid",
+  name: "Home",
   created() {},
   setup() {
     const view = sessionStorage.getItem("view");
