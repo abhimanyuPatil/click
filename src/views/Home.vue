@@ -208,17 +208,16 @@ export default defineComponent({
       views,
     };
   },
-  methods:{
-    selectView(view:string){
-      sessionStorage.setItem("view",view)
-      if(view === "minimal"){
+  methods: {
+    selectView(view: string) {
+      sessionStorage.setItem("view", view);
+      if (view === "minimal") {
         // set isminimal in store
-        this.setMinimalView()
+        this.setMinimalView();
       }
-      this.closeModal()
+      this.closeModal();
     },
-    ...mapActions("layout", { setMinimalView: "setMinimalView"}),
-
+    ...mapActions("layout", { setMinimalView: "setMinimalView" }),
   },
   components: {
     HeaderContainer,
@@ -248,7 +247,17 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-1.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
-          tags: ["Design", "Creative", "Graphics"],
+          tags: [
+            "Design",
+            "Creative",
+            "Graphics",
+            "Painting",
+            "Arts",
+            "Painting",
+            "Arts",
+            "Painting",
+            "Arts",
+          ],
           owner: "James",
           isGroup: false,
           category: "book",
@@ -289,7 +298,17 @@ export default defineComponent({
           height: true,
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
-          tags: ["Physiology", "Scientific", "Fiction"],
+          tags: [
+            "Physiology",
+            "Scientific",
+            "Fiction",
+            "Physiology",
+            "Scientific",
+            "Fiction",
+            "Physiology",
+            "Scientific",
+            "Fiction",
+          ],
           owner: "James",
           isGroup: false,
           category: "book",
@@ -302,7 +321,15 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-5.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
-          tags: ["Games", "Painting", "Arts"],
+          tags: [
+            "Games",
+            "Painting",
+            "Arts",
+            "Painting",
+            "Arts",
+            "Painting",
+            "Arts",
+          ],
           owner: "Alex",
           isGroup: true,
           category: "project",

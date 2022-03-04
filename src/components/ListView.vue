@@ -13,27 +13,33 @@
         id="list-view-header"
         class="hidden items-center text-center text-white rounded-3xl px-2 mx-8 sm:bg-[#6317A7] sm:h-12 sm:flex sm:mt-12"
       >
-        <p id="list-view-head-category" class="hidden sm:w-1/12 text-left pl-2">
+        <p
+          id="list-view-head-category"
+          class="font-aileron hidden text-left pl-2 sm:w-1/12 lg:flex lg:w-1/12"
+        >
           Category
         </p>
         <p
           id="list-view-head-title"
-          class="hidden sm:flex lg:w-1/3 sm:w-1/3 sm:justify-center text-left pl-2 font-aileron"
+          class="font-aileron hidden text-left pl-2 sm:flex sm:w-1/3 sm:justify-center lg:w-1/5"
         >
           Title
         </p>
         <p
           id="list-view-head-tags"
-          class="hidden sm:flex sm:w-1/3 sm:justify-center lg-4/12 font-aileron"
+          class="hidden lg-4/12 font-aileron sm:flex sm:w-1/3 sm:justify-center"
         >
           Tags
         </p>
-        <p id="list-view-head-name" class="hidden lg:w-1/12 font-aileron">
+        <p
+          id="list-view-head-name"
+          class="font-aileron hidden lg:flex lg:w-1/12"
+        >
           Name
         </p>
         <p
           id="list-view-head-actions"
-          class="hidden sm:flex sm:w-1/3 sm:justify-center lg:w-4/12 font-aileron"
+          class="font-aileron hidden sm:flex sm:w-1/3 sm:justify-center lg:w-4/12"
         >
           Actions
         </p>
@@ -46,16 +52,19 @@
       >
         <div
           id="list-view-category"
-          class="my-1 w-2/12 h-fit sm:hidden lg:w-1/12 cursor-pointer"
+          class="my-1 w-2/12 h-fit cursor-pointer sm:hidden lg:flex lg:w-1/12"
         >
           <div
-            class="font-aileron bg-[#6317A7] text-xs p-1.5 text-white capitalize py-1 truncate shadow-md rounded-3xl lg:basis-3/5"
+            class="font-aileron bg-[#6317A7] text-xs p-1.5 text-white capitalize py-1 truncate shadow-md rounded-3xl lg:w-4/5"
           >
             <!-- w-2/3  -->
             {{ item.category }}
           </div>
         </div>
-        <div id="list-view-title" class="flex item-center my-2 my-1 lg:w-2/12">
+        <div
+          id="list-view-title"
+          class="flex item-center my-2 my-1 sm:w-1/3 sm:pr-4 lg:w-2/12 lg:pl-4"
+        >
           <img
             class="hidden lg:block lg:h-1/2"
             src="../../resources/gallery.png"
@@ -69,31 +78,30 @@
         </div>
         <div
           id="list-view-tags"
-          class="flex justify-start my-1 rounded-3xl lg:h-fit lg:w-4/12 lg:pl-36 lg:pl-8 text-ellipsis cursor-pointer"
+          class="block my-1 cursor-pointer sm:item-center sm:w-1/3 sm:pr-4 sm:truncate lg:h-fit lg:w-4/12 lg:pl-36 lg:pl-8"
         >
-          <div
-            class="bg-[#ECEFF4] shadow-md text-xs h-fit rounded-3xl p-1 mr-2"
+          <span
+            class="font-aileron bg-[#ECEFF4] text-[#181819] shadow-md text-xs h-fit rounded-3xl p-1 mr-2 sm:h-6 sm:text-center sm:w-16"
             v-for="itemTag in item.tags"
             :key="itemTag"
           >
-            <p class="font-aileron text-[#181819] text-xs">
-              #{{ itemTag }} &nbsp;
-            </p>
-          </div>
+            #{{ itemTag }} &nbsp;
+          </span>
         </div>
         <div
           id="list-view-name"
-          class="hidden lg:w-1/12 flex justify-center cursor-pointer"
+          class="hidden lg:flex lg:justify-center cursor-pointer"
         >
           <img :src="item.image" class="h-8 w-8 inline-flex rounded-full" />
         </div>
         <div
           id="list-view-actions"
-          class="flex flex-wrap justify-between items-center w-full my-1 h-fit sm:justify-around md:flex-row lg:w-4/12"
+          class="flex flex-wrap justify-between items-center w-full my-1 h-fit sm:w-1/3 sm:justify-around sm:self-center md:flex-row lg:w-4/12"
         >
+          -
           <div
             id="list-view-act-share"
-            class="justify-center flex items-center w-1/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl mb-2 sm:basis-1/12 cursor-pointer hover:bg-[#6317A7]"
+            class="justify-center flex items-center w-1/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl mb-2 sm:w-fit basis-1/12 cursor-pointer hover:bg-[#6317A7]"
           >
             <img
               class="h-3 w-3 object-fit"
@@ -103,7 +111,7 @@
           </div>
           <div
             id="list-view-act-likes"
-            class="flex justify-center items-center w-2/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl px-1 mb-2 lg:basis-2/12 cursor-pointer hover:bg-[#6317A7]"
+            class="flex justify-center items-center w-2/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl px-1 mb-2 sm:w-fit lg:basis-2/12 cursor-pointer hover:bg-[#6317A7]"
           >
             <img
               class="h-3 w-3 object-fit"
@@ -116,7 +124,7 @@
           </div>
           <div
             id="list-view-act-views"
-            class="flex justify-center items-center w-2/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl mb-2 px-1 lg:basis-2/12 cursor-pointer"
+            class="flex justify-center items-center w-2/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl mb-2 px-1 sm:w-fit lg:basis-2/12 cursor-pointer"
           >
             <img
               class="h-3 w-3 object-fit"
@@ -129,7 +137,7 @@
           </div>
           <div
             id="list-view-act-rating"
-            class="flex items-center justify-center w-3/12 h-6 bg-[#ECEFF4] shadow-md px-1 p-1 mb-2 rounded-2xl lg:basis-3/12 cursor-pointer"
+            class="flex items-center justify-center w-3/12 h-6 bg-[#ECEFF4] shadow-md px-1 p-1 mb-2 rounded-2xl sm:w-fit lg:basis-3/12 cursor-pointer"
           >
             <svg
               v-for="item in 5"
@@ -150,7 +158,7 @@
           </div>
           <div
             id="list-view-act-edit"
-            class="flex justify-center cursor-pointer items-center w-1/12 h-6 mb-2 mx-1 p-1 bg-[#ECEFF4] shadow-md rounded-2xl lg:basis-1/12 hover:bg-[#6317A7]"
+            class="flex justify-center cursor-pointer items-center w-1/12 h-6 mb-2 mx-1 p-1 bg-[#ECEFF4] shadow-md rounded-2xl sm:hidden sm:w-fit lg:basis-1/12 hover:bg-[#6317A7]"
           >
             <img
               class="h-4 w-4 object-fit"
@@ -160,7 +168,7 @@
           </div>
           <div
             id="list-view-act-save"
-            class="flex justify-center cursor-pointer items-center w-1/12 h-6 mb-2 mx-1 p-1 bg-[#ECEFF4] shadow-md rounded-2xl lg:basis-1/12 hover:bg-[#6317A7]"
+            class="flex justify-center cursor-pointer items-center w-1/12 h-6 mb-2 mx-1 p-1 bg-[#ECEFF4] shadow-md rounded-2xl sm:w-fit sm:justify-around lg:basis-1/12 hover:bg-[#6317A7]"
           >
             <img
               class="h-4 w-4 object-fit"
