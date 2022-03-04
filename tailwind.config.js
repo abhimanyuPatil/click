@@ -42,7 +42,7 @@ module.exports = {
       },
       textColor: {
         primary: "#6317A7",
-        secondary: "#6317A7",
+        black: "#2A2A2A",
         light: "#B163E2",
         orange: "#EA5E5D",
         grey:'#878787'

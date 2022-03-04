@@ -8,11 +8,11 @@
         ]"
       >
         <span
-          class="flex font-aileron text-[14px] font-bold text-grey font-light cursor-pointer text-left"
+          class="flex font-aileron text-xs text-grey font-light cursor-pointer text-left"
           >{{ label }}</span
         >
         <p
-          class="cursor-pointer items-center text-grey font-aileron flex text-[12px] mt-2"
+          class="cursor-pointer items-center text-grey font-aileron flex text-[14px] font-bold mt-2"
         >
           {{ selected.label }}
           <svg
