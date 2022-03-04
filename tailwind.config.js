@@ -32,7 +32,8 @@ module.exports = {
         secondary: "#6317A7",
         light: "#B163E2",
         orange: "#EA5E5D",
-        pink: "#ED4E94"
+        pink: "#ED4E94",
+        grey:"#ECEFF4"
       },
       borderColor: {
         primary: "#6317A7",
