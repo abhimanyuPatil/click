@@ -3,6 +3,38 @@
     <ion-content :fullscreen="true">
       <HeaderContainer title="Cllct" />
       <HeroCard v-if="!isMinimal" />
+      <div class="flex md:hidden">
+        <HeroSectionDropdown
+          @onChange="changeZoom"
+          :selected="zoom"
+          :label="'Zoom'"
+          :options="[
+            { label: '100%', value: '100' },
+            { label: '80%', value: '80' },
+            { label: '50%', value: '50' },
+          ]"
+        />
+        <HeroSectionDropdown
+          @onChange="changeSort"
+          :selected="sort"
+          :label="'Sort By'"
+          :options="[
+            { label: 'Latest', value: 'latest' },
+            { label: 'Relevance', value: 'relevance' },
+            { label: 'Popular', value: 'popular' },
+          ]"
+        />
+        <HeroSectionDropdown
+          @onChange="changeLayout"
+          :selected="layout"
+          :label="'View'"
+          :options="[
+            { label: 'List View', value: 'list' },
+            { label: 'Card View', value: 'card' },
+            { label: 'Grid View', value: 'grid' },
+          ]"
+        />
+      </div>
       <GridView v-if="layout.value === 'card'" :cards="cardsItems" />
       <ListView v-if="layout.value === 'list'" :cards="cardsItems" />
       <DetailView v-if="layout.value === 'grid'" :cards="cardsItems" />
@@ -173,6 +205,7 @@ import {
   RadioGroupDescription,
   RadioGroupOption,
 } from "@headlessui/vue";
+import HeroSectionDropdown from "../components/HeroSectionDropdown.vue";
 const views = [
   {
     name: "Normal",
@@ -186,7 +219,7 @@ const views = [
   },
 ];
 export default defineComponent({
-  name: "HomeRegularGrid",
+  name: "Home",
   created() {},
   setup() {
     const view = sessionStorage.getItem("view");
@@ -217,7 +250,12 @@ export default defineComponent({
       }
       this.closeModal();
     },
-    ...mapActions("layout", { setMinimalView: "setMinimalView" }),
+    ...mapActions("layout", {
+      setMinimalView: "setMinimalView",
+      changeLayout: "changeLayout",
+      changeZoom: "changeZoom",
+      changeSort: "changeSort",
+    }),
   },
   components: {
     HeaderContainer,
@@ -239,6 +277,7 @@ export default defineComponent({
     RadioGroupLabel,
     RadioGroupDescription,
     RadioGroupOption,
+    HeroSectionDropdown,
   },
   data() {
     return {
@@ -481,6 +520,8 @@ export default defineComponent({
   computed: mapState({
     layout: (state: any) => state.layout.layout,
     isMinimal: (state: any) => state.layout.isMinimal,
+    zoom: (state: any) => state.layout.zoom,
+    sort: (state: any) => state.layout.sort,
   }),
 });
 </script>
