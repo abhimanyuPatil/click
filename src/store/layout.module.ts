@@ -1,5 +1,5 @@
 const state = {
-  layout: { label: "Grid View", value: "grid" },
+  layout: { label: "List View", value: "list" },
   zoom: { label: "100%", value: "100" },
   sort: { label: "Latest", value: "latest" },
   isMinimal: false,
@@ -19,9 +19,9 @@ const actions = {
   changeSort({ dispatch, commit }: any, data: any) {
     commit("CHANGE_SORT", { sort: data });
   },
-  setMinimalView({dispatch,commit}:any,data:any){
-    commit("SET_MINIMAL_VIEW")
-  }
+  setMinimalView({ dispatch, commit }: any, data: any) {
+    commit("SET_MINIMAL_VIEW");
+  },
 };
 
 const mutations = {
@@ -34,9 +34,9 @@ const mutations = {
   CHANGE_SORT(state: any, sort: any) {
     state.sort = sort.sort;
   },
-  SET_MINIMAL_VIEW(state:any){
-    state.isMinimal = true
-  }
+  SET_MINIMAL_VIEW(state: any) {
+    state.isMinimal = true;
+  },
 };
 export const layout = {
   namespaced: true,

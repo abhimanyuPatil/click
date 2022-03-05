@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-white border-t-2 border-gray-500 py-3">
+  <footer class="bg-white border-t-[1px] border-[#707070] py-1 lg:fixed lg:bottom-0 w-full">
     <div class="container sm:container mx-auto">
       <div
         class="grid lg:grid-cols-[25%_minmax(28%,_0fr)_minmax(20%,_1fr)_21%] sm:grid-cols-2 grid-cols-1 gap-4 auto-cols-max content-center"
@@ -7,7 +7,7 @@
         <div class="grid-1">
           <div class="flex items-center gap-6">
             <img
-              class="h-15 w-30 object-cover"
+              class="h-10 w-15 object-cover"
               src="../../../resources/Cllct-black.png"
               alt="black-logo"
             />
@@ -29,7 +29,7 @@
         <div class="grid-3 flex items-center">
           <div class="flex items-center gap-3 flex items-center">
             <button
-              class="flex items-center gap-1 bg-[#6317A7] p-3 rounded-full text-white"
+              class="flex items-center gap-1 bg-[#6317A7] px-3 py-2 rounded-full text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,12 +43,12 @@
                 ></path>
               </svg>
               <div>
-                <span class="text-xs text-white">Available on</span>
-                <p class="text-base lg:text-sm font-semiBold font-poppins text-white">Google Play</p>
+                <!-- <span class="text-xs text-white">Available on</span> -->
+                <p class="text-xs font-semiBold font-poppins text-white">Google Play</p>
               </div>
             </button>
             <button
-              class="flex items-center gap-1 bg-[#ED4E94] p-3 rounded-full text-white"
+              class="flex items-center gap-1 bg-[#ED4E94] px-3 py-2 rounded-full text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -62,8 +62,8 @@
                 ></path>
               </svg>
               <div>
-                <span class="text-xs text-white">Available on</span>
-                <p class="text-base lg:text-sm font-semiBold font-poppins text-white">App Store</p>
+                <!-- <span class="text-xs text-white">Available on</span> -->
+                <p class="text-xs font-semiBold font-poppins text-white">App Store</p>
               </div>
             </button>
           </div>
@@ -71,7 +71,7 @@
         <div class="grid-4 flex items-center justify-start lg:justify-end">
           <div class="flex items-center gap-5 justify-start lg:justify-end">
             <button
-              class="rounded-full bg-pink flex justify-center items-center w-[35px] h-[35px] p-2"
+              class="rounded-full bg-pink flex justify-center items-center w-[30px] h-[30px] p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@
               </svg>
             </button>
             <button
-              class="rounded-full bg-pink flex justify-center items-center w-[35px] h-[35px] p-2"
+              class="rounded-full bg-pink flex justify-center items-center w-[30px] h-[30px] p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -101,7 +101,7 @@
               </svg>
             </button>
             <button
-              class="rounded-full bg-pink flex justify-center items-center w-[35px] h-[35px] p-2"
+              class="rounded-full bg-pink flex justify-center items-center w-[30px] h-[30px] p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +117,7 @@
               </svg>
             </button>
             <button
-              class="rounded-full bg-pink flex justify-center items-center w-[35px] h-[35px] p-2"
+              class="rounded-full bg-pink flex justify-center items-center w-[30px] h-[30px] p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -132,7 +132,7 @@
               </svg>
             </button>
             <button
-              class="rounded-full bg-pink flex justify-center items-center w-[35px] h-[35px] p-2"
+              class="rounded-full bg-pink flex justify-center items-center w-[30px] h-[30px] p-2"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

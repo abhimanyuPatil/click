@@ -8,6 +8,10 @@
   }
 } */
 @variants responsive {
+  .masonry-6-col {
+    column-count: 6;
+    column-gap: 2em;
+  }
   .masonry-5-col {
     column-count: 5;
     column-gap: 1em;
@@ -25,7 +29,7 @@
     column-gap: 1em;
   }
   .masonry-1-col {
-    column-count: 2;
+    column-count: 1;
     column-gap: 1em;
   }
   .break-inside {
@@ -101,12 +105,8 @@ HERO SECTION CSSS
   background-image: url("/resources/home-page/Group\ 1334.png");
   background-position: center;
 }
-.hero-content-wrap {
-}
 .hero-content-wrap h1 {
   font-size: 36px;
-}
-.hero-content-wrap p {
 }
 
 /*===================================================
@@ -115,7 +115,7 @@ Temporary css changes to be cleaned
 ===================================================*/
 
 @media only screen and (max-width: 1034px) {
-  #list-view-header {
+  /* #list-view-header {
   }
 
   #list-view-head-category {
@@ -157,11 +157,11 @@ Temporary css changes to be cleaned
   #list-view-act-views,
   #list-view-act-rating {
     flex-basis: 25%;
-  }
+  } */
 }
 
 @media only screen and (max-width: 611px) {
-  #list-view-header {
+  /* #list-view-header {
     display: none;
   }
 
@@ -178,7 +178,7 @@ Temporary css changes to be cleaned
 
   #list-view-name {
     align-self: flex-start;
-  }
+  } */
 
   /* #list-view-title,
   #list-view-tags,
