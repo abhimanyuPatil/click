@@ -90,7 +90,7 @@
         </div>
         <div
           id="list-view-name"
-          class="hidden cursor-pointer lg:flex lg:justify-center lg:self-center lg:mx-2"
+          class="hidden cursor-pointer lg:flex lg:justify-center lg:self-center lg:mx-auto"
         >
           <img :src="item.image" class="h-8 w-8 inline-flex rounded-full" />
         </div>
