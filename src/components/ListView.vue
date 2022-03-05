@@ -101,24 +101,24 @@
           -
           <div
             id="list-view-act-share"
-            class="justify-center flex items-center w-1/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl mb-2 sm:w-fit basis-1/12 cursor-pointer hover:bg-[#6317A7]"
+            class="justify-center flex items-center w-1/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl mb-2 sm:w-fit basis-1/12 cursor-pointer hover:bg-[#6317A7] group transition"
           >
             <img
-              class="h-3 w-3 object-fit"
+              class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
               src="../../public/assets/icon/share-solid.svg"
               alt="share-icon"
             />
           </div>
           <div
             id="list-view-act-likes"
-            class="flex justify-center items-center w-2/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl px-1 mb-2 sm:w-fit lg:basis-2/12 cursor-pointer hover:bg-[#6317A7]"
+            class="flex justify-center items-center w-2/12 h-6 bg-[#ECEFF4] shadow-md rounded-2xl px-1 mb-2 sm:w-fit lg:basis-2/12 cursor-pointer hover:bg-[#6317A7] group transition"
           >
             <img
-              class="h-3 w-3 object-fit"
+              class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
               src="../../public/assets/icon/like-icon.svg"
               alt="like-icon"
             />
-            <p class="text-xs text-[#5E5C5C] font-aileron">
+            <p class="text-xs text-[#5E5C5C] font-aileron group-hover:text-white">
               &nbsp; {{ formatLikes(item.likes) }}
             </p>
           </div>
@@ -158,7 +158,7 @@
           </div>
           <div
             id="list-view-act-edit"
-            class="flex justify-center cursor-pointer items-center w-1/12 h-6 mb-2 mx-1 p-1 bg-[#ECEFF4] shadow-md rounded-2xl sm:hidden sm:w-fit lg:basis-1/12 hover:bg-[#6317A7]"
+            class="flex justify-center cursor-pointer items-center w-1/12 h-6 mb-2 mx-1 p-1 bg-[#ECEFF4] shadow-md rounded-2xl sm:hidden sm:w-fit lg:basis-1/12 hover:bg-[#6317A7] "
           >
             <img
               class="h-4 w-4 object-fit"
@@ -168,10 +168,10 @@
           </div>
           <div
             id="list-view-act-save"
-            class="flex justify-center cursor-pointer items-center w-1/12 h-6 mb-2 mx-1 p-1 bg-[#ECEFF4] shadow-md rounded-2xl sm:w-fit sm:justify-around lg:basis-1/12 hover:bg-[#6317A7]"
+            class="flex justify-center cursor-pointer items-center w-1/12 h-6 mb-2 mx-1 p-1 bg-[#ECEFF4] shadow-md rounded-2xl sm:w-fit sm:justify-around lg:basis-1/12 hover:bg-[#6317A7] group transition"
           >
             <img
-              class="h-4 w-4 object-fit"
+              class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
               src="../../public/assets/icon/save-icon.svg"
               alt="save-icon"
             />
