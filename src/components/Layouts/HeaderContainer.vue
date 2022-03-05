@@ -298,9 +298,11 @@
               </PopoverPanel>
             </transition>
           </Popover>
-          <div class="relative">
+          <div
+            class="relative transform transition hover:scale-105 duration-300 ease-in-out"
+          >
             <button
-              class="font-aileron text-sm uppercase text-center pb-1 w-24 h-9 font-semibold text-black rounded-3xl bg-[#FBBB0B]"
+              class="font-aileron text-sm uppercase text-center w-24 h-9 font-semibold text-black rounded-3xl bg-[#FBBB0B]"
             >
               create
             </button>
@@ -312,7 +314,7 @@
           </div>
         </div>
       </div>
-
+      <!-- bottom section -->
       <div
         class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block"
       >
@@ -325,11 +327,33 @@
               height="20"
             />
           </div>
-          <input
-            type="text"
-            placeholder="Web..."
-            class="w-12/12 h-full border-none outline-none bg-transparent"
-          />
+          <div class="relative w-full">
+            <input
+              id="dropdown"
+              type="text"
+              placeholder="Search topic"
+              @change="query = $event.target.value"
+              class="w-full h-[50px] border-none outline-none bg-transparent text-[#2A2A2A] text-aileron"
+            />
+            <TransitionRoot
+              :show="isOpen"
+              enter="transition-opacity duration-75"
+              enter-from="opacity-0"
+              enter-to="opacity-100"
+              leave="transition-opacity duration-150"
+              leave-from="opacity-100"
+              leave-to="opacity-0"
+            >
+              <div
+                v-if="isOpen"
+                class="absolute w-full bg-white rounded z-10 px-3 shadow-md mt-2"
+              >
+                <p class="font-poppins text-black my-2 cursor-pointer" v-for="person in filteredPeople" :key="person.id">
+                  {{person.name}}
+                </p>
+              </div>
+            </TransitionRoot>
+          </div>
         </div>
         <div
           class="hidden md:flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3 pl-3"
@@ -543,16 +567,26 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
 import {
   Popover,
   PopoverButton,
-  // PopoverGroup,
-  PopoverPanel,
+  PopoverPanel, TransitionRoot
 } from "@headlessui/vue";
-import { mapGetters, mapActions, mapState } from "vuex";
-import ViewDropdown from "../HeaderDropdowns/ViewLayout.vue";
+import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
+import { computed, defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
+import { mapActions, mapState } from "vuex";
+import ViewDropdown from "../HeaderDropdowns/ViewLayout.vue";
+
+const people = [
+  { id: 1, name: "Wade Cooper" },
+  { id: 2, name: "Arlene Mccoy" },
+  { id: 3, name: "Devon Webb" },
+  { id: 4, name: "Tom Cook" },
+  { id: 5, name: "Tanya Fox" },
+  { id: 6, name: "Hellen Schmidt" },
+];
+
 export default defineComponent({
   name: "HeaderContainer",
   data() {
@@ -574,13 +608,17 @@ export default defineComponent({
       } else
         return "font-aileron text-xs h-6 w-auto px-2 pt-0.5 font-bold text text-black cursor-pointer";
     },
-    ...mapActions("layout", { changeLayout: "changeLayout",changeZoom:"changeZoom",changeSort:"changeSort" }),
+    ...mapActions("layout", {
+      changeLayout: "changeLayout",
+      changeZoom: "changeZoom",
+      changeSort: "changeSort",
+    }),
   },
   computed: mapState({
     isLoggedIn: (state: any) => state.user.isLoggedIn,
     layout: (state: any) => state.layout.layout,
-    zoom:(state:any)=>state.layout.zoom,
-    sort:(state:any)=>state.layout.sort
+    zoom: (state: any) => state.layout.zoom,
+    sort: (state: any) => state.layout.sort,
   }),
   props: {
     title: String,
@@ -590,10 +628,36 @@ export default defineComponent({
     PopoverButton,
     PopoverPanel,
     ViewDropdown,
+    TransitionRoot,
+    CheckIcon,
+    SelectorIcon,
   },
   setup() {
     const router = useRouter();
-    return { router };
+    let isOpen = ref(false);
+    let selected = ref(people[0]);
+    let query = ref("");
+    let filteredPeople = computed(() =>
+      query.value === ""
+        ? people
+        : people.filter((person) =>
+            person.name
+              .toLowerCase()
+              .replace(/\s+/g, "")
+              .includes(query.value.toLowerCase().replace(/\s+/g, ""))
+          )
+    );
+
+    return { router, selected, query, filteredPeople, isOpen };
+  },
+  mounted() {
+    let input = <HTMLInputElement>document?.getElementById("dropdown");
+    input.addEventListener("focusin", () => {
+      this.isOpen = true;
+    });
+    input.addEventListener("blur", () => {
+      this.isOpen = false;
+    });
   },
 });
 </script>
