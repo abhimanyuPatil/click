@@ -35,7 +35,7 @@
             {{ item.title }}
           </h3>
           <!-- tags -->
-          <div class="flex items-center">
+          <div class="flex items-center flex-wrap">
             <p
               v-for="tag in item.tags"
               :key="tag"
@@ -47,7 +47,7 @@
 
           <!-- likes views share and star -->
           <div
-            class="flex flex-col md:flex-row items-center md:justify-between lg:justify-between my-5"
+            class="flex md:flex-row items-center md:justify-between lg:justify-between my-5"
           >
             <div
               class="flex items-center font-poppins text-[#D1D1D1] text-xs justify-between p-0 md:pr-5"
@@ -96,7 +96,7 @@
             </div>
             <div class="px-2">
               <h4
-                class="text-[#504E4E] font-aileron font-semibold text-base mb-1"
+                class="text-[#504E4E] font-aileron font-semibold text-base mb-0 mt-0"
               >
                 {{ item.owner }}
               </h4>
