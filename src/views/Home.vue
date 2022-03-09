@@ -83,7 +83,7 @@
                     Please select your view preference
                   </DialogTitle>
                   <div class="w-full max-w-md mx-auto">
-                    <RadioGroup v-model="selected">
+                    <RadioGroup v-model="selectedView">
                       <RadioGroupLabel class="sr-only"
                         >Server size</RadioGroupLabel
                       >
@@ -94,6 +94,7 @@
                           :key="view.name"
                           :value="view"
                           v-slot="{ active, checked }"
+                          @click="setSelectedView(view)"
                         >
                           <div
                             :class="[
@@ -224,11 +225,10 @@ export default defineComponent({
   setup() {
     const view = sessionStorage.getItem("view");
     let isOpen = ref(false);
-
     if (!view) {
       isOpen.value = true;
     }
-    const selected = ref(views[0]);
+    let selectedView = ref(views[0]);
     return {
       isOpen,
       closeModal() {
@@ -237,14 +237,18 @@ export default defineComponent({
       openModal() {
         isOpen.value = true;
       },
-      selected,
+      selectedView,
       views,
     };
   },
   methods: {
-    selectView(view: string) {
-      sessionStorage.setItem("view", view);
-      if (view === "minimal") {
+    setSelectedView(test: any) {
+      this.selectedView = test;
+    },
+    selectView() {
+      sessionStorage.setItem("view", this.selectedView);
+      console.log("type", this.selectedView.value);
+      if (this.selectedView.value === "minimal") {
         // set isminimal in store
         this.setMinimalView();
       }
@@ -281,6 +285,7 @@ export default defineComponent({
   },
   data() {
     return {
+      selectedView: "normal",
       cardsItems: [
         {
           image: require("../../resources/home-page/portfolios/Portfolio-1.jpg"),
