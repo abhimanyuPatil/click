@@ -88,13 +88,13 @@ module.exports = {
             maxWidth: '90%',
           },
           '@screen lg': {
-            maxWidth: '90%',
+            maxWidth: '95%',
           },
           '@screen xl': {
-            maxWidth: '90%',
+            maxWidth: '96%',
           },
           '@screen 2xl': {
-            maxWidth: '90%',
+            maxWidth: '98%',
           },
         }
       })

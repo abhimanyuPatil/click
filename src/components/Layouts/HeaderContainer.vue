@@ -571,6 +571,9 @@
       </div>
       <div class="flex items-center justify-between w-full hidden md:flex">
         <div class="header-badges-wrap flex items-center gap-3">
+          <p class="font-aileron font-bold text-[#373636] text-sm">
+            Select Category :
+          </p>
           <Popover class="relative" v-slot="{ open }">
             <PopoverButton
               :class="[
