@@ -19,8 +19,11 @@ module.exports = {
       "6xl": "4rem",
     },
     extend: {
-      boxShadow:{
-        'custom':'0px 0px 5px 0.5px rgba(0,0,0,0.28)'
+      scale: {
+        '103': '1.03'
+      },
+      boxShadow: {
+        'custom': '0px 0px 5px 0.5px rgba(0,0,0,0.28)'
       },
       screens: { '3xl': '1600px' },
       fontFamily: {
@@ -33,19 +36,19 @@ module.exports = {
         light: "#B163E2",
         orange: "#EA5E5D",
         pink: "#ED4E94",
-        grey:"#ECEFF4"
+        grey: "#ECEFF4"
       },
       borderColor: {
         primary: "#6317A7",
         secondary: "#6317A7",
-        grey:"#707070"
+        grey: "#707070"
       },
       textColor: {
         primary: "#6317A7",
         black: "#2A2A2A",
         light: "#B163E2",
         orange: "#EA5E5D",
-        grey:'#878787'
+        grey: '#878787'
       },
       colors: {
         gray: {

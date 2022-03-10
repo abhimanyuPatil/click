@@ -1,12 +1,11 @@
 <template>
-  <div class="flex items-center text=[10px] ml-2 hover:text-light group-hover:fill-[#6317A7]">
-    7.5k
+  <div class="flex items-center ml-2 group">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="16"
       height="16"
       viewBox="0 0 20.833 11.667"
-      class="ml-1 cursor-pointer fill-[#d1d1d1] hover:fill-[#6317A7]"
+      class="ml-1 cursor-pointer fill-[#d1d1d1] group-hover:fill-[#6317A7]"
     >
       <path
         id="eye"
@@ -14,6 +13,7 @@
         transform="translate(0 -7.04)"
       />
     </svg>
+    <p class="text=[10px] group-hover:text-light">&nbsp;7.5k</p>
   </div>
 </template>
 <script lang="ts">

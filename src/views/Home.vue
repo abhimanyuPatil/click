@@ -2,7 +2,7 @@
   <ion-page>
     <ion-content :fullscreen="true">
       <HeaderContainer title="Cllct" />
-      <HeroCard v-if="!isMinimal" />
+      <!-- <HeroCard v-if="!isMinimal" /> -->
       <div class="flex md:hidden">
         <HeroSectionDropdown
           @onChange="changeZoom"
@@ -291,6 +291,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-1.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: [
             "Design",
             "Creative",
@@ -314,6 +316,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-2.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Design", "Creative", "Fiction"],
           height: true,
           owner: "Alex",
@@ -328,6 +332,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-3.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Physiology", "Scientific", "Fiction"],
           owner: "James",
           isGroup: false,
@@ -342,6 +348,8 @@ export default defineComponent({
           height: true,
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: [
             "Physiology",
             "Scientific",
@@ -365,6 +373,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-5.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: [
             "Games",
             "Painting",
@@ -387,6 +397,8 @@ export default defineComponent({
           height: true,
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Arts", "Physiology", "Fiction"],
           owner: "James",
           isGroup: false,
@@ -400,6 +412,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-5.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Design", "Arts", "Physiology"],
           owner: "Alex",
           isGroup: true,
@@ -415,6 +429,8 @@ export default defineComponent({
 
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Creative", "Games", "Fiction"],
           owner: "James",
           isGroup: false,
@@ -428,6 +444,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-4.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Design", "Scientific", "Fiction"],
           owner: "James",
           height: true,
@@ -442,6 +460,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-5.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Design", "Creative", "Graphics"],
           owner: "James",
           isGroup: false,
@@ -455,6 +475,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-1.jpg"),
           height: true,
           from: "from web design Ledger ",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           title: "Lufthnas home page concept for UI Designs",
           tags: ["Design", "Creative", "Graphics"],
           owner: "James",
@@ -469,6 +491,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-2.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Physiology", "Scientific", "Fiction"],
           owner: "James",
           isGroup: false,
@@ -482,6 +506,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-3.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Games", "Painting", "Arts"],
           owner: "James",
           isGroup: false,
@@ -496,6 +522,8 @@ export default defineComponent({
           image: require("../../resources/home-page/portfolios/Portfolio-5.jpg"),
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Design", "Creative", "Games"],
           owner: "Alex",
           isGroup: true,
@@ -510,6 +538,8 @@ export default defineComponent({
           height: true,
           from: "from web design Ledger ",
           title: "Lufthnas home page concept for UI Designs",
+          description:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
           tags: ["Design", "Scientific", "Fiction"],
           owner: "James",
           isGroup: false,
