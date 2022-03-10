@@ -1,4 +1,34 @@
 <template>
+
+  <div class="flex justify-between items-center flex-wrap bg-white fixed bottom-0 w-full z-[999] px-3 py-3 gap-3 md:hidden border-t-[1px] border-gray-800">
+    <div class="flex flex-col items-center justify-center text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-pink-400" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+        </svg>
+        <p class="text-gray-900 font-aileron text-sm font-bold">Login</p>
+    </div>
+    <div class="flex flex-col items-center justify-center text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-pink-400" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+          <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" />
+        </svg>
+        <p class="text-gray-900 font-aileron text-sm font-bold">Categories</p>
+    </div>
+    <div class="flex flex-col items-center justify-center text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-pink-400" viewBox="0 0 20 20" fill="currentColor">
+          <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
+        </svg>
+        <p class="text-gray-900 font-aileron text-sm font-bold">Projects</p>
+    </div>
+    <div class="flex flex-col items-center justify-center text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-pink-400" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
+        </svg>
+        <p class="text-gray-900 font-aileron text-sm font-bold">Signup</p>
+    </div>
+  </div>
+
+
   <footer class="bg-white border-t-[1px] border-[#707070] py-1 lg:fixed lg:bottom-0 w-full">
     <div class="container sm:container mx-auto">
       <div

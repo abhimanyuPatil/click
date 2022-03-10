@@ -299,7 +299,7 @@
                <a @click="()=> router.push('/home')"> <img src="../../../resources/logo-icon.svg" alt="" width="100" height="48" class="cursor-pointer"/> </a> 
             </div>
             <div class="flex items-center">
-               <a href="" class="font-aileron w-24 py-[10px] px-2 bg-primary uppercase text-xs text-white text-center justify-center font-bold rounded-full focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">Login</a>
+               <a href="" class="font-aileron w-24 py-[10px] px-2 bg-purple-700 uppercase text-xs text-white text-center justify-center font-bold rounded-full focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">Create</a>
             </div>
          </div>
             <!--=========================================================================
@@ -360,7 +360,7 @@
   MOBILE HAMBURGER NAVIGATION MENU START
   ============================================================================-->
 
-   <div v-if="isMobile()" :class="[isNavActive ? 'border-b border-[#DEDEDE] bg-white fixed h-[100%] w-[70%] left-[0%] top-0 z-[999999] transition-[all] duration-700 shadow-md': 'border-b border-[#DEDEDE] bg-white fixed h-[100%] w-[70%] -left-[70%] top-0 z-[999999] transition-[all] duration-700 shadow-md']">
+   <div v-if="isMobile()" :class="[isNavActive ? 'border-b border-[#DEDEDE] bg-white fixed h-[100%] w-[70%] left-[0%] top-0 z-[999999] transition-[all] duration-700 shadow-md': 'border-b border-[#DEDEDE] bg-white fixed h-[100%] w-[70%] -left-[100%] top-0 z-[999999] transition-[all] duration-700 shadow-md']">
       <div class="flex items-center justify-between py-4 px-3">
          <div class="container mx-auto">
             <div class="flex items-center justify-between ">
