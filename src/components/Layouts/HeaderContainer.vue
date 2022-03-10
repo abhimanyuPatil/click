@@ -299,9 +299,7 @@
                <a @click="()=> router.push('/home')"> <img src="../../../resources/logo-icon.svg" alt="" width="100" height="48" class="cursor-pointer"/> </a> 
             </div>
             <div class="flex items-center">
-               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-               </svg>
+               <a href="" class="font-aileron w-24 py-[10px] px-2 bg-primary uppercase text-xs text-white text-center justify-center font-bold rounded-full focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">Login</a>
             </div>
          </div>
             <!--=========================================================================
