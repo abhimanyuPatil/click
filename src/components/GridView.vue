@@ -5,24 +5,24 @@
         class="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:md:grid-cols-2 gap-4"
       >
         <div
-          class="portfolio-box shadow-md rounded mb-5 hover:scale-105 duration-300 ease-in-out cursor-pointer"
+          class="portfolio-box rounded mb-5 hover:scale-105 duration-300 ease-in-out cursor-pointer"
           v-for="item in cards"
           :key="item"
         >
           <div class="portfolio-image">
             <img :src="generateLink(item)" class="w-full" />
           </div>
-          <div class="portfolio-content">
-            <div class="portfolio-title flex items-center py-4 px-3">
-              <div class="p-[10px] rounded mr-2" :style="getColor()"></div>
-              <h4
-                class="text-[14px] font-semibold font-aileron text-gray-600 m-0"
+          <div class="portfolio-content flex mt-2">
+            <div class="portfolio-title flex items-center min-w-0 mr-[10%]">
+              <span class="p-[10px] rounded mr-1" :style="getColor()"></span>
+              <p
+                class="font-aileron text-gray-600 text-[10px] font-semibold truncate font-bold"
               >
                 {{ item.from }}
-              </h4>
+              </p>
             </div>
             <div
-              class="flex items-center font-poppins text-[#D1D1D1] text-xs justify-start p-3"
+              class="flex items-center font-poppins text-[#D1D1D1] text-xs justify-start ml-auto"
             >
               <LikesBox />
               <ViewsBox />
