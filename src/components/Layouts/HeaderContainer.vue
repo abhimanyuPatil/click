@@ -447,7 +447,7 @@
       <div
         class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block"
       >
-        <div class="flex items-center w-full gap-3 h-11">
+        <div class="flex basis-3/5 items-center w-full gap-3 h-11">
           <div class="flex items-center ml-4">
             <img
               src="../../../resources/search-icon.svg"
@@ -462,7 +462,7 @@
               type="text"
               placeholder="Search topic"
               @change="query = $event.target.value"
-              class="w-full h-[50px] border-none outline-none bg-transparent text-[#2A2A2A] text-aileron"
+              class="w-full h-[50px] border-none outline-none bg-[transparent] text-[#2A2A2A] text-aileron"
             />
             <TransitionRoot
               :show="isOpen"
@@ -488,6 +488,67 @@
             </TransitionRoot>
           </div>
         </div>
+        <div class="flex basis-2/5 md:hidden h-full border-l-2">
+          <Listbox v-model="selectedType">
+            <div class="relative mt-1 w-full">
+              <ListboxButton
+                class="relative font-aileron w-full py-2 pl-3 pr-10 text-left bg-transparent rounded-lg cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 text-sm"
+              >
+                <span class="block truncate">{{ selectedType }}</span>
+                <span
+                  class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                >
+                  <SelectorIcon
+                    class="w-5 h-5 text-gray-600"
+                    aria-hidden="true"
+                  />
+                </span>
+              </ListboxButton>
+
+              <transition
+                enter-active-class="transition duration-100 ease-out"
+                enter-from-class="transform scale-95 opacity-0"
+                enter-to-class="transform scale-100 opacity-100"
+                leave-active-class="transition duration-75 ease-out"
+                leave-from-class="transform scale-100 opacity-100"
+                leave-to-class="transform scale-95 opacity-0"
+              >
+                <ListboxOptions
+                  class="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white rounded-md ring-1 ring-black ring-opacity-5 focus:outline-none"
+                >
+                  <ListboxOption
+                    v-slot="{ active, selected }"
+                    v-for="type in types"
+                    :key="type"
+                    :value="type"
+                    as="template"
+                  >
+                    <li
+                      :class="[
+                        active ? 'text-amber-900 bg-primary' : 'text-gray-900',
+                        'cursor-default select-none relative py-2 pl-10 pr-4',
+                      ]"
+                    >
+                      <span
+                        :class="[
+                          selected ? 'font-medium text-white' : 'font-normal',
+                          'block text-sm font-aileron',
+                        ]"
+                        >{{ type }}</span
+                      >
+                      <span
+                        v-if="selected"
+                        class="absolute inset-y-0 left-0 flex items-center pl-3 text-white"
+                      >
+                        <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                      </span>
+                    </li>
+                  </ListboxOption>
+                </ListboxOptions>
+              </transition>
+            </div>
+          </Listbox>
+        </div>
         <div
           class="hidden md:flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3 pl-3"
         >
@@ -506,25 +567,6 @@
           >
             Project
           </div>
-        </div>
-      </div>
-      <div
-        class="flex md:hidden items-center gap-3 h-full justify-center border-[#9B9B9B] mr-3 pl-3"
-      >
-        <div :class="checkSearchType('all')" @click="toggleSearchType('all')">
-          All
-        </div>
-        <div
-          :class="checkSearchType('collections')"
-          @click="toggleSearchType('collections')"
-        >
-          Collections
-        </div>
-        <div
-          :class="checkSearchType('project')"
-          @click="toggleSearchType('project')"
-        >
-          Project
         </div>
       </div>
       <div class="flex items-center justify-between w-full hidden md:flex">
@@ -618,8 +660,13 @@ import {
   PopoverButton,
   PopoverPanel,
   TransitionRoot,
+  Listbox,
+  ListboxLabel,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
 } from "@headlessui/vue";
-import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
+import { CheckIcon, SelectorIcon, ChevronDownIcon } from "@heroicons/vue/solid";
 import { computed, defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
 import { mapActions, mapState } from "vuex";
@@ -633,6 +680,7 @@ const categories = [
   "Songs",
   "News",
 ];
+const types = ["All", "Projects", "Collections"];
 const people = [
   { id: 1, name: "Wade Cooper" },
   { id: 2, name: "Arlene Mccoy" },
@@ -641,15 +689,17 @@ const people = [
   { id: 5, name: "Tanya Fox" },
   { id: 6, name: "Hellen Schmidt" },
 ];
-
 export default defineComponent({
   name: "HeaderContainer",
   data() {
+    const selectedType = ref(types[0]);
     return {
       isProfileScreen: "nav",
       searchType: "all",
       selectedCategory: categories[0],
       categories,
+      selectedType,
+      types,
     };
   },
   methods: {
@@ -698,6 +748,11 @@ export default defineComponent({
     TransitionRoot,
     CheckIcon,
     SelectorIcon,
+    Listbox,
+    ListboxLabel,
+    ListboxButton,
+    ListboxOptions,
+    ListboxOption,
   },
   setup() {
     const router = useRouter();

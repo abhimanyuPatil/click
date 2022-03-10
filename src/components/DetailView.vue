@@ -90,7 +90,7 @@
           </div>
           <!-- user view -->
           <div
-            class="flex items-center justify-between border-t-[0.8px] border-grey px-2 pt-2"
+            class="flex items-center justify-between border-t-[0.8px] border-[#ccc] px-2 pt-2"
           >
             <div class="flex items-center">
               <img
