@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center text=[10px] ml-2 hover:text-light group-hover:fill-[#6317A7] font-bold"
+    class="flex items-center text=sm ml-2 hover:text-light group-hover:fill-[#6317A7] font-bold"
   >
     7.5k
     <svg

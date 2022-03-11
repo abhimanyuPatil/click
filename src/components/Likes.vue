@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center text=[10px] hover:text-light font-bold">
+  <div class="flex items-center text=sm hover:text-light font-bold">
     77
     <svg
       xmlns="http://www.w3.org/2000/svg"
