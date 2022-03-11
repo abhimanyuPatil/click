@@ -1,7 +1,7 @@
 <template>
   <div id="regular-grid" class="bg-white">
     <div
-      class="masonry-1-col md:masonry-2-col lg:masonry-5-col xl:masonry-5-col 2xl:masonry-6-col bg-white container mx-auto py-[3rem]"
+      class="masonry-1-col md:masonry-2-col lg:masonry-5-col xl:masonry-5-col 2xl:masonry-6-col bg-white container mx-auto py-[3rem] pb-[4rem]"
     >
       <div
         v-for="item in cards"

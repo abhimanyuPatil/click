@@ -51,9 +51,9 @@
               class="w-[40%] group-hover:brightness-0 group-hover:invert"
             />
             <div
-              class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
+              class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
-              T
+              <p>T</p>
             </div>
           </div>
           <div
@@ -65,9 +65,9 @@
               class="w-[40%] group-hover:brightness-0 group-hover:invert"
             />
             <div
-              class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
+              class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
-              S
+              <p>S</p>
             </div>
           </div>
           <Popover class="relative" v-slot="{ open }">
@@ -86,9 +86,9 @@
                   alt=""
                 />
                 <div
-                  class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
+                  class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
                 >
-                  A
+                 <p>A</p>
                 </div>
               </div>
             </PopoverButton>

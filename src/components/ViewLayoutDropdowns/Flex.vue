@@ -4,12 +4,12 @@
       <PopoverButton
         :class="[
           open ? 'text-gray-900' : 'text-gray-500',
-          'group bg-white font-medium hover:text-gray-900 focus:outline-none text-left',
+          'group bg-white font-medium hover:text-gray-900 focus:outline-none text-right',
         ]"
       >
-        <span
-          class="flex font-aileron text-xs text-grey font-light cursor-pointer text-left"
-          >{{ label }}</span
+        <div
+          class="flex justify-end pr-1 font-aileron text-xs text-grey font-light cursor-pointer text-right"
+          >{{ label }}</div
         >
         <p
           class="cursor-pointer items-center text-grey font-aileron flex text-[14px] font-bold mt-2"

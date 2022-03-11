@@ -53,7 +53,7 @@
             <span
               class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
             >
-              <SelectorIcon class="w-5 h-5 text-gray-100" aria-hidden="true" />
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
             </span>
           </ListboxButton>
 

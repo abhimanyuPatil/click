@@ -73,11 +73,16 @@
           class="block h-8 whitespace-pre overflow-hidden text-ellipsis my-1 cursor-pointer sm:item-center sm:w-1/3 sm:pr-4 sm:truncate lg:block lg:h-8 lg:w-3/12 lg:self-center lg:text-left lg:px-4"
         >
           <span
-            class="font-aileron bg-[#ECEFF4] text-[#181819] shadow-md text-xs h-7 rounded-3xl p-1 mr-2 sm:h-6 sm:text-center sm:w-16"
-            v-for="itemTag in item.tags"
+            class="font-aileron bg-[#ECEFF4] text-[#181819] shadow-md text-xs h-7 rounded-3xl p-1 px-2 mr-2 sm:h-6 text-center sm:w-16"
+            v-for="itemTag in item.tags.slice(0, 3)"
             :key="itemTag"
           >
-            #{{ itemTag }} &nbsp;
+            #{{ itemTag }}
+          </span>
+          <span
+            class="font-aileron bg-[#ECEFF4] text-[#181819] shadow-md text-xs h-7 rounded-3xl p-1 px-2 mr-2 sm:h-6 text-center sm:w-16"
+          >
+            ...
           </span>
         </div>
         <div
