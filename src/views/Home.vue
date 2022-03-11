@@ -39,6 +39,7 @@
       <ListView v-if="layout.value === 'list'" :cards="cardsItems" />
       <DetailView v-if="layout.value === 'grid'" :cards="cardsItems" />
       <Footer />
+      <MobileTabs />
       <TransitionRoot appear :show="isOpen" as="template">
         <Dialog as="div" @close="closeModal">
           <div class="fixed inset-0 z-10 overflow-y-auto">
@@ -188,6 +189,7 @@ import GridView from "@/components/GridView.vue";
 import HeroCard from "@/components/Hero-Card.vue";
 import Footer from "@/components/Layouts/Footer.vue";
 import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
+import MobileTabs from "@/components/Layouts/MobileTabs.vue";
 import LikesBox from "@/components/Likes.vue";
 import ListView from "@/components/ListView.vue";
 import ViewsBox from "@/components/Views.vue";
@@ -282,6 +284,7 @@ export default defineComponent({
     RadioGroupDescription,
     RadioGroupOption,
     HeroSectionDropdown,
+    MobileTabs,
   },
   data() {
     return {
