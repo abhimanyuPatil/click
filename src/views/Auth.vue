@@ -303,7 +303,6 @@ import { defineComponent } from "vue";
 import { IonPage, IonContent } from "@ionic/vue";
 import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
 import Footer from "@/components/Layouts/Footer.vue";
-import MobileTabs from "@/components/Layouts/MobileTabs.vue";
 import { ArrowLeftIcon } from "@heroicons/vue/outline";
 import AppInput from "@/components/Input.vue";
 import { mapActions } from "vuex";
@@ -317,7 +316,6 @@ export default defineComponent({
     IonPage,
     IonContent,
     Footer,
-    MobileTabs,
   },
   data() {
     return {
