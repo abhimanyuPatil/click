@@ -797,9 +797,9 @@
               height="20"
             />
           </div>
-          <div class="relative w-[65%]">
+          <div class="relative w-[60%]">
             <input
-              id="dropdown"
+              id="dropdown-responsive"
               type="text"
               placeholder="Search topic"
               @change="query = $event.target.value"
@@ -828,15 +828,24 @@
               </div>
             </TransitionRoot>
           </div>
-          <select
-            class="form-select appearance-none block w-[35%] px-3 h-full py-1.5 text-base font-normal text-black bg-white bg-clip-padding bg-no-repeat transition ease-in-out text-center font-aileron m-0 border-l-[1px] border-gray-500 focus:text-gray-500 focus:bg-white focus:border-blue-600 focus:outline-none"
-            aria-label="Default select example"
-          >
-            <option selected>Projects</option>
-            <option value="1">Collections</option>
-            <option value="2">Images</option>
-            <option value="3">Videos</option>
-          </select>
+          <div class="block w-[40%] flex items-center px-3 justify-between">
+            <select
+              class="form-select w-full text-[#363636] font-aileron appearance-none h-full py-1.5 text-sm font-normal text-black bg-white bg-clip-padding bg-no-repeat transition ease-in-out text-center m-0 border-l-[1px] border-gray-500 focus:bg-white focus:border-blue-600 focus:outline-none"
+              aria-label="Default select example"
+            >
+              <option selected>All</option>
+              <option selected value="1">Projects</option>
+              <option value="2">Collections</option>
+            </select>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 fill-gray-500"
+            >
+              <path
+                d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+              ></path>
+            </svg>
+          </div>
         </div>
       </div>
 
@@ -1061,13 +1070,25 @@ export default defineComponent({
     return { router, selected, query, filteredPeople, isOpen };
   },
   mounted() {
-    let input = <HTMLInputElement>document?.getElementById("dropdown");
-    input.addEventListener("focusin", () => {
-      this.isOpen = true;
-    });
-    input.addEventListener("blur", () => {
-      this.isOpen = false;
-    });
+    if (this.isMobile()) {
+      let responsiveInput = <HTMLInputElement>(
+        document?.getElementById("dropdown-responsive")
+      );
+      responsiveInput.addEventListener("focusin", () => {
+        this.isOpen = true;
+      });
+      responsiveInput.addEventListener("blur", () => {
+        this.isOpen = false;
+      });
+    } else {
+      let input = <HTMLInputElement>document?.getElementById("dropdown");
+      input.addEventListener("focusin", () => {
+        this.isOpen = true;
+      });
+      input.addEventListener("blur", () => {
+        this.isOpen = false;
+      });
+    }
   },
 });
 </script>
