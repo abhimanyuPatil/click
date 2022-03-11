@@ -48,14 +48,14 @@
         id="list-view-row"
         v-for="item in cards"
         :key="item"
-        class="flex flex-wrap items-left text-center mx-8 rounded-3xl my-4 shadow-lg pl-2 py-1"
+        class="flex flex-wrap items-left text-center mx-8 rounded-3xl my-4 shadow-lg px-2 py-0 xl:py-1 lg:pr-0"
       >
         <div
           id="list-view-category"
-          class="my-1 w-2/12 h-fit cursor-pointer sm:hidden lg:flex lg:w-1/12 lg:my-auto"
+          class="min-w-max my-1 w-2/12 h-fit cursor-pointer sm:hidden lg:flex lg:w-1/12 lg:my-auto"
         >
           <div
-            class="font-aileron bg-[#6317A7] text-xs p-1.5 text-white capitalize py-1 truncate shadow-md rounded-3xl lg:w-4/5"
+            class="font-aileron bg-[#6317A7] text-xs p-1.5 text-white capitalize py-1 truncate shadow-md rounded-3xl lg:w-4/5 lg:p-2"
           >
             <!-- w-2/3  -->
             {{ item.category }}
@@ -63,7 +63,7 @@
         </div>
         <div
           id="list-view-title"
-          class="flex item-center my-2 my-1 sm:w-1/3 sm:pr-4 lg:w-1/5 lg:pl-4"
+          class="flex item-center sm:w-1/3 sm:pr-4 lg:w-1/5 lg:pl-4"
         >
           <img
             class="hidden self-center lg:block lg:h-1/2"
@@ -96,7 +96,7 @@
         </div>
         <div
           id="list-view-actions"
-          class="flex flex-wrap justify-between items-center w-full my-1 h-fit sm:w-1/3 sm:justify-around sm:self-center md:flex-row lg:w-2/5 lg:self-center lg:justify-evenly"
+          class="flex flex-wrap justify-between items-center w-full my-1 h-fit sm:w-1/3 sm:justify-around sm:self-center md:flex-row lg:w-2/5 lg:self-center"
         >
           <div
             id="list-view-act-share"

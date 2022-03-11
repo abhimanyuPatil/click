@@ -20,13 +20,13 @@
               ></span>
               <p
                 :title="item.from"
-                class="font-aileron text-gray-600 text-[10px] font-semibold truncate font-bold"
+                class="font-aileron text-gray-600 text-sm font-semibold truncate font-bold"
               >
                 {{ item.from }}
               </p>
             </div>
             <div
-              class="flex items-center justify-between font-poppins text-[#D1D1D1] text-xs ml-auto"
+              class="flex items-end lg:items-center justify-between font-poppins text-[#D1D1D1] text-xs ml-auto"
             >
               <div><ViewsBox /></div>
               <div class="ml-2"><LikesBox /></div>
