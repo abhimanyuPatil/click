@@ -1,17 +1,9 @@
 <template>
-  <!-- <ul>
-      <li v-for="item in cards" :key="item">
-        <router-link :to="`/items/${item.id}`"
-          >{{ item.name }} ({{ item.id }})</router-link
-        >
-        astro phiyics
-      </li>
-    </ul> -->
   <div id="list-view" class="bg-white">
-    <div class="container mx-auto bg-white py-[4rem]">
+    <div class="container mx-auto bg-white pb-[4rem] pt-1">
       <div
         id="list-view-header"
-        class="hidden items-center text-center text-white rounded-3xl px-2 mx-8 sm:bg-[#6317A7] sm:h-12 sm:flex sm:mt-12"
+        class="hidden items-center text-center text-white rounded-3xl px-2 mx-8 sm:bg-[#6317A7] sm:h-12 sm:flex sm:mt-8"
       >
         <p
           id="list-view-head-category"
