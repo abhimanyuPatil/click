@@ -183,14 +183,14 @@
 </template>
 
 <script>
-import DetailView from "@/components/DetailView.vue";
-import GridView from "@/components/GridView.vue";
+import DetailView from "@/components/Cards/GridLayoutCard.vue";
+import GridView from "@/components/Cards/CardLayoutCard.vue";
 import HeroCard from "@/components/Hero-Card.vue";
 import Footer from "@/components/Layouts/Footer.vue";
 import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
-import LikesBox from "@/components/Likes.vue";
-import ListView from "@/components/ListView.vue";
-import ViewsBox from "@/components/Views.vue";
+import LikesBox from "@/components/UI/Likes.vue";
+import ListView from "@/components/Cards/ListLayoutCard.vue";
+import ViewsBox from "@/components/UI/Views.vue";
 import { IonContent, IonPage } from "@ionic/vue";
 import { defineComponent } from "vue";
 import { mapActions, mapState } from "vuex";
@@ -206,7 +206,7 @@ import {
   RadioGroupDescription,
   RadioGroupOption,
 } from "@headlessui/vue";
-import HeroSectionDropdown from "../components/HeroSectionDropdown.vue";
+import HeroSectionDropdown from "../components/ViewLayoutDropdowns/Responsive.vue";
 const views = [
   {
     name: "Normal",

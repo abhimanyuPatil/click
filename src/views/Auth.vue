@@ -304,7 +304,7 @@ import { IonPage, IonContent } from "@ionic/vue";
 import HeaderContainer from "@/components/Layouts/HeaderContainer.vue";
 import Footer from "@/components/Layouts/Footer.vue";
 import { ArrowLeftIcon } from "@heroicons/vue/outline";
-import AppInput from "@/components/Input.vue";
+import AppInput from "@/components/UI/Input.vue";
 import { mapActions } from "vuex";
 import { useRouter } from "vue-router";
 export default defineComponent({

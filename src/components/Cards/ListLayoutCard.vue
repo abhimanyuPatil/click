@@ -67,7 +67,7 @@
         >
           <img
             class="hidden self-center lg:block lg:h-1/2"
-            src="../../resources/gallery.png"
+            src="../../../resources/gallery.png"
             alt="title-avatar"
           />
           <p
@@ -104,7 +104,7 @@
           >
             <img
               class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
-              src="../../public/assets/icon/share-solid.svg"
+              src="../../../public/assets/icon/share-solid.svg"
               alt="share-icon"
             />
           </div>
@@ -114,7 +114,7 @@
           >
             <img
               class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
-              src="../../public/assets/icon/like-icon.svg"
+              src="../../../public/assets/icon/like-icon.svg"
               alt="like-icon"
             />
             <p
@@ -129,7 +129,7 @@
           >
             <img
               class="h-3 w-3 object-fit"
-              src="../../public/assets/icon/eye-icon.svg"
+              src="../../../public/assets/icon/eye-icon.svg"
               alt="views-icon"
             />
             <p class="text-xs text-[#5E5C5C] font-aileron">
@@ -163,7 +163,7 @@
           >
             <img
               class="h-4 w-4 object-fit"
-              src="../../public/assets/icon/edit-icon.svg"
+              src="../../../public/assets/icon/edit-icon.svg"
               alt="edit-icon"
             />
           </div>
@@ -173,7 +173,7 @@
           >
             <img
               class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
-              src="../../public/assets/icon/save-icon.svg"
+              src="../../../public/assets/icon/save-icon.svg"
               alt="save-icon"
             />
           </div>

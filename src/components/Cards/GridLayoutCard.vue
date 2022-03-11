@@ -95,7 +95,7 @@
             <div class="flex items-center">
               <img
                 class="h-10 w-10 object-scale-down"
-                src="../../resources/dp.png"
+                src="../../../resources/dp.png"
               />
               <div class="px-2">
                 <h4
@@ -121,8 +121,8 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import LikesBox from "@/components/Likes.vue";
-import ViewsBox from "@/components/Views.vue";
+import LikesBox from "@/components/UI/Likes.vue";
+import ViewsBox from "@/components/UI/Views.vue";
 
 export default defineComponent({
   name: "DetailView",
@@ -141,7 +141,7 @@ export default defineComponent({
       };
     },
     generateLink(item: any) {
-      return require("../../resources/home-page/portfolios/Portfolio-" +
+      return require("../../../resources/home-page/portfolios/Portfolio-" +
         item +
         ".jpg");
     },

@@ -51,8 +51,8 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import LikesBox from "@/components/Likes.vue";
-import ViewsBox from "@/components/Views.vue";
+import LikesBox from "@/components/UI/Likes.vue";
+import ViewsBox from "@/components/UI/Views.vue";
 
 export default defineComponent({
   name: "GridView",
