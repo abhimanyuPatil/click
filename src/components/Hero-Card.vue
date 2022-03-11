@@ -1,6 +1,6 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div class="flex w-full items-center hero-section text-center h-3/6">
+  <div class="md:flex w-full items-center hero-section text-center h-3/6 hidden">
     <div class="md:container m-auto">
       <div class="hero-content-wrap md:w-1/2 m-auto w-full">
         <h1 class="text-white font-semibold font-poppins">

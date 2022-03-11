@@ -1,6 +1,5 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div class="border-b border-[#DEDEDE] pb-3 bg-white">
+  <div v-if="!isMobile()" class="border-b border-[#DEDEDE] pb-3 bg-white">
     <div class="container md:container md:mx-auto flex flex-col gap-2 mx-auto">
       <div class="flex items-center justify-between mt-4">
         <div class="flex items-center">
@@ -71,9 +70,6 @@
               S
             </div>
           </div>
-
-          <!--Categories Popup Content Start-->
-
           <Popover class="relative" v-slot="{ open }">
             <PopoverButton
               :class="[
@@ -96,7 +92,6 @@
                 </div>
               </div>
             </PopoverButton>
-
             <transition
               enter-active-class="transition ease-out duration-200"
               enter-from-class="opacity-0 translate-y-1"
@@ -204,10 +199,9 @@
                     </div>
                   </div>
                 </div>
-
                 <!--====================================================================
-              PROFILE VIEW END
-              =====================================================================-->
+                        PROFILE VIEW END
+                        =====================================================================-->
               </PopoverPanel>
             </transition>
           </Popover>
@@ -221,7 +215,6 @@
           >
             Login
           </button>
-
           <Popover v-if="isLoggedIn" class="relative" v-slot="{ open }">
             <PopoverButton
               :class="[
@@ -252,9 +245,8 @@
                 class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-100 max-w-md sm:px-0"
               >
                 <!--====================================================================
-              NAV PROFILE VIEW START
-              =====================================================================-->
-
+                        NAV PROFILE VIEW START
+                        =====================================================================-->
                 <div
                   class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden"
                   v-if="isProfileScreen === 'nav'"
@@ -325,12 +317,8 @@
                 </div>
 
                 <!--====================================================================
-              NAV PROFILE VIEW END
-              =====================================================================-->
-
-                <!--====================================================================
-              PROFILE VIEW START
-              =====================================================================-->
+                        NAV PROFILE VIEW END
+                        =====================================================================--><!--====================================================================PROFILE VIEW START=====================================================================-->
                 <div
                   class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden bg-white w-[250px]"
                   v-if="isProfileScreen === 'profileView'"
@@ -371,7 +359,6 @@
                         Edit Profile
                       </button>
                     </div>
-
                     <div class="proile-details p-3">
                       <div
                         class="profile-details-wrap p-4 bg-[#EFEFEF] rounded-md"
@@ -422,8 +409,8 @@
                 </div>
 
                 <!--====================================================================
-              PROFILE VIEW END
-              =====================================================================-->
+                        PROFILE VIEW END
+                        =====================================================================-->
               </PopoverPanel>
             </transition>
           </Popover>
@@ -443,7 +430,6 @@
           </div>
         </div>
       </div>
-      <!-- bottom section -->
       <div
         class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex"
       >
@@ -658,7 +644,235 @@
       </div>
     </div>
   </div>
+
+  <!--============================================================================
+  MOBILE HEADER START
+  ==============================================================================-->
+
+  <div v-if="isMobile()" class="border-[#DEDEDE] bg-white">
+    <div class="container md:container md:mx-auto flex flex-col mx-auto">
+      <div
+        class="flex flex-wrap items-center justify-between border-gray-200 border-b-[1px]"
+      >
+        <div class="flex items-center gap-3">
+          <a class="text-black" @click="isNavActive = !isNavActive">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-[30px] w-[30px]"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </a>
+          <a @click="() => router.push('/home')">
+            <img
+              src="../../../resources/logo-icon.svg"
+              alt=""
+              width="100"
+              height="48"
+              class="cursor-pointer"
+            />
+          </a>
+        </div>
+        <div class="flex items-center">
+          <a
+            href=""
+            class="font-aileron w-24 py-[10px] px-2 bg-purple-700 uppercase text-xs text-white text-center justify-center font-bold rounded-full focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+            >Create</a
+          >
+        </div>
+      </div>
+      <!--=========================================================================
+              MOBILE SEARCH BAR START
+            ===========================================================================-->
+      <div
+        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block mb-4 overflow-hidden mt-4"
+      >
+        <div class="flex items-center w-full gap-3 h-11 bg-white">
+          <div class="flex items-center ml-4">
+            <img
+              class="5%"
+              src="../../../resources/search-icon.svg"
+              alt=""
+              width="20"
+              height="20"
+            />
+          </div>
+          <div class="relative w-[60%]">
+            <input
+              id="dropdown-responsive"
+              type="text"
+              placeholder="Search topic"
+              @change="query = $event.target.value"
+              class="w-full h-[50px] border-none outline-none bg-transparent text-black placeholder-black-500 font-aileron"
+            />
+            <TransitionRoot
+              :show="isOpen"
+              enter="transition-opacity duration-75"
+              enter-from="opacity-0"
+              enter-to="opacity-100"
+              leave="transition-opacity duration-150"
+              leave-from="opacity-100"
+              leave-to="opacity-0"
+            >
+              <div
+                v-if="isOpen"
+                class="absolute w-full bg-white rounded z-10 px-3 shadow-md mt-2"
+              >
+                <p
+                  class="font-poppins text-black my-2 cursor-pointer"
+                  v-for="person in filteredPeople"
+                  :key="person.id"
+                >
+                  {{ person.name }}
+                </p>
+              </div>
+            </TransitionRoot>
+          </div>
+          <div class="block w-[40%] flex items-center px-3 justify-between">
+            <select
+              class="form-select w-full text-[#363636] font-aileron appearance-none h-full py-1.5 text-sm font-normal text-black bg-white bg-clip-padding bg-no-repeat transition ease-in-out text-center m-0 border-l-[1px] border-gray-500 focus:bg-white focus:border-blue-600 focus:outline-none"
+              aria-label="Default select example"
+            >
+              <option selected>All</option>
+              <option selected value="1">Projects</option>
+              <option value="2">Collections</option>
+            </select>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 fill-gray-500"
+            >
+              <path
+                d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!--========================================================================
+              MOBILE SEARCH BAR END
+              ==========================================================================-->
+    </div>
+  </div>
+
+  <!--=========================================================================
+    MOBILE HEADER END
+  ===========================================================================-->
+
+  <!--==========================================================================
+  MOBILE HAMBURGER NAVIGATION MENU START
+  ============================================================================-->
+
+  <div
+    v-if="isMobile()"
+    :class="[
+      isNavActive
+        ? 'border-b border-[#DEDEDE] bg-white fixed h-[100%] w-[70%] left-[0%] top-0 z-[999999] transition-[all] duration-700 shadow-md'
+        : 'border-b border-[#DEDEDE] bg-white fixed h-[100%] w-[70%] -left-[100%] top-0 z-[999999] transition-[all] duration-700 shadow-md',
+    ]"
+  >
+    <div class="flex items-center justify-between py-4 px-3">
+      <div class="container mx-auto">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <a @click="isNavActive = !isNavActive" class="text-black">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 rotate-45"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="flex">
+            <a
+              class="border border-gray-500 rounded-full py-[5px] px-6 font-aileron text-gray-700 font-bold"
+            >
+              Login
+            </a>
+          </div>
+        </div>
+        <div class="flex flex-wrap flex-col py-10">
+          <a href="" class="font-bold text-[18px] text-black font-aileron pb-3"
+            >Collections</a
+          >
+          <a href="" class="font-bold text-[18px] text-black font-aileron pb-3"
+            >Projects</a
+          >
+          <a href="" class="font-bold text-[18px] text-black font-aileron pb-3"
+            >Categories</a
+          >
+          <a href="" class="font-bold text-[18px] text-black font-aileron pb-3"
+            >Projects</a
+          >
+        </div>
+        <div class="flex flex-wrap gap-3 py-6 absolute bottom-0">
+          <button
+            class="flex items-center justify-center gap-1 bg-[#6317A7] px-3 py-2 rounded-full text-white w-[200px]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              style="fill: rgba(255, 255, 255, 1); transform: ; msfilter: "
+            >
+              <path
+                d="M18.344 8.71c-.707 0-1.279.572-1.279 1.278v4.53a1.278 1.278 0 1 0 2.558 0v-4.53c0-.706-.572-1.278-1.279-1.278zm-12.688 0c-.707 0-1.279.572-1.279 1.278v4.53a1.278 1.278 0 1 0 2.558 0v-4.53A1.277 1.277 0 0 0 5.656 8.71zm8.889-3.809.768-1.388a.343.343 0 0 0-.133-.47.344.344 0 0 0-.471.135l-.789 1.42c-.588-.235-1.236-.368-1.92-.368s-1.332.132-1.92.367l-.789-1.418a.344.344 0 0 0-.471-.135.345.345 0 0 0-.133.47l.768 1.388C8.072 5.69 7.148 7.099 7.148 8.71c0 .011 0 .021.002.034-.002.006-.002.013-.002.019v.001h9.703V8.71c.001-1.611-.923-3.019-2.306-3.809zM9.76 6.869a.346.346 0 1 1 .005-.693.346.346 0 0 1-.005.693zm4.48 0a.347.347 0 0 1 0-.692.346.346 0 0 1 0 .692zM7.148 16.12c0 .646.525 1.171 1.174 1.171h.586v2.401a1.279 1.279 0 0 0 2.558 0v-2.401h1.066v2.401c0 .707.572 1.278 1.277 1.278.709 0 1.281-.571 1.281-1.278v-2.401h.586c.648 0 1.174-.524 1.174-1.171V9.028H7.148v7.092z"
+              ></path>
+            </svg>
+            <div>
+              <p class="text-xs font-semiBold font-poppins text-white">
+                Google Play
+              </p>
+            </div>
+          </button>
+          <button
+            class="flex items-center justify-center gap-1 bg-[#ED4E94] px-3 py-2 rounded-full text-white w-[200px]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              style="fill: rgba(255, 255, 255, 1); transform: ; msfilter: "
+            >
+              <path
+                d="M19.665 16.811a10.316 10.316 0 0 1-1.021 1.837c-.537.767-.978 1.297-1.316 1.592-.525.482-1.089.73-1.692.744-.432 0-.954-.123-1.562-.373-.61-.249-1.17-.371-1.683-.371-.537 0-1.113.122-1.73.371-.616.25-1.114.381-1.495.393-.577.025-1.154-.229-1.729-.764-.367-.32-.826-.87-1.377-1.648-.59-.829-1.075-1.794-1.455-2.891-.407-1.187-.611-2.335-.611-3.447 0-1.273.275-2.372.826-3.292a4.857 4.857 0 0 1 1.73-1.751 4.65 4.65 0 0 1 2.34-.662c.46 0 1.063.142 1.81.422s1.227.422 1.436.422c.158 0 .689-.167 1.593-.498.853-.307 1.573-.434 2.163-.384 1.6.129 2.801.759 3.6 1.895-1.43.867-2.137 2.08-2.123 3.637.012 1.213.453 2.222 1.317 3.023a4.33 4.33 0 0 0 1.315.863c-.106.307-.218.6-.336.882zM15.998 2.38c0 .95-.348 1.838-1.039 2.659-.836.976-1.846 1.541-2.941 1.452a2.955 2.955 0 0 1-.021-.36c0-.913.396-1.889 1.103-2.688.352-.404.8-.741 1.343-1.009.542-.264 1.054-.41 1.536-.435.013.128.019.255.019.381z"
+              ></path>
+            </svg>
+            <div>
+              <p class="text-xs font-semiBold font-poppins text-white">
+                App Store
+              </p>
+            </div>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--======================================================================
+  MOBILE HAMBURGER NAVIGATION MENU END
+  =======================================================================-->
 </template>
+
 <script lang="ts">
 import {
   Popover,
@@ -686,6 +900,15 @@ const categories = [
   "News",
 ];
 const types = ["All", "Projects", "Collections"];
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonButtons,
+  IonIcon,
+} from "@ionic/vue";
 const people = [
   { id: 1, name: "Wade Cooper" },
   { id: 2, name: "Arlene Mccoy" },
@@ -735,6 +958,17 @@ export default defineComponent({
       changeZoom: "changeZoom",
       changeSort: "changeSort",
     }),
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        return true;
+      } else {
+        return false;
+      }
+    },
   },
   computed: mapState({
     isLoggedIn: (state: any) => state.user.isLoggedIn,
@@ -742,9 +976,7 @@ export default defineComponent({
     zoom: (state: any) => state.layout.zoom,
     sort: (state: any) => state.layout.sort,
   }),
-  props: {
-    title: String,
-  },
+  props: { title: String },
   components: {
     Popover,
     PopoverButton,
@@ -758,6 +990,13 @@ export default defineComponent({
     ListboxButton,
     ListboxOptions,
     ListboxOption,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonPage,
+    IonButtons,
+    IonIcon,
   },
   setup() {
     const router = useRouter();
@@ -774,17 +1013,28 @@ export default defineComponent({
               .includes(query.value.toLowerCase().replace(/\s+/g, ""))
           )
     );
-
     return { router, selected, query, filteredPeople, isOpen };
   },
   mounted() {
-    let input = <HTMLInputElement>document?.getElementById("dropdown");
-    input.addEventListener("focusin", () => {
-      this.isOpen = true;
-    });
-    input.addEventListener("blur", () => {
-      this.isOpen = false;
-    });
+    if (this.isMobile()) {
+      let responsiveInput = <HTMLInputElement>(
+        document?.getElementById("dropdown-responsive")
+      );
+      responsiveInput.addEventListener("focusin", () => {
+        this.isOpen = true;
+      });
+      responsiveInput.addEventListener("blur", () => {
+        this.isOpen = false;
+      });
+    } else {
+      let input = <HTMLInputElement>document?.getElementById("dropdown");
+      input.addEventListener("focusin", () => {
+        this.isOpen = true;
+      });
+      input.addEventListener("blur", () => {
+        this.isOpen = false;
+      });
+    }
   },
 });
 </script>
