@@ -1,35 +1,82 @@
 <template>
-
-  <div class="flex justify-between items-center flex-wrap bg-white fixed bottom-0 w-full z-[999] px-3 py-3 gap-3 md:hidden border-t-[1px] border-gray-800">
+  <div
+    class="flex justify-between items-center flex-wrap bg-white fixed bottom-0 w-full z-[999] px-3 py-3 gap-3 md:hidden border-t-[1px] border-gray-400"
+  >
     <div class="flex flex-col items-center justify-center text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-pink-400" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
-        </svg>
-        <p class="text-gray-900 font-aileron text-sm font-bold">Login</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 fill-pink-400"
+        viewBox="0 0 22 22"
+      >
+        <path
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          d="m21.743 12.331-9-10c-.379-.422-1.107-.422-1.486 0l-9 10a.998.998 0 0 0-.17 1.076c.16.361.518.593.913.593h2v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h2a.998.998 0 0 0 .743-1.669z"
+        ></path>
+      </svg>
+      <p class="text-gray-900 font-aileron text-sm font-bold">Home</p>
     </div>
     <div class="flex flex-col items-center justify-center text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-pink-400" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
-          <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd" />
-        </svg>
-        <p class="text-gray-900 font-aileron text-sm font-bold">Categories</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 fill-pink-400"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
+        <path
+          fill-rule="evenodd"
+          d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      <p class="text-gray-900 font-aileron text-sm font-bold">Collections</p>
     </div>
     <div class="flex flex-col items-center justify-center text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-pink-400" viewBox="0 0 20 20" fill="currentColor">
-          <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z" />
-        </svg>
-        <p class="text-gray-900 font-aileron text-sm font-bold">Projects</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 fill-pink-400"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+        ></path>
+      </svg>
+      <p class="text-gray-900 font-aileron text-sm font-bold">Create</p>
     </div>
     <div class="flex flex-col items-center justify-center text-center">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 fill-pink-400" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd" />
-        </svg>
-        <p class="text-gray-900 font-aileron text-sm font-bold">Signup</p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 fill-pink-400"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z"
+        />
+      </svg>
+      <p class="text-gray-900 font-aileron text-sm font-bold">Projects</p>
+    </div>
+    <div class="flex flex-col items-center justify-center text-center">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6 fill-pink-400"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      <p class="text-gray-900 font-aileron text-sm font-bold">Profile</p>
     </div>
   </div>
 
-
-  <footer class="bg-white border-t-[1px] border-[#707070] py-1 lg:fixed lg:bottom-0 w-full">
+  <footer
+    class="bg-white border-t-[1px] border-[#707070] py-1 lg:fixed lg:bottom-0 w-full"
+  >
     <div class="container sm:container mx-auto">
       <div
         class="grid lg:grid-cols-[25%_minmax(28%,_0fr)_minmax(20%,_1fr)_21%] sm:grid-cols-2 grid-cols-1 gap-4 auto-cols-max content-center"
@@ -49,10 +96,26 @@
         <div class="grid-2 flex items-center">
           <div class="flex items-center">
             <ul class="md:flex block items-center justify-between gap-6">
-              <li><a class="text-black text-xs font-poppins cursor-pointer">About Us</a></li>
-              <li><a class="text-black text-xs font-poppins cursor-pointer">Help</a></li>
-              <li><a class="text-black text-xs font-poppins cursor-pointer">Terms of Service</a></li>
-              <li><a class="text-black text-xs font-poppins cursor-pointer">Privacy Policy</a></li>
+              <li>
+                <a class="text-black text-xs font-poppins cursor-pointer"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a class="text-black text-xs font-poppins cursor-pointer"
+                  >Help</a
+                >
+              </li>
+              <li>
+                <a class="text-black text-xs font-poppins cursor-pointer"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a class="text-black text-xs font-poppins cursor-pointer"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -74,7 +137,9 @@
               </svg>
               <div>
                 <!-- <span class="text-xs text-white">Available on</span> -->
-                <p class="text-xs font-semiBold font-poppins text-white">Google Play</p>
+                <p class="text-xs font-semiBold font-poppins text-white">
+                  Google Play
+                </p>
               </div>
             </button>
             <button
@@ -93,7 +158,9 @@
               </svg>
               <div>
                 <!-- <span class="text-xs text-white">Available on</span> -->
-                <p class="text-xs font-semiBold font-poppins text-white">App Store</p>
+                <p class="text-xs font-semiBold font-poppins text-white">
+                  App Store
+                </p>
               </div>
             </button>
           </div>
