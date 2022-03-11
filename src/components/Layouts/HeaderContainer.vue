@@ -445,7 +445,7 @@
       </div>
       <!-- bottom section -->
       <div
-        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block"
+        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex"
       >
         <div class="flex basis-3/5 items-center w-full gap-3 h-11">
           <div class="flex items-center ml-4">
@@ -494,7 +494,9 @@
               <ListboxButton
                 class="relative font-aileron w-full py-2 pl-3 pr-10 text-left bg-transparent rounded-lg cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 text-sm"
               >
-                <span class="block truncate">{{ selectedType }}</span>
+                <span class="block truncate text-black">{{
+                  selectedType
+                }}</span>
                 <span
                   class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
                 >

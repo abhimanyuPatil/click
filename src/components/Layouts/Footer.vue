@@ -1,5 +1,7 @@
 <template>
-  <footer class="bg-white border-t-[1px] border-[#707070] py-1 lg:fixed lg:bottom-0 w-full">
+  <footer
+    class="bg-white border-t-[1px] border-[#707070] hidden md:flex py-1 lg:fixed lg:bottom-0 w-full"
+  >
     <div class="container sm:container mx-auto">
       <div
         class="grid lg:grid-cols-[25%_minmax(28%,_0fr)_minmax(20%,_1fr)_21%] sm:grid-cols-2 grid-cols-1 gap-4 auto-cols-max content-center"
@@ -19,10 +21,26 @@
         <div class="grid-2 flex items-center">
           <div class="flex items-center">
             <ul class="md:flex block items-center justify-between gap-6">
-              <li><a class="text-black text-xs font-poppins cursor-pointer">About Us</a></li>
-              <li><a class="text-black text-xs font-poppins cursor-pointer">Help</a></li>
-              <li><a class="text-black text-xs font-poppins cursor-pointer">Terms of Service</a></li>
-              <li><a class="text-black text-xs font-poppins cursor-pointer">Privacy Policy</a></li>
+              <li>
+                <a class="text-black text-xs font-poppins cursor-pointer"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a class="text-black text-xs font-poppins cursor-pointer"
+                  >Help</a
+                >
+              </li>
+              <li>
+                <a class="text-black text-xs font-poppins cursor-pointer"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a class="text-black text-xs font-poppins cursor-pointer"
+                  >Privacy Policy</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -44,7 +62,9 @@
               </svg>
               <div>
                 <!-- <span class="text-xs text-white">Available on</span> -->
-                <p class="text-xs font-semiBold font-poppins text-white">Google Play</p>
+                <p class="text-xs font-semiBold font-poppins text-white">
+                  Google Play
+                </p>
               </div>
             </button>
             <button
@@ -63,7 +83,9 @@
               </svg>
               <div>
                 <!-- <span class="text-xs text-white">Available on</span> -->
-                <p class="text-xs font-semiBold font-poppins text-white">App Store</p>
+                <p class="text-xs font-semiBold font-poppins text-white">
+                  App Store
+                </p>
               </div>
             </button>
           </div>
