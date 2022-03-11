@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
+import VueProgressBar from "@aacassandra/vue3-progressbar";
 
 import { IonicVue } from "@ionic/vue";
 
@@ -26,8 +27,17 @@ import "@ionic/vue/css/display.css";
 import "./theme/variables.css";
 import VueVirtualScroller from "vue3-virtual-scroller";
 import "vue3-virtual-scroller/dist/vue3-virtual-scroller.css";
-import {store} from './store/index'
-const app = createApp(App).use(IonicVue).use(router).use(VueVirtualScroller).use(store);
+import { store } from "./store/index";
+const app = createApp(App)
+  .use(IonicVue)
+  .use(router)
+  .use(VueVirtualScroller)
+  .use(store)
+  .use(VueProgressBar, {
+    color: "rgb(99, 23, 167)",
+    failedColor: "red",
+    height: "2px",
+  });
 
 router.isReady().then(() => {
   app.mount("#app");
