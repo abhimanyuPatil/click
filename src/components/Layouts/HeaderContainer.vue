@@ -474,69 +474,6 @@
             </TransitionRoot>
           </div>
         </div>
-        <div class="flex basis-2/5 md:hidden h-full border-l-2">
-          <Listbox v-model="selectedType">
-            <div class="relative mt-1 w-full">
-              <ListboxButton
-                class="relative font-aileron w-full py-2 pl-3 pr-10 text-left bg-transparent rounded-lg cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 text-sm"
-              >
-                <span class="block truncate text-black">{{
-                  selectedType
-                }}</span>
-                <span
-                  class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
-                >
-                  <SelectorIcon
-                    class="w-5 h-5 text-gray-600"
-                    aria-hidden="true"
-                  />
-                </span>
-              </ListboxButton>
-
-              <transition
-                enter-active-class="transition duration-100 ease-out"
-                enter-from-class="transform scale-95 opacity-0"
-                enter-to-class="transform scale-100 opacity-100"
-                leave-active-class="transition duration-75 ease-out"
-                leave-from-class="transform scale-100 opacity-100"
-                leave-to-class="transform scale-95 opacity-0"
-              >
-                <ListboxOptions
-                  class="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white rounded-md ring-1 ring-black ring-opacity-5 focus:outline-none"
-                >
-                  <ListboxOption
-                    v-slot="{ active, selected }"
-                    v-for="type in types"
-                    :key="type"
-                    :value="type"
-                    as="template"
-                  >
-                    <li
-                      :class="[
-                        active ? 'text-amber-900 bg-primary' : 'text-gray-900',
-                        'cursor-default select-none relative py-2 pl-10 pr-4',
-                      ]"
-                    >
-                      <span
-                        :class="[
-                          selected ? 'font-medium text-white' : 'font-normal',
-                          'block text-sm font-aileron',
-                        ]"
-                        >{{ type }}</span
-                      >
-                      <span
-                        v-if="selected"
-                        class="absolute inset-y-0 left-0 flex items-center pl-3 text-white"
-                      >
-                        <CheckIcon class="w-5 h-5" aria-hidden="true" />
-                      </span>
-                    </li>
-                  </ListboxOption>
-                </ListboxOptions>
-              </transition>
-            </div>
-          </Listbox>
-        </div>
         <div
           class="hidden md:flex items-center gap-3 h-full border-l border-[#9B9B9B] mr-3 pl-3"
         >
@@ -649,7 +586,7 @@
   MOBILE HEADER START
   ==============================================================================-->
 
-  <div v-if="isMobile()" class="border-[#DEDEDE] bg-white">
+  <div v-if="isMobile()" class="border-[#DEDEDE] bg-white pt-2 pb-4">
     <div class="container md:container md:mx-auto flex flex-col mx-auto">
       <div
         class="flex flex-wrap items-center justify-between border-gray-200 border-b-[1px]"
@@ -693,25 +630,24 @@
               MOBILE SEARCH BAR START
             ===========================================================================-->
       <div
-        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block mb-4 overflow-hidden mt-4"
+        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex"
       >
-        <div class="flex items-center w-full gap-3 h-11 bg-white">
+        <div class="flex basis-3/5 items-center w-full gap-3 h-11">
           <div class="flex items-center ml-4">
             <img
-              class="5%"
               src="../../../resources/search-icon.svg"
               alt=""
               width="20"
               height="20"
             />
           </div>
-          <div class="relative w-[60%]">
+          <div class="relative w-full">
             <input
-              id="dropdown-responsive"
+              id="dropdown"
               type="text"
               placeholder="Search topic"
               @change="query = $event.target.value"
-              class="w-full h-[50px] border-none outline-none bg-transparent text-black placeholder-black-500 font-aileron"
+              class="w-full h-[50px] border-none outline-none bg-[transparent] text-[#2A2A2A] text-aileron"
             />
             <TransitionRoot
               :show="isOpen"
@@ -736,24 +672,69 @@
               </div>
             </TransitionRoot>
           </div>
-          <div class="block w-[40%] flex items-center px-3 justify-between">
-            <select
-              class="form-select w-full text-[#363636] font-aileron appearance-none h-full py-1.5 text-sm font-normal text-black bg-white bg-clip-padding bg-no-repeat transition ease-in-out text-center m-0 border-l-[1px] border-gray-500 focus:bg-white focus:border-blue-600 focus:outline-none"
-              aria-label="Default select example"
-            >
-              <option selected>All</option>
-              <option selected value="1">Projects</option>
-              <option value="2">Collections</option>
-            </select>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 fill-gray-500"
-            >
-              <path
-                d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
-              ></path>
-            </svg>
-          </div>
+        </div>
+        <div class="flex basis-2/5 md:hidden h-full border-l-2">
+          <Listbox v-model="selectedType">
+            <div class="relative mt-1 w-full">
+              <ListboxButton
+                class="relative font-aileron w-full py-2 pl-3 pr-10 text-left bg-transparent rounded-lg cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 text-sm"
+              >
+                <span class="block truncate text-black">{{
+                  selectedType
+                }}</span>
+                <span
+                  class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
+                >
+                  <SelectorIcon
+                    class="w-5 h-5 text-gray-600"
+                    aria-hidden="true"
+                  />
+                </span>
+              </ListboxButton>
+
+              <transition
+                enter-active-class="transition duration-100 ease-out"
+                enter-from-class="transform scale-95 opacity-0"
+                enter-to-class="transform scale-100 opacity-100"
+                leave-active-class="transition duration-75 ease-out"
+                leave-from-class="transform scale-100 opacity-100"
+                leave-to-class="transform scale-95 opacity-0"
+              >
+                <ListboxOptions
+                  class="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white rounded-md ring-1 ring-black ring-opacity-5 focus:outline-none"
+                >
+                  <ListboxOption
+                    v-slot="{ active, selected }"
+                    v-for="type in types"
+                    :key="type"
+                    :value="type"
+                    as="template"
+                  >
+                    <li
+                      :class="[
+                        active ? 'text-amber-900 bg-primary' : 'text-gray-900',
+                        'cursor-default select-none relative py-2 pl-10 pr-4',
+                      ]"
+                    >
+                      <span
+                        :class="[
+                          selected ? 'font-medium text-white' : 'font-normal',
+                          'block text-sm font-aileron',
+                        ]"
+                        >{{ type }}</span
+                      >
+                      <span
+                        v-if="selected"
+                        class="absolute inset-y-0 left-0 flex items-center pl-3 text-white"
+                      >
+                        <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                      </span>
+                    </li>
+                  </ListboxOption>
+                </ListboxOptions>
+              </transition>
+            </div>
+          </Listbox>
         </div>
       </div>
 
@@ -1016,25 +997,25 @@ export default defineComponent({
     return { router, selected, query, filteredPeople, isOpen };
   },
   mounted() {
-    if (this.isMobile()) {
-      let responsiveInput = <HTMLInputElement>(
-        document?.getElementById("dropdown-responsive")
-      );
-      responsiveInput.addEventListener("focusin", () => {
-        this.isOpen = true;
-      });
-      responsiveInput.addEventListener("blur", () => {
-        this.isOpen = false;
-      });
-    } else {
-      let input = <HTMLInputElement>document?.getElementById("dropdown");
-      input.addEventListener("focusin", () => {
-        this.isOpen = true;
-      });
-      input.addEventListener("blur", () => {
-        this.isOpen = false;
-      });
-    }
+    // if (this.isMobile()) {
+    //   let responsiveInput = <HTMLInputElement>(
+    //     document?.getElementById("dropdown-responsive")
+    //   );
+    //   responsiveInput.addEventListener("focusin", () => {
+    //     this.isOpen = true;
+    //   });
+    //   responsiveInput.addEventListener("blur", () => {
+    //     this.isOpen = false;
+    //   });
+    // } else {
+    //   let input = <HTMLInputElement>document?.getElementById("dropdown");
+    //   input.addEventListener("focusin", () => {
+    //     this.isOpen = true;
+    //   });
+    //   input.addEventListener("blur", () => {
+    //     this.isOpen = false;
+    //   });
+    // }
   },
 });
 </script>
