@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white" id="square-grid">
-    <div class="container mx-auto bg-white py-[4rem]">
+    <div class="container mx-auto bg-white pb-[4rem] pt-2">
       <div
         class="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:md:grid-cols-2 gap-4"
       >
@@ -10,7 +10,7 @@
           :key="item"
         >
           <div class="portfolio-image">
-            <img :src="generateLink(item)" class="w-full" />
+            <img :src="generateLink(item)" class="w-full rounded" />
           </div>
           <div class="portfolio-content flex py-3 sm:py-0 sm:mt-2">
             <VueCustomTooltip :label="item.from" class="min-w-0">
@@ -53,8 +53,8 @@
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
-import LikesBox from "@/components/Likes.vue";
-import ViewsBox from "@/components/Views.vue";
+import LikesBox from "@/components/UI/Likes.vue";
+import ViewsBox from "@/components/UI/Views.vue";
 
 export default defineComponent({
   name: "GridView",

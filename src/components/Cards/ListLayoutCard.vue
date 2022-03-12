@@ -1,17 +1,9 @@
 <template>
-  <!-- <ul>
-      <li v-for="item in cards" :key="item">
-        <router-link :to="`/items/${item.id}`"
-          >{{ item.name }} ({{ item.id }})</router-link
-        >
-        astro phiyics
-      </li>
-    </ul> -->
   <div id="list-view" class="bg-white">
-    <div class="container mx-auto bg-white py-[4rem]">
+    <div class="container mx-auto bg-white pb-[4rem] pt-1">
       <div
         id="list-view-header"
-        class="hidden items-center text-center text-white rounded-3xl px-2 mx-8 sm:bg-[#6317A7] sm:h-12 sm:flex sm:mt-12"
+        class="hidden items-center text-center text-white rounded-3xl px-2 mx-8 sm:bg-[#6317A7] sm:h-12 sm:flex sm:mt-8"
       >
         <p
           id="list-view-head-category"
@@ -67,7 +59,7 @@
         >
           <img
             class="hidden self-center lg:block lg:h-1/2"
-            src="../../resources/gallery.png"
+            src="../../../resources/gallery.png"
             alt="title-avatar"
           />
 
@@ -82,11 +74,16 @@
           class="block h-8 whitespace-pre overflow-hidden text-ellipsis my-1 cursor-pointer sm:item-center sm:w-1/3 sm:pr-4 sm:truncate lg:block lg:h-8 lg:w-3/12 lg:self-center lg:text-left lg:px-4"
         >
           <span
-            class="font-aileron bg-[#ECEFF4] text-[#181819] shadow-md text-xs h-7 rounded-3xl p-1 mr-2 sm:h-6 sm:text-center sm:w-16"
-            v-for="itemTag in item.tags"
+            class="font-aileron bg-[#ECEFF4] text-[#181819] shadow-md text-xs h-7 rounded-3xl p-1 px-2 mr-2 sm:h-6 text-center sm:w-16"
+            v-for="itemTag in item.tags.slice(0, 3)"
             :key="itemTag"
           >
-            #{{ itemTag }} &nbsp;
+            #{{ itemTag }}
+          </span>
+          <span
+            class="font-aileron bg-[#ECEFF4] text-[#181819] shadow-md text-xs h-7 rounded-3xl p-1 px-2 mr-2 sm:h-6 text-center sm:w-16"
+          >
+            ...
           </span>
         </div>
         <div
@@ -105,7 +102,7 @@
           >
             <img
               class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
-              src="../../public/assets/icon/share-solid.svg"
+              src="../../../public/assets/icon/share-solid.svg"
               alt="share-icon"
             />
           </div>
@@ -115,7 +112,7 @@
           >
             <img
               class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
-              src="../../public/assets/icon/like-icon.svg"
+              src="../../../public/assets/icon/like-icon.svg"
               alt="like-icon"
             />
             <p
@@ -130,7 +127,7 @@
           >
             <img
               class="h-3 w-3 object-fit"
-              src="../../public/assets/icon/eye-icon.svg"
+              src="../../../public/assets/icon/eye-icon.svg"
               alt="views-icon"
             />
             <p class="text-xs text-[#5E5C5C] font-aileron">
@@ -164,7 +161,7 @@
           >
             <img
               class="h-4 w-4 object-fit"
-              src="../../public/assets/icon/edit-icon.svg"
+              src="../../../public/assets/icon/edit-icon.svg"
               alt="edit-icon"
             />
           </div>
@@ -174,7 +171,7 @@
           >
             <img
               class="h-3 w-3 object-fit group-hover:brightness-0 group-hover:invert"
-              src="../../public/assets/icon/save-icon.svg"
+              src="../../../public/assets/icon/save-icon.svg"
               alt="save-icon"
             />
           </div>

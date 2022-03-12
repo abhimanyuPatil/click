@@ -51,9 +51,9 @@
               class="w-[40%] group-hover:brightness-0 group-hover:invert"
             />
             <div
-              class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
+              class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
-              T
+              <p>T</p>
             </div>
           </div>
           <div
@@ -65,9 +65,9 @@
               class="w-[40%] group-hover:brightness-0 group-hover:invert"
             />
             <div
-              class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
+              class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
-              S
+              <p>S</p>
             </div>
           </div>
           <Popover class="relative" v-slot="{ open }">
@@ -86,9 +86,9 @@
                   alt=""
                 />
                 <div
-                  class="absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
+                  class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
                 >
-                  A
+                 <p>A</p>
                 </div>
               </div>
             </PopoverButton>
@@ -101,17 +101,14 @@
               leave-to-class="opacity-0 translate-y-1"
             >
               <PopoverPanel
-                class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-100 max-w-md sm:px-0"
+                class="w-[calc(100%+15rem)] absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-100 sm:px-0"
               >
-                <!--====================================================================
-                        PROFILE VIEW START
-                        =====================================================================-->
                 <div
-                  class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden bg-white w-[200px]"
+                  class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden bg-white w-full"
                 >
-                  <div class="flex items-center justify-between flex-wrap">
+                  <div class="grid grid-cols-4 gap-2">
                     <div
-                      class="flex align-center justify-center w-1/2 flex-col p-3 mb-3 text-center"
+                      class="flex align-center justify-center flex-col p-3 mb-3 text-center cursor-pointer"
                     >
                       <svg
                         class="mx-auto"
@@ -125,28 +122,10 @@
                           d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm11-6h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 6h-4V5h4v4zm-9 4H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6H5v-4h4v4zm8-6c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
                         ></path>
                       </svg>
-                      <p class="text-md text-gray-500">All</p>
+                      <p class="text-sm text-center text-gray-500">All</p>
                     </div>
                     <div
-                      class="flex align-center justify-center w-1/2 flex-col p-3 mb-3 text-center"
-                    >
-                      <svg
-                        class="mx-auto"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
-                        viewBox="0 0 24 24"
-                        style="fill: #6317a7; transform: ; msfilter: "
-                      >
-                        <path
-                          d="M11.42 21.815a1.004 1.004 0 0 0 1.16 0C12.884 21.598 20.029 16.44 20 10c0-4.411-3.589-8-8-8S4 5.589 4 9.996c-.029 6.444 7.116 11.602 7.42 11.819zM12 4c3.309 0 6 2.691 6 6.004.021 4.438-4.388 8.423-6 9.731-1.611-1.308-6.021-5.293-6-9.735 0-3.309 2.691-6 6-6z"
-                        ></path>
-                        <path d="M11 14h2v-3h3V9h-3V6h-2v3H8v2h3z"></path>
-                      </svg>
-                      <p class="text-md text-gray-500">Locations</p>
-                    </div>
-                    <div
-                      class="flex align-center justify-center w-1/2 flex-col p-3 mb-3 text-center"
+                      class="flex align-center justify-center flex-col p-3 mb-3 text-center cursor-pointer"
                     >
                       <svg
                         class="mx-auto"
@@ -160,10 +139,10 @@
                           d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm7.931 9h-2.764a14.67 14.67 0 0 0-1.792-6.243A8.013 8.013 0 0 1 19.931 11zM12.53 4.027c1.035 1.364 2.427 3.78 2.627 6.973H9.03c.139-2.596.994-5.028 2.451-6.974.172-.01.344-.026.519-.026.179 0 .354.016.53.027zm-3.842.7C7.704 6.618 7.136 8.762 7.03 11H4.069a8.013 8.013 0 0 1 4.619-6.273zM4.069 13h2.974c.136 2.379.665 4.478 1.556 6.23A8.01 8.01 0 0 1 4.069 13zm7.381 6.973C10.049 18.275 9.222 15.896 9.041 13h6.113c-.208 2.773-1.117 5.196-2.603 6.972-.182.012-.364.028-.551.028-.186 0-.367-.016-.55-.027zm4.011-.772c.955-1.794 1.538-3.901 1.691-6.201h2.778a8.005 8.005 0 0 1-4.469 6.201z"
                         ></path>
                       </svg>
-                      <p class="text-md text-gray-500">Sites</p>
+                      <p class="text-sm text-gray-500">Sites</p>
                     </div>
                     <div
-                      class="flex align-center justify-center w-1/2 flex-col p-3 mb-3 text-center"
+                      class="flex align-center justify-center flex-col p-3 mb-3 text-center cursor-pointer"
                     >
                       <svg
                         class="mx-auto"
@@ -178,10 +157,10 @@
                         ></path>
                         <path d="M8 6h9v2H8z"></path>
                       </svg>
-                      <p class="text-md text-gray-500">Books</p>
+                      <p class="text-sm text-gray-500">Books</p>
                     </div>
                     <div
-                      class="flex align-center justify-center w-1/2 flex-col p-3 mb-3 text-center"
+                      class="flex align-center justify-center flex-col p-3 mb-3 text-center cursor-pointer"
                     >
                       <svg
                         class="mx-auto"
@@ -195,28 +174,11 @@
                           d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm.001 6c-.001 0-.001 0 0 0h-.466l-2.667-4H20l.001 4zM9.535 9 6.868 5h2.597l2.667 4H9.535zm5 0-2.667-4h2.597l2.667 4h-2.597zM4 5h.465l2.667 4H4V5zm0 14v-8h16l.002 8H4z"
                         ></path>
                       </svg>
-                      <p class="text-md text-gray-500">Movie</p>
+                      <p class="text-sm text-gray-500">Movie</p>
                     </div>
+
                     <div
-                      class="flex align-center justify-center w-1/2 flex-col p-3 mb-3 text-center"
-                    >
-                      <svg
-                        class="mx-auto"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="30"
-                        height="30"
-                        viewBox="0 0 24 24"
-                        style="fill: #6317a7; transform: ; msfilter: "
-                      >
-                        <path
-                          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
-                        ></path>
-                        <path d="m9 17 8-5-8-5z"></path>
-                      </svg>
-                      <p class="text-md text-gray-500">Songs</p>
-                    </div>
-                    <div
-                      class="flex align-center justify-center w-1/2 flex-col p-3 mb-3 text-center"
+                      class="flex align-center justify-center flex-col p-3 mb-3 text-center cursor-pointer"
                     >
                       <svg
                         class="mx-auto"
@@ -233,24 +195,7 @@
                           d="M6 7h6v6H6zm7 8H6v2h12v-2h-4zm1-4h4v2h-4zm0-4h4v2h-4z"
                         ></path>
                       </svg>
-                      <p class="text-md text-gray-500">News</p>
-                    </div>
-                    <div
-                      class="flex align-center justify-center w-1/2 flex-col p-3 mb-3 text-center"
-                    >
-                      <svg
-                        class="mx-auto"
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="35"
-                        height="35"
-                        viewBox="0 0 24 24"
-                        style="fill: #6317a7; transform: ; msfilter: "
-                      >
-                        <path
-                          d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm11-6h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 6h-4V5h4v4zm-9 4H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6H5v-4h4v4zm8-6c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
-                        ></path>
-                      </svg>
-                      <p class="text-md text-gray-500">All</p>
+                      <p class="text-sm text-gray-500">News</p>
                     </div>
                   </div>
                 </div>
@@ -260,6 +205,9 @@
               </PopoverPanel>
             </transition>
           </Popover>
+
+          <!--Categories Popup Content End-->
+
           <button
             v-if="!isLoggedIn"
             @click="() => router.push('/auth')"
@@ -483,9 +431,9 @@
         </div>
       </div>
       <div
-        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block"
+        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex"
       >
-        <div class="flex items-center w-full gap-3 h-11">
+        <div class="flex basis-3/5 items-center w-full gap-3 h-11">
           <div class="flex items-center ml-4">
             <img
               src="../../../resources/search-icon.svg"
@@ -500,7 +448,7 @@
               type="text"
               placeholder="Search topic"
               @change="query = $event.target.value"
-              class="w-full h-[50px] border-none outline-none bg-transparent text-[#2A2A2A] text-aileron"
+              class="w-full h-[50px] border-none outline-none bg-[transparent] text-[#2A2A2A] text-aileron"
             />
             <TransitionRoot
               :show="isOpen"
@@ -546,160 +494,57 @@
           </div>
         </div>
       </div>
-      <div
-        class="flex md:hidden items-center gap-3 h-full justify-center border-[#9B9B9B] mr-3 pl-3"
-      >
-        <div :class="checkSearchType('all')" @click="toggleSearchType('all')">
-          All
-        </div>
-        <div
-          :class="checkSearchType('collections')"
-          @click="toggleSearchType('collections')"
-        >
-          Collections
-        </div>
-        <div
-          :class="checkSearchType('project')"
-          @click="toggleSearchType('project')"
-        >
-          Project
-        </div>
-      </div>
       <div class="flex items-center justify-between w-full hidden md:flex">
         <div class="header-badges-wrap flex items-center gap-3">
-          <span
-            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
-          >
-            All
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 ml-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          <p class="font-aileron font-bold text-[#373636] text-sm">
+            Select Category :
+          </p>
+          <Popover class="relative" v-slot="{ open }">
+            <PopoverButton
+              :class="[
+                open ? 'text-gray-900' : 'text-gray-500',
+                'font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex justify-between cursor-pointer group hover:bg-primary hover:text-[#fff]',
+              ]"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-          <span
-            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
-          >
-            Location
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 ml-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+              {{ selectedCategory }}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4 ml-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="{2}"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </PopoverButton>
+            <transition
+              enter-active-class="transition ease-out duration-200"
+              enter-from-class="opacity-0 translate-y-1"
+              enter-to-class="opacity-100 translate-y-0"
+              leave-active-class="transition ease-in duration-150"
+              leave-from-class="opacity-100 translate-y-0"
+              leave-to-class="opacity-0 translate-y-1"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-          <span
-            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
-          >
-            Sites
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 ml-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-          <span
-            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
-          >
-            Books
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 ml-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-          <span
-            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
-          >
-            Movies
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 ml-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-          <span
-            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
-          >
-            Songs
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 ml-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
-          <span
-            class="font-aileron bg-[#eceff4] text-xs px-3 py-2 font-bold bg-gray-100 text-[#373636] rounded-3xl shadow-md flex cursor-pointer hover:bg-primary hover:text-[#fff]"
-          >
-            News
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 ml-3"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M19 9l-7 7-7-7"
-              />
-            </svg>
-          </span>
+              <PopoverPanel
+                class="absolute bg-white z-10 left-1/2 transform -translate-x-1/2 mt-2 px-2 w-[calc(100%+4rem)] max-w-md sm:px-0"
+              >
+                <PopoverButton
+                  :as="span"
+                  v-for="item in categories"
+                  :key="item"
+                  :class="selectedClass(item)"
+                  @click="setSelectedCategory(item)"
+                >
+                  {{ item }}
+                </PopoverButton>
+              </PopoverPanel>
+            </transition>
+          </Popover>
         </div>
         <div class="sort-filters flex items-center gap-3">
           <ViewDropdown
@@ -741,7 +586,7 @@
   MOBILE HEADER START
   ==============================================================================-->
 
-  <div v-if="isMobile()" class="border-[#DEDEDE] bg-white">
+  <div v-if="isMobile()" class="border-[#DEDEDE] bg-white pt-2 pb-4">
     <div class="container md:container md:mx-auto flex flex-col mx-auto">
       <div
         class="flex flex-wrap items-center justify-between border-gray-200 border-b-[1px]"
@@ -781,77 +626,7 @@
           >
         </div>
       </div>
-      <!--=========================================================================
-              MOBILE SEARCH BAR START
-            ===========================================================================-->
-      <div
-        class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex sm:block mb-4 overflow-hidden mt-4"
-      >
-        <div class="flex items-center w-full gap-3 h-11 bg-white">
-          <div class="flex items-center ml-4">
-            <img
-              class="5%"
-              src="../../../resources/search-icon.svg"
-              alt=""
-              width="20"
-              height="20"
-            />
-          </div>
-          <div class="relative w-[60%]">
-            <input
-              id="dropdown-responsive"
-              type="text"
-              placeholder="Search topic"
-              @change="query = $event.target.value"
-              class="w-full h-[50px] border-none outline-none bg-transparent text-black placeholder-black-500 font-aileron"
-            />
-            <TransitionRoot
-              :show="isOpen"
-              enter="transition-opacity duration-75"
-              enter-from="opacity-0"
-              enter-to="opacity-100"
-              leave="transition-opacity duration-150"
-              leave-from="opacity-100"
-              leave-to="opacity-0"
-            >
-              <div
-                v-if="isOpen"
-                class="absolute w-full bg-white rounded z-10 px-3 shadow-md mt-2"
-              >
-                <p
-                  class="font-poppins text-black my-2 cursor-pointer"
-                  v-for="person in filteredPeople"
-                  :key="person.id"
-                >
-                  {{ person.name }}
-                </p>
-              </div>
-            </TransitionRoot>
-          </div>
-          <div class="block w-[40%] flex items-center px-3 justify-between">
-            <select
-              class="form-select w-full text-[#363636] font-aileron appearance-none h-full py-1.5 text-sm font-normal text-black bg-white bg-clip-padding bg-no-repeat transition ease-in-out text-center m-0 border-l-[1px] border-gray-500 focus:bg-white focus:border-blue-600 focus:outline-none"
-              aria-label="Default select example"
-            >
-              <option selected>All</option>
-              <option selected value="1">Projects</option>
-              <option value="2">Collections</option>
-            </select>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 fill-gray-500"
-            >
-              <path
-                d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!--========================================================================
-              MOBILE SEARCH BAR END
-              ==========================================================================-->
+      <MobileSearch />
     </div>
   </div>
 
@@ -971,12 +746,28 @@ import {
   PopoverButton,
   PopoverPanel,
   TransitionRoot,
+  Listbox,
+  ListboxLabel,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption,
 } from "@headlessui/vue";
-import { CheckIcon, SelectorIcon } from "@heroicons/vue/solid";
+import { CheckIcon, SelectorIcon, ChevronDownIcon } from "@heroicons/vue/solid";
 import { computed, defineComponent, ref } from "vue";
 import { useRouter } from "vue-router";
 import { mapActions, mapState } from "vuex";
-import ViewDropdown from "../HeaderDropdowns/ViewLayout.vue";
+import ViewDropdown from "../ViewLayoutDropdowns/Flex.vue";
+import MobileSearch from "../Responsive/MobileSearch.vue";
+const categories = [
+  "All",
+  "Location",
+  "Sites",
+  "Books",
+  "Movies",
+  "Songs",
+  "News",
+];
+const types = ["All", "Projects", "Collections"];
 import {
   IonPage,
   IonHeader,
@@ -997,7 +788,16 @@ const people = [
 export default defineComponent({
   name: "HeaderContainer",
   data() {
-    return { isProfileScreen: "nav", searchType: "all", isNavActive: false };
+    const selectedType = ref(types[0]);
+    return {
+      isProfileScreen: "nav",
+      searchType: "all",
+      selectedCategory: categories[0],
+      categories,
+      selectedType,
+      types,
+      isNavActive: false,
+    };
   },
   methods: {
     toggleProfile(state: "nav" | "profileView") {
@@ -1011,6 +811,16 @@ export default defineComponent({
         return "font-aileron h-6 pt-0.5 px-2 text-xs font-bold text w-auto bg-[#6317A7] rounded-3xl text-center text-white cursor-pointer";
       } else
         return "font-aileron text-xs h-6 w-auto px-2 pt-0.5 font-bold text text-black cursor-pointer";
+    },
+    setSelectedCategory(category: string) {
+      this.selectedCategory = category;
+    },
+    selectedClass(category: string) {
+      if (category === this.selectedCategory) {
+        return "w-full font-aileron text-xs px-3 py-2 text-center justify-center font-bold text-[#fff] flex cursor-pointer bg-primary";
+      } else {
+        return "w-full font-aileron text-xs px-3 py-2 text-center justify-center font-bold text-[#373636] flex cursor-pointer hover:bg-primary hover:text-[#fff]";
+      }
     },
     ...mapActions("layout", {
       changeLayout: "changeLayout",
@@ -1044,6 +854,11 @@ export default defineComponent({
     TransitionRoot,
     CheckIcon,
     SelectorIcon,
+    Listbox,
+    ListboxLabel,
+    ListboxButton,
+    ListboxOptions,
+    ListboxOption,
     IonHeader,
     IonToolbar,
     IonTitle,
@@ -1051,6 +866,7 @@ export default defineComponent({
     IonPage,
     IonButtons,
     IonIcon,
+    MobileSearch,
   },
   setup() {
     const router = useRouter();
@@ -1070,17 +886,7 @@ export default defineComponent({
     return { router, selected, query, filteredPeople, isOpen };
   },
   mounted() {
-    if (this.isMobile()) {
-      let responsiveInput = <HTMLInputElement>(
-        document?.getElementById("dropdown-responsive")
-      );
-      responsiveInput.addEventListener("focusin", () => {
-        this.isOpen = true;
-      });
-      responsiveInput.addEventListener("blur", () => {
-        this.isOpen = false;
-      });
-    } else {
+    if (!this.isMobile()) {
       let input = <HTMLInputElement>document?.getElementById("dropdown");
       input.addEventListener("focusin", () => {
         this.isOpen = true;
