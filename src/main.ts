@@ -28,11 +28,24 @@ import "./theme/variables.css";
 import VueVirtualScroller from "vue3-virtual-scroller";
 import "vue3-virtual-scroller/dist/vue3-virtual-scroller.css";
 import { store } from "./store/index";
+import VueCustomTooltip, {
+  TooltipOptions,
+} from "@adamdehaven/vue-custom-tooltip";
+
+const opt: TooltipOptions = {
+  name: "VueCustomTooltip",
+  color: "#fff",
+  background: "#000",
+  borderRadius: 100,
+  fontWeight: 400,
+};
+
 const app = createApp(App)
   .use(IonicVue)
   .use(router)
   .use(VueVirtualScroller)
   .use(store)
+  .use(VueCustomTooltip, opt)
   .use(VueProgressBar, {
     color: "rgb(99, 23, 167)",
     failedColor: "red",
@@ -40,5 +53,6 @@ const app = createApp(App)
   });
 
 router.isReady().then(() => {
+  app.use(VueCustomTooltip, opt);
   app.mount("#app");
 });

@@ -70,6 +70,7 @@
             src="../../resources/gallery.png"
             alt="title-avatar"
           />
+
           <p
             class="font-aileron flex-wrap text-[#181819] self-center overflow-hidden text-ellipsis text-left text-xs ml-2"
           >

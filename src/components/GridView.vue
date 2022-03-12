@@ -13,18 +13,20 @@
             <img :src="generateLink(item)" class="w-full" />
           </div>
           <div class="portfolio-content flex py-3 sm:py-0 sm:mt-2">
-            <div class="portfolio-title flex items-center min-w-0 mr-[10%]">
-              <span
-                class="p-[10px] rounded-3xl mr-1"
-                :style="getColor()"
-              ></span>
-              <p
-                :title="item.from"
-                class="font-aileron text-gray-600 text-sm font-semibold truncate font-bold"
-              >
-                {{ item.from }}
-              </p>
-            </div>
+            <VueCustomTooltip :label="item.from" class="min-w-0">
+              <div class="portfolio-title flex items-center min-w-0">
+                <span
+                  class="p-[10px] rounded-3xl mr-1"
+                  :style="getColor()"
+                ></span>
+
+                <p
+                  class="font-aileron text-gray-600 text-sm font-semibold truncate font-bold"
+                >
+                  {{ item.from }}
+                </p>
+              </div>
+            </VueCustomTooltip>
             <div
               class="flex items-end lg:items-center justify-between font-poppins text-[#D1D1D1] text-xs ml-auto"
             >
