@@ -1,9 +1,9 @@
 <template>
   <ion-page>
     <ion-content>
-      <HeaderContainer title="Cllct" />
+      <!-- <HeaderContainer title="Cllct" /> -->
       <div
-        class="flex min-h-[80vh] bg-gradient-to-r from-[#6317A7] to-[#320C54]"
+        class="flex min-h-[100vh] bg-gradient-to-r from-[#6317A7] to-[#320C54]"
       >
         <!-- first section -->
         <div
@@ -293,8 +293,8 @@
         </div>
         <!--  -->
       </div>
-      <Footer />
-      <MobileTabs />
+      <!-- <Footer /> -->
+      <!-- <MobileTabs /> -->
     </ion-content>
   </ion-page>
 </template>

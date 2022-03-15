@@ -5,7 +5,7 @@
     <div class="flex flex-col items-center justify-center text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 fill-pink-400"
+        class="h-5 w-5 fill-purple-700"
         viewBox="0 0 22 22"
       >
         <path
@@ -19,7 +19,7 @@
     <div class="flex flex-col items-center justify-center text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 fill-pink-400"
+        class="h-5 w-5 fill-purple-700"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -35,20 +35,20 @@
     <div class="flex flex-col items-center justify-center text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 fill-pink-400"
+        class="h-6 w-6 fill-purple-700"
         viewBox="0 0 24 24"
         fill="currentColor"
       >
         <path
-          d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"
+          d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"
         ></path>
       </svg>
-      <p class="text-gray-900 font-aileron text-sm font-bold">Create</p>
+      <p class="text-gray-900 font-aileron text-sm font-bold">Applications</p>
     </div>
     <div class="flex flex-col items-center justify-center text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5 fill-pink-400"
+        class="h-5 w-5 fill-purple-700"
         viewBox="0 0 20 20"
         fill="currentColor"
       >
@@ -61,7 +61,7 @@
     <div class="flex flex-col items-center justify-center text-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 fill-pink-400"
+        class="h-6 w-6 fill-purple-700"
         viewBox="0 0 20 20"
       >
         <path
