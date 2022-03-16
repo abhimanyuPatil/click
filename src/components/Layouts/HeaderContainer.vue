@@ -12,7 +12,7 @@
               class="cursor-pointer"
             />
           </a>
-          <div class="flex items-center ml-10 gap-9 hidden md:flex">
+          <div class="items-center ml-10 gap-9 hidden md:flex">
             <h5
               class="text-lg font-semibold font-aileron text-black cursor-pointer"
             >
@@ -51,6 +51,7 @@
               class="w-[40%] group-hover:brightness-0 group-hover:invert"
             />
             <div
+              v-if="showControls"
               class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
               <p>T</p>
@@ -65,6 +66,7 @@
               class="w-[40%] group-hover:brightness-0 group-hover:invert"
             />
             <div
+              v-if="showControls"
               class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
             >
               <p>S</p>
@@ -86,9 +88,10 @@
                   alt=""
                 />
                 <div
+                  v-if="showControls"
                   class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
                 >
-                 <p>A</p>
+                  <p>A</p>
                 </div>
               </div>
             </PopoverButton>
@@ -797,6 +800,7 @@ export default defineComponent({
       selectedType,
       types,
       isNavActive: false,
+      showControls: false,
     };
   },
   methods: {
@@ -821,6 +825,9 @@ export default defineComponent({
       } else {
         return "w-full font-aileron text-xs px-3 py-2 text-center justify-center font-bold text-[#373636] flex cursor-pointer hover:bg-primary hover:text-[#fff]";
       }
+    },
+    toggleControls() {
+      this.showControls = !this.showControls;
     },
     ...mapActions("layout", {
       changeLayout: "changeLayout",
@@ -895,6 +902,12 @@ export default defineComponent({
         this.isOpen = false;
       });
     }
+    document.addEventListener("keydown", (e) => {
+      if (e.altKey) this.toggleControls();
+    });
+    document.addEventListener("keyup", (e) => {
+      if (e.key === "Alt") this.toggleControls();
+    });
   },
 });
 </script>

@@ -13,7 +13,7 @@
         transform="translate(0 -7.04)"
       />
     </svg>
-    <p class="text=[10px] group-hover:text-light">&nbsp;7.5k</p>
+    <p class="text=[10px] font-bold font-aileron group-hover:text-light">&nbsp;7.5k</p>
   </div>
 </template>
 <script lang="ts">

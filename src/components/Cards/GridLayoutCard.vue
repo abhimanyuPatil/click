@@ -6,7 +6,7 @@
       <div
         v-for="item in cards"
         :key="item"
-        class="break-inside shadow-md rounded-b mb-5 hover:scale-103 duration-300 ease-in-out cursor-pointer"
+        class="break-inside shadow-md rounded-b mb-5 duration-300 ease-in-out cursor-pointer"
       >
         <div class="portfolio-image relative">
           <img
