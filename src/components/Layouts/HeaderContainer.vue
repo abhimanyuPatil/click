@@ -842,7 +842,6 @@ export default defineComponent({
       this.showControls = !this.showControls;
     },
     changeTheme() {
-      console.log('theme',this.localTheme);
       if (this.localTheme === "light") {
         this.localTheme = "dark"
         document.documentElement.classList.add("dark");

@@ -75,7 +75,7 @@
   </div>
 
   <footer
-    class="bg-white border-t-[1px] border-[#707070] py-1 lg:fixed lg:bottom-0 w-full"
+    class="bg-white dark:bg-darkBg border-t-[1px] border-[#707070] dark:border-darkBorder py-1 lg:fixed lg:bottom-0 w-full"
   >
     <div class="container sm:container mx-auto">
       <div
@@ -84,11 +84,18 @@
         <div class="grid-1">
           <div class="flex items-center gap-6">
             <img
+            v-if="theme==='light'"
               class="h-10 w-15 object-cover"
               src="../../../resources/Cllct-black.png"
               alt="black-logo"
             />
-            <p class="text-black text-xs font-poppins">
+             <img
+            v-if="theme==='dark'"
+              class="h-10 w-15 object-cover"
+              src="../../../resources/logo/Cllct-Logo-White.svg"
+              alt="black-logo"
+            />
+            <p class="text-black dark:text-white text-xs font-poppins">
               © {{ new Date().getFullYear() }} Cllct. All rights reserved.
             </p>
           </div>
@@ -97,22 +104,22 @@
           <div class="flex items-center">
             <ul class="md:flex block items-center justify-between gap-6">
               <li>
-                <a class="text-black text-xs font-poppins cursor-pointer"
+                <a class="text-black dark:text-white text-xs font-poppins cursor-pointer"
                   >About Us</a
                 >
               </li>
               <li>
-                <a class="text-black text-xs font-poppins cursor-pointer"
+                <a class="text-black dark:text-white text-xs font-poppins cursor-pointer"
                   >Help</a
                 >
               </li>
               <li>
-                <a class="text-black text-xs font-poppins cursor-pointer"
+                <a class="text-black dark:text-white text-xs font-poppins cursor-pointer"
                   >Terms of Service</a
                 >
               </li>
               <li>
-                <a class="text-black text-xs font-poppins cursor-pointer"
+                <a class="text-black dark:text-white text-xs font-poppins cursor-pointer"
                   >Privacy Policy</a
                 >
               </li>
@@ -252,11 +259,14 @@
   </footer>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
+import {  mapState } from "vuex";
 export default defineComponent({
   name: "FooterComponent",
-  props: {},
   components: {},
+  computed: mapState({
+    theme: (state:any) => state.layout.theme,
+  }),
 });
 </script>

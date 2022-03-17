@@ -555,6 +555,7 @@ export default defineComponent({
     isMinimal: (state) => state.layout.isMinimal,
     zoom: (state) => state.layout.zoom,
     sort: (state) => state.layout.sort,
+    theme: (state) => state.layout.theme,
   }),
 });
 </script>

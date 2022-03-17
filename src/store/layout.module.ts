@@ -24,7 +24,6 @@ const actions = {
     commit("SET_MINIMAL_VIEW");
   },
   toggleTheme({dispatch,commit}:any){
-    console.log('in')
     commit("TOGGLE_THEME")
   }
 };
@@ -42,13 +41,10 @@ const mutations = {
   SET_MINIMAL_VIEW(state: any) {
     state.isMinimal = true;
   },
-  TOGGLE_THEME(){
+  TOGGLE_THEME(state: any){
     if(state.theme === 'dark') {
-      console.log('setting light')
       state.theme = 'light'
     }else{
-      console.log('setting dark')
-
       state.theme = 'dark'
     }
   }
