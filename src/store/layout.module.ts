@@ -3,6 +3,7 @@ const state = {
   zoom: { label: "100%", value: "100" },
   sort: { label: "Latest", value: "latest" },
   isMinimal: false,
+  theme:'light'
 };
 
 const getters = {
@@ -22,6 +23,10 @@ const actions = {
   setMinimalView({ dispatch, commit }: any, data: any) {
     commit("SET_MINIMAL_VIEW");
   },
+  toggleTheme({dispatch,commit}:any){
+    console.log('in')
+    commit("TOGGLE_THEME")
+  }
 };
 
 const mutations = {
@@ -37,6 +42,16 @@ const mutations = {
   SET_MINIMAL_VIEW(state: any) {
     state.isMinimal = true;
   },
+  TOGGLE_THEME(){
+    if(state.theme === 'dark') {
+      console.log('setting light')
+      state.theme = 'light'
+    }else{
+      console.log('setting dark')
+
+      state.theme = 'dark'
+    }
+  }
 };
 export const layout = {
   namespaced: true,
