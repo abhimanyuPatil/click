@@ -691,56 +691,70 @@
   >
     <div
       v-if="isMobile()"
-      class="border-b border-[#DEDEDE] bg-white absolute h-[100%] w-[70%]"
+      class="border-b border-[#DEDEDE] bg-white dark:bg-darkBg absolute h-[100%] w-[70%]"
     >
       <div class="flex items-center justify-between py-4 px-3">
         <div class="container mx-auto">
           <div class="flex items-center justify-between">
             <div class="flex items-center">
-              <a @click="isNavActive = !isNavActive" class="text-black">
+              <a @click="isNavActive = !isNavActive">
                 <svg
+                  class="h-6 w-6 fill-black dark:fill-white"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 rotate-45"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                  />
+                    d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"
+                  ></path>
                 </svg>
               </a>
             </div>
             <div class="flex">
               <a
-                class="border border-gray-500 rounded-full py-[5px] px-6 font-aileron text-gray-700 font-bold"
+                class="border border-gray-500 rounded-full py-[5px] px-6 font-aileron text-gray-700 dark:text-darkWhite dark:bg-dropdownBg dark:border-darkBorder font-bold"
               >
                 Login
               </a>
             </div>
           </div>
+
           <div class="flex flex-wrap flex-col py-10">
+            <SwitchGroup class="pb-3">
+              <div class="flex items-center">
+                <SwitchLabel
+                  class="mr-4 text-black dark:text-darkWhite font-bold"
+                  >Enable Dark Mode</SwitchLabel
+                >
+                <Switch
+                  v-model="enabled"
+                  @click="changeTheme()"
+                  :class="enabled ? 'bg-blue-600' : 'bg-gray-200'"
+                  class="relative inline-flex items-center h-6 transition-colors rounded-full w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                >
+                  <span
+                    :class="enabled ? 'translate-x-6' : 'translate-x-1'"
+                    class="inline-block w-4 h-4 transition-transform transform bg-white rounded-full"
+                  />
+                </Switch>
+              </div>
+            </SwitchGroup>
             <a
               href=""
-              class="font-bold text-[18px] text-black font-aileron pb-3"
+              class="font-bold text-[18px] text-black dark:text-darkWhite font-aileron pb-3"
               >Collections</a
             >
             <a
               href=""
-              class="font-bold text-[18px] text-black font-aileron pb-3"
+              class="font-bold text-[18px] text-black dark:text-darkWhite font-aileron pb-3"
               >Projects</a
             >
             <a
               href=""
-              class="font-bold text-[18px] text-black font-aileron pb-3"
+              class="font-bold text-[18px] text-black dark:text-darkWhite font-aileron pb-3"
               >Categories</a
             >
             <a
               href=""
-              class="font-bold text-[18px] text-black font-aileron pb-3"
+              class="font-bold text-[18px] text-black dark:text-darkWhite font-aileron pb-3"
               >Projects</a
             >
           </div>
@@ -811,6 +825,9 @@ import {
   ListboxButton,
   ListboxOptions,
   ListboxOption,
+  Switch,
+  SwitchGroup,
+  SwitchLabel,
 } from "@headlessui/vue";
 import { CheckIcon, SelectorIcon, ChevronDownIcon } from "@heroicons/vue/solid";
 import { computed, defineComponent, ref } from "vue";
@@ -849,6 +866,8 @@ export default defineComponent({
   name: "HeaderContainer",
   data() {
     const selectedType = ref(types[0]);
+    const enabled = ref(false);
+
     return {
       isProfileScreen: "nav",
       searchType: "all",
@@ -859,6 +878,7 @@ export default defineComponent({
       isNavActive: false,
       showControls: false,
       localTheme: "light",
+      enabled,
     };
   },
   methods: {
@@ -945,6 +965,9 @@ export default defineComponent({
     IonButtons,
     IonIcon,
     MobileSearch,
+    Switch,
+    SwitchGroup,
+    SwitchLabel,
   },
   setup() {
     const router = useRouter();
