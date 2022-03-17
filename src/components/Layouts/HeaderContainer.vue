@@ -1,11 +1,14 @@
 <template>
-  <div v-if="!isMobile()" class="border-b border-[#DEDEDE] pb-3 bg-white dark:bg-darkBg">
+  <div
+    v-if="!isMobile()"
+    class="border-b border-[#DEDEDE] pb-3 bg-white dark:bg-darkBg"
+  >
     <div class="container md:container md:mx-auto flex flex-col gap-2 mx-auto">
       <div class="flex items-center justify-between mt-4">
         <div class="flex items-center">
           <a @click="() => router.push('/home')">
             <img
-            v-if="localTheme==='dark'"
+              v-if="localTheme === 'dark'"
               src="../../../resources/logo/Cllct-Logo-White.svg"
               alt=""
               width="78"
@@ -13,7 +16,7 @@
               class="cursor-pointer"
             />
             <img
-            v-if="localTheme==='light'"
+              v-if="localTheme === 'light'"
               src="../../../resources/logo-icon.svg"
               alt=""
               width="78"
@@ -135,7 +138,11 @@
                           d="M10 3H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM9 9H5V5h4v4zm11-6h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 6h-4V5h4v4zm-9 4H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1zm-1 6H5v-4h4v4zm8-6c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"
                         ></path>
                       </svg>
-                      <p class="text-sm text-center text-gray-500 dark:text-white">All</p>
+                      <p
+                        class="text-sm text-center text-gray-500 dark:text-white"
+                      >
+                        All
+                      </p>
                     </div>
                     <div
                       class="flex align-center justify-center flex-col p-3 mb-3 text-center cursor-pointer"
@@ -231,7 +238,9 @@
           <Popover v-if="isLoggedIn" class="relative" v-slot="{ open }">
             <PopoverButton
               :class="[
-                open ? 'text-gray-900 dark:text-white' : 'text-gray-500 dark:text-white',
+                open
+                  ? 'text-gray-900 dark:text-white'
+                  : 'text-gray-500 dark:text-white',
                 'px-3 py-1 group bg-white dark:bg-transparent dark:text-white rounded-md inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500',
               ]"
             >
@@ -241,7 +250,9 @@
                 >
                   <img src="../../../resources/user-icon.svg" alt="" />
                 </div>
-                <h3 class="text-[#5E5C5C] dark:text-white text-sm font-semibold font-aileron">
+                <h3
+                  class="text-[#5E5C5C] dark:text-white text-sm font-semibold font-aileron"
+                >
                   John Doe
                 </h3>
               </div>
@@ -268,8 +279,12 @@
                     class="relative bg-white dark:bg-cardBg px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center"
                   >
                     <img src="../../../resources/user-icon.svg" alt="" />
-                    <p class="font-aileron text-black dark:text-white text-xs">John Dess</p>
-                    <p class="font-aileron text-black dark:text-white text-xs">Mumbai</p>
+                    <p class="font-aileron text-black dark:text-white text-xs">
+                      John Dess
+                    </p>
+                    <p class="font-aileron text-black dark:text-white text-xs">
+                      Mumbai
+                    </p>
                   </div>
                   <div
                     class="relative grid gap-6 bg-white dark:bg-cardBg dark:text-white px-2 py-2 sm:gap-3 sm:p-3"
@@ -306,7 +321,7 @@
                     </div>
                   </div>
                   <div
-                    class="relative grid gap-6 bg-white dark:bg-cardBg  px-2 py-2 sm:gap-3 sm:p-3"
+                    class="relative grid gap-6 bg-white dark:bg-cardBg px-2 py-2 sm:gap-3 sm:p-3"
                   >
                     <div class="ml-4 pr-4">
                       <p
@@ -355,15 +370,27 @@
                         />
                       </svg>
                     </p>
-                    <h5 class="m-0 flex-1 font-aileron text-black dark:text-white">Profile</h5>
+                    <h5
+                      class="m-0 flex-1 font-aileron text-black dark:text-white"
+                    >
+                      Profile
+                    </h5>
                   </div>
                   <div class="profile-menu-content-wrap">
                     <div
                       class="relative bg-white dark:bg-cardBg px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center"
                     >
                       <img src="../../../resources/user-icon.svg" alt="" />
-                      <p class="text-black dark:text-white text-xs font-aileron">John Dess</p>
-                      <p class="text-black dark:text-white text-xs font-aileron">Mumbai</p>
+                      <p
+                        class="text-black dark:text-white text-xs font-aileron"
+                      >
+                        John Dess
+                      </p>
+                      <p
+                        class="text-black dark:text-white text-xs font-aileron"
+                      >
+                        Mumbai
+                      </p>
                     </div>
                     <div class="edit-profile-btn text-center">
                       <button
@@ -374,13 +401,15 @@
                     </div>
                     <div class="proile-details p-3">
                       <div
-                        class="profile-details-wrap p-4 bg-[#EFEFEF] dark:bg-cardBg  rounded-md"
+                        class="profile-details-wrap p-4 bg-[#EFEFEF] dark:bg-cardBg rounded-md"
                       >
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             Email
                           </h5>
-                          <p class="font-aileron m-0 text-xs text-black dark:text-white">
+                          <p
+                            class="font-aileron m-0 text-xs text-black dark:text-white"
+                          >
                             johndoe0007 @gmail.com
                           </p>
                         </div>
@@ -509,7 +538,9 @@
       </div>
       <div class="flex items-center justify-between w-full hidden md:flex">
         <div class="header-badges-wrap flex items-center gap-3">
-          <p class="font-aileron font-bold text-[#373636] dark:text-white text-sm">
+          <p
+            class="font-aileron font-bold text-[#373636] dark:text-white text-sm"
+          >
             Select Category :
           </p>
           <Popover class="relative" v-slot="{ open }">
@@ -650,104 +681,120 @@
   <!--==========================================================================
   MOBILE HAMBURGER NAVIGATION MENU START
   ============================================================================-->
-
   <div
     v-if="isMobile()"
     :class="[
       isNavActive
-        ? 'border-b border-[#DEDEDE] bg-white fixed h-[100%] w-[70%] left-[0%] top-0 z-[999999] transition-[all] duration-700 shadow-md'
-        : 'border-b border-[#DEDEDE] bg-white fixed h-[100%] w-[70%] -left-[100%] top-0 z-[999999] transition-[all] duration-700 shadow-md',
+        ? 'border-b border-[#DEDEDE] bg-transparent fixed h-[100%] w-[100%] left-[0%] top-0 z-[999999] transition-[all] duration-700 shadow-md'
+        : 'border-b border-[#DEDEDE] bg-transparent fixed h-[100%] w-[100%] -left-[100%] top-0 z-[999999] transition-[all] duration-700 shadow-md',
     ]"
   >
-    <div class="flex items-center justify-between py-4 px-3">
-      <div class="container mx-auto">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center">
-            <a @click="isNavActive = !isNavActive" class="text-black">
+    <div
+      v-if="isMobile()"
+      class="border-b border-[#DEDEDE] bg-white absolute h-[100%] w-[70%]"
+    >
+      <div class="flex items-center justify-between py-4 px-3">
+        <div class="container mx-auto">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center">
+              <a @click="isNavActive = !isNavActive" class="text-black">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-6 w-6 rotate-45"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="flex">
+              <a
+                class="border border-gray-500 rounded-full py-[5px] px-6 font-aileron text-gray-700 font-bold"
+              >
+                Login
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-wrap flex-col py-10">
+            <a
+              href=""
+              class="font-bold text-[18px] text-black font-aileron pb-3"
+              >Collections</a
+            >
+            <a
+              href=""
+              class="font-bold text-[18px] text-black font-aileron pb-3"
+              >Projects</a
+            >
+            <a
+              href=""
+              class="font-bold text-[18px] text-black font-aileron pb-3"
+              >Categories</a
+            >
+            <a
+              href=""
+              class="font-bold text-[18px] text-black font-aileron pb-3"
+              >Projects</a
+            >
+          </div>
+          <div class="flex flex-wrap gap-3 py-6 absolute bottom-0">
+            <button
+              class="flex items-center justify-center gap-1 bg-[#6317A7] px-3 py-2 rounded-full text-white w-[200px]"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="h-6 w-6 rotate-45"
-                fill="none"
+                width="24"
+                height="24"
                 viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
+                style="fill: rgba(255, 255, 255, 1); transform: ; msfilter: "
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-                />
+                  d="M18.344 8.71c-.707 0-1.279.572-1.279 1.278v4.53a1.278 1.278 0 1 0 2.558 0v-4.53c0-.706-.572-1.278-1.279-1.278zm-12.688 0c-.707 0-1.279.572-1.279 1.278v4.53a1.278 1.278 0 1 0 2.558 0v-4.53A1.277 1.277 0 0 0 5.656 8.71zm8.889-3.809.768-1.388a.343.343 0 0 0-.133-.47.344.344 0 0 0-.471.135l-.789 1.42c-.588-.235-1.236-.368-1.92-.368s-1.332.132-1.92.367l-.789-1.418a.344.344 0 0 0-.471-.135.345.345 0 0 0-.133.47l.768 1.388C8.072 5.69 7.148 7.099 7.148 8.71c0 .011 0 .021.002.034-.002.006-.002.013-.002.019v.001h9.703V8.71c.001-1.611-.923-3.019-2.306-3.809zM9.76 6.869a.346.346 0 1 1 .005-.693.346.346 0 0 1-.005.693zm4.48 0a.347.347 0 0 1 0-.692.346.346 0 0 1 0 .692zM7.148 16.12c0 .646.525 1.171 1.174 1.171h.586v2.401a1.279 1.279 0 0 0 2.558 0v-2.401h1.066v2.401c0 .707.572 1.278 1.277 1.278.709 0 1.281-.571 1.281-1.278v-2.401h.586c.648 0 1.174-.524 1.174-1.171V9.028H7.148v7.092z"
+                ></path>
               </svg>
-            </a>
+              <div>
+                <p class="text-xs font-semiBold font-poppins text-white">
+                  Google Play
+                </p>
+              </div>
+            </button>
+            <button
+              class="flex items-center justify-center gap-1 bg-[#ED4E94] px-3 py-2 rounded-full text-white w-[200px]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                style="fill: rgba(255, 255, 255, 1); transform: ; msfilter: "
+              >
+                <path
+                  d="M19.665 16.811a10.316 10.316 0 0 1-1.021 1.837c-.537.767-.978 1.297-1.316 1.592-.525.482-1.089.73-1.692.744-.432 0-.954-.123-1.562-.373-.61-.249-1.17-.371-1.683-.371-.537 0-1.113.122-1.73.371-.616.25-1.114.381-1.495.393-.577.025-1.154-.229-1.729-.764-.367-.32-.826-.87-1.377-1.648-.59-.829-1.075-1.794-1.455-2.891-.407-1.187-.611-2.335-.611-3.447 0-1.273.275-2.372.826-3.292a4.857 4.857 0 0 1 1.73-1.751 4.65 4.65 0 0 1 2.34-.662c.46 0 1.063.142 1.81.422s1.227.422 1.436.422c.158 0 .689-.167 1.593-.498.853-.307 1.573-.434 2.163-.384 1.6.129 2.801.759 3.6 1.895-1.43.867-2.137 2.08-2.123 3.637.012 1.213.453 2.222 1.317 3.023a4.33 4.33 0 0 0 1.315.863c-.106.307-.218.6-.336.882zM15.998 2.38c0 .95-.348 1.838-1.039 2.659-.836.976-1.846 1.541-2.941 1.452a2.955 2.955 0 0 1-.021-.36c0-.913.396-1.889 1.103-2.688.352-.404.8-.741 1.343-1.009.542-.264 1.054-.41 1.536-.435.013.128.019.255.019.381z"
+                ></path>
+              </svg>
+              <div>
+                <p class="text-xs font-semiBold font-poppins text-white">
+                  App Store
+                </p>
+              </div>
+            </button>
           </div>
-          <div class="flex">
-            <a
-              class="border border-gray-500 rounded-full py-[5px] px-6 font-aileron text-gray-700 font-bold"
-            >
-              Login
-            </a>
-          </div>
-        </div>
-        <div class="flex flex-wrap flex-col py-10">
-          <a href="" class="font-bold text-[18px] text-black font-aileron pb-3"
-            >Collections</a
-          >
-          <a href="" class="font-bold text-[18px] text-black font-aileron pb-3"
-            >Projects</a
-          >
-          <a href="" class="font-bold text-[18px] text-black font-aileron pb-3"
-            >Categories</a
-          >
-          <a href="" class="font-bold text-[18px] text-black font-aileron pb-3"
-            >Projects</a
-          >
-        </div>
-        <div class="flex flex-wrap gap-3 py-6 absolute bottom-0">
-          <button
-            class="flex items-center justify-center gap-1 bg-[#6317A7] px-3 py-2 rounded-full text-white w-[200px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              style="fill: rgba(255, 255, 255, 1); transform: ; msfilter: "
-            >
-              <path
-                d="M18.344 8.71c-.707 0-1.279.572-1.279 1.278v4.53a1.278 1.278 0 1 0 2.558 0v-4.53c0-.706-.572-1.278-1.279-1.278zm-12.688 0c-.707 0-1.279.572-1.279 1.278v4.53a1.278 1.278 0 1 0 2.558 0v-4.53A1.277 1.277 0 0 0 5.656 8.71zm8.889-3.809.768-1.388a.343.343 0 0 0-.133-.47.344.344 0 0 0-.471.135l-.789 1.42c-.588-.235-1.236-.368-1.92-.368s-1.332.132-1.92.367l-.789-1.418a.344.344 0 0 0-.471-.135.345.345 0 0 0-.133.47l.768 1.388C8.072 5.69 7.148 7.099 7.148 8.71c0 .011 0 .021.002.034-.002.006-.002.013-.002.019v.001h9.703V8.71c.001-1.611-.923-3.019-2.306-3.809zM9.76 6.869a.346.346 0 1 1 .005-.693.346.346 0 0 1-.005.693zm4.48 0a.347.347 0 0 1 0-.692.346.346 0 0 1 0 .692zM7.148 16.12c0 .646.525 1.171 1.174 1.171h.586v2.401a1.279 1.279 0 0 0 2.558 0v-2.401h1.066v2.401c0 .707.572 1.278 1.277 1.278.709 0 1.281-.571 1.281-1.278v-2.401h.586c.648 0 1.174-.524 1.174-1.171V9.028H7.148v7.092z"
-              ></path>
-            </svg>
-            <div>
-              <p class="text-xs font-semiBold font-poppins text-white">
-                Google Play
-              </p>
-            </div>
-          </button>
-          <button
-            class="flex items-center justify-center gap-1 bg-[#ED4E94] px-3 py-2 rounded-full text-white w-[200px]"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              style="fill: rgba(255, 255, 255, 1); transform: ; msfilter: "
-            >
-              <path
-                d="M19.665 16.811a10.316 10.316 0 0 1-1.021 1.837c-.537.767-.978 1.297-1.316 1.592-.525.482-1.089.73-1.692.744-.432 0-.954-.123-1.562-.373-.61-.249-1.17-.371-1.683-.371-.537 0-1.113.122-1.73.371-.616.25-1.114.381-1.495.393-.577.025-1.154-.229-1.729-.764-.367-.32-.826-.87-1.377-1.648-.59-.829-1.075-1.794-1.455-2.891-.407-1.187-.611-2.335-.611-3.447 0-1.273.275-2.372.826-3.292a4.857 4.857 0 0 1 1.73-1.751 4.65 4.65 0 0 1 2.34-.662c.46 0 1.063.142 1.81.422s1.227.422 1.436.422c.158 0 .689-.167 1.593-.498.853-.307 1.573-.434 2.163-.384 1.6.129 2.801.759 3.6 1.895-1.43.867-2.137 2.08-2.123 3.637.012 1.213.453 2.222 1.317 3.023a4.33 4.33 0 0 0 1.315.863c-.106.307-.218.6-.336.882zM15.998 2.38c0 .95-.348 1.838-1.039 2.659-.836.976-1.846 1.541-2.941 1.452a2.955 2.955 0 0 1-.021-.36c0-.913.396-1.889 1.103-2.688.352-.404.8-.741 1.343-1.009.542-.264 1.054-.41 1.536-.435.013.128.019.255.019.381z"
-              ></path>
-            </svg>
-            <div>
-              <p class="text-xs font-semiBold font-poppins text-white">
-                App Store
-              </p>
-            </div>
-          </button>
         </div>
       </div>
     </div>
+    <div
+      @click="isNavActive = !isNavActive"
+      v-if="isMobile()"
+      class="border-b border-[#DEDEDE] absolute bg-black opacity-20 h-[100%] w-[30%] left-[70%]"
+    ></div>
   </div>
-
   <!--======================================================================
   MOBILE HAMBURGER NAVIGATION MENU END
   =======================================================================-->
@@ -811,7 +858,7 @@ export default defineComponent({
       types,
       isNavActive: false,
       showControls: false,
-      localTheme:'light'
+      localTheme: "light",
     };
   },
   methods: {
@@ -843,10 +890,10 @@ export default defineComponent({
     },
     changeTheme() {
       if (this.localTheme === "light") {
-        this.localTheme = "dark"
+        this.localTheme = "dark";
         document.documentElement.classList.add("dark");
       } else {
-        this.localTheme = "light"
+        this.localTheme = "light";
         document.documentElement.classList.remove("dark");
       }
       this.toggleTheme();
