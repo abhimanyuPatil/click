@@ -630,17 +630,17 @@
   MOBILE HEADER START
   ==============================================================================-->
 
-  <div v-if="isMobile()" class="border-[#DEDEDE] bg-white pt-2 pb-4">
+  <div
+    v-if="isMobile()"
+    class="border-[#DEDEDE] bg-white dark:bg-darkBg pt-2 pb-4"
+  >
     <div class="container md:container md:mx-auto flex flex-col mx-auto">
-      <div
-        class="flex flex-wrap items-center justify-between border-gray-200 border-b-[1px]"
-      >
+      <div class="flex flex-wrap items-center justify-between">
         <div class="flex items-center gap-3">
-          <a class="text-black" @click="isNavActive = !isNavActive">
+          <a @click="isNavActive = !isNavActive">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-[30px] w-[30px]"
-              fill="none"
+              class="h-[30px] w-[30px] fill-black dark:fill-darkWhite"
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
@@ -654,6 +654,15 @@
           </a>
           <a @click="() => router.push('/home')">
             <img
+              v-if="localTheme === 'dark'"
+              src="../../../resources/logo/Cllct-Logo-White.svg"
+              alt=""
+              width="100"
+              height="48"
+              class="cursor-pointer"
+            />
+            <img
+              v-if="localTheme === 'light'"
               src="../../../resources/logo-icon.svg"
               alt=""
               width="100"
