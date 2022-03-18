@@ -38,15 +38,15 @@ module.exports = {
         orange: "#EA5E5D",
         pink: "#ED4E94",
         grey: "#ECEFF4",
-        darkBg:"#02040A",
-        cardBg:"#0E1117",
-        dropdownBg:"#30363C"
+        darkBg: "#02040A",
+        cardBg: "#0E1117",
+        dropdownBg: "#30363C"
       },
       borderColor: {
         primary: "#6317A7",
         secondary: "#6317A7",
         grey: "#707070",
-        darkBorder:"#30363d"
+        darkBorder: "#30363d"
       },
       textColor: {
         primary: "#6317A7",
@@ -54,8 +54,13 @@ module.exports = {
         light: "#B163E2",
         orange: "#EA5E5D",
         grey: '#878787',
-        darkMuted:"#8b949e",
-        darkWhite:"#CBD5E0"
+        darkMuted: "#8b949e",
+        darkWhite: "#CBD5E0"
+      },
+      fill: {
+        lightGrey: "#5e5c5c",
+        darkMuted: "#8b949e",
+        darkWhite: "#CBD5E0"
       },
       colors: {
         gray: {

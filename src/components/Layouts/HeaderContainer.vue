@@ -58,11 +58,20 @@
             @click="changeTheme()"
             class="relative flex items-center justify-center bg-[#E1E1E1] dark:bg-dropdownBg hover:bg-[#6317A7] dark:hover:bg-[#6317A7] cursor-pointer w-10 h-10 rounded-full group transition ease-out duration-200"
           >
-            <img
-              src="../../../resources/brush-icon.svg"
-              alt=""
-              class="w-[40%] group-hover:brightness-0 group-hover:invert"
-            />
+            <svg
+              class="w-[40%] group-hover:brightness-0 group-hover:invert fill-lightGrey dark:fill-darkWhite"
+              xmlns="http://www.w3.org/2000/svg"
+              width="17"
+              height="24"
+              viewBox="0 0 17 24"
+            >
+              <path
+                id="Union_19"
+                data-name="Union 19"
+                d="M-2591.381,2071a2,2,0,0,1-2-2v-5h13.762v5a2,2,0,0,1-2,2Zm-1.619-9a2,2,0,0,1-2-2v-2a2,2,0,0,1,2-2h5.286v-7.381A1.619,1.619,0,0,1-2586.1,2047a1.62,1.62,0,0,1,1.619,1.619V2056H-2580a2,2,0,0,1,2,2v2a2,2,0,0,1-2,2Z"
+                transform="translate(2595 -2047)"
+              />
+            </svg>
             <div
               v-if="showControls"
               class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
@@ -73,11 +82,18 @@
           <div
             class="relative font-aileron flex items-center justify-center rounded-full bg-[#E1E1E1] dark:bg-dropdownBg hover:bg-[#6317A7] dark:hover:bg-[#6317A7] cursor-pointer fill-white w-10 h-10 group transition ease-out duration-200"
           >
-            <img
-              src="../../../resources/string-icon.svg"
-              alt=""
-              class="w-[40%] group-hover:brightness-0 group-hover:invert"
-            />
+            <svg
+              class="w-[40%] group-hover:brightness-0 group-hover:invert fill-lightGrey dark:fill-darkWhite"
+              xmlns="http://www.w3.org/2000/svg"
+              width="682.667"
+              height="682.667"
+              viewBox="0 0 512 512"
+              xmlns:v="https://vecta.io/nano"
+            >
+              <path
+                d="M240.5.6c-10.6 1.6-24.4 5.1-33 8.5-13.2 5.1-23.3 11.2-36.3 21.7L55.3 127c-3 3.6-7.4 10.5-9.9 15.5-15.7 31.8-11.3 68.9 11.4 96.2 3.1 3.7 83.3 69.7 116.9 96.2 16.6 13.1 34.7 21.7 55.3 26.3 15.1 3.3 39 3.3 54 0 17.1-3.9 33.4-10.7 46.6-19.8 12.7-8.7 30.1-24.2 32.4-28.8 6.3-13.2-3.2-28.5-17.8-28.6-6.4 0-10.5 2.2-21.1 11.3-13 11.3-18.4 15-28.4 19.7-12.7 6-23.7 8.3-38.7 8.3-9.5 0-14.7-.5-21.4-2.2-9.9-2.4-24.6-9-31.7-14.2-2.5-1.9-29.4-23.6-59.8-48.3-59-47.9-59.8-48.7-64.2-61.1-5.7-16.2-1.4-36.8 9.9-47.8 7.9-7.6 114.1-93 120.3-96.8C221.8 45.3 241 40 256 40c14.7 0 32.3 4.7 45.5 12.1 4 2.3 31.9 24.2 64.5 50.7 60.8 49.4 62.4 50.9 67.2 63.1 2.3 5.9 2.2 4.4 1.5 34.3-.2 7.1 0 7.9 2.9 11.5 7.8 9.8 20.9 10.9 29.7 2.5 4.1-3.8 5.3-6.7 7.3-16.2 1.3-6.4 1.5-11.2 1.1-20-1.1-22.5-9.3-41.5-24.5-56.8C442.1 112 332.9 24 323.6 18.4 312.8 11.9 299.3 6.5 286 3.3 277.7 1.4 272.1.8 259.5.5c-8.8-.2-17.3-.1-19 .1zm-5 149c-17.2 2.7-35.2 9.2-48.7 17.7-12.6 7.9-31 23.6-33.6 28.7-4.9 9.5-.9 21.6 8.9 26.7 8.8 4.7 15.8 2.6 29.9-9.1 11.9-9.8 21.8-15.9 31.9-19.6 32.1-11.7 65.5-5.6 92.8 16.9l55.9 45.4c27.6 22.3 51.5 42.3 53.1 44.4 9.9 12.5 12.7 29.7 7.4 44.8-4.4 12.5-5.1 13.2-66.1 62.7l-63.1 50c-8.1 4.9-19.2 9.4-28.1 11.4-11.1 2.5-30 2.3-41.2-.4-10-2.5-23.5-8.5-30.7-13.7-2.7-1.9-29.8-23.7-60.3-48.5-47.6-38.6-56-45.8-59.5-51.1-6.3-9.5-7.5-14.1-7.5-30.6-.1-14-.1-14.1-3.1-18.5-5.6-8-16.2-11-25-6.9C40 303.8 37 310 36.3 325c-1.2 24.5 6.6 46.3 22.5 63.2 6.8 7.2 111.3 92.7 123.8 101.4 31.2 21.5 73.1 27.9 110.9 16.9 11.5-3.3 25.6-10 35.9-17 4.5-3 33.9-26.5 65.5-52.2 62.4-50.8 64.1-52.5 72.1-68.9 6.5-13.2 8.3-21.5 8.3-38.4 0-16.5-1.6-24.3-7.8-37.6-5.5-12-13-21.2-26.4-32.2-44.4-36.7-110.4-89.5-116.9-93.4-25.2-15.5-58.4-21.9-88.7-17.2z"
+              />
+            </svg>
             <div
               v-if="showControls"
               class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
@@ -95,11 +111,20 @@
               <div
                 class="relative flex items-center justify-center rounded-full bg-[#E1E1E1] dark:bg-dropdownBg hover:bg-[#6317A7] dark:hover:bg-[#6317A7] cursor-pointer fill-white w-10 h-10 group transition ease-out duration-200"
               >
-                <img
-                  class="w-[40%] group-hover:brightness-0 group-hover:invert"
-                  src="../../../resources/box-icon.svg"
-                  alt=""
-                />
+                <svg
+                  class="w-[40%] group-hover:brightness-0 group-hover:invert fill-lightGrey dark:fill-darkWhite"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="19.2"
+                  height="19.2"
+                  viewBox="0 0 19.2 19.2"
+                >
+                  <path
+                    id="grid"
+                    d="M12.8,6.4H8A1.6,1.6,0,0,0,6.4,8v4.8A1.6,1.6,0,0,0,8,14.4h4.8a1.6,1.6,0,0,0,1.6-1.6V8A1.6,1.6,0,0,0,12.8,6.4ZM24,6.4H19.2A1.6,1.6,0,0,0,17.6,8v4.8a1.6,1.6,0,0,0,1.6,1.6H24a1.6,1.6,0,0,0,1.6-1.6V8A1.6,1.6,0,0,0,24,6.4ZM12.8,17.6H8a1.6,1.6,0,0,0-1.6,1.6V24A1.6,1.6,0,0,0,8,25.6h4.8A1.6,1.6,0,0,0,14.4,24V19.2A1.6,1.6,0,0,0,12.8,17.6Zm11.2,0H19.2a1.6,1.6,0,0,0-1.6,1.6V24a1.6,1.6,0,0,0,1.6,1.6H24A1.6,1.6,0,0,0,25.6,24V19.2A1.6,1.6,0,0,0,24,17.6Z"
+                    transform="translate(-6.4 -6.4)"
+                  />
+                </svg>
+
                 <div
                   v-if="showControls"
                   class="flex justify-center items-center absolute font-aileron w-4 h-4 text-center text-white bg-gray-700 bg-opacity-75 rounded-full -right-3 -top-0 ring-white ring-1 text-xs"
