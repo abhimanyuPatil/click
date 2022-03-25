@@ -62,6 +62,11 @@ module.exports = {
         darkMuted: "#8b949e",
         darkWhite: "#CBD5E0"
       },
+      stroke: {
+        lightGrey: "#5e5c5c",
+        darkMuted: "#8b949e",
+        darkWhite: "#CBD5E0"
+      },
       colors: {
         gray: {
           100: "#f7fafc",
