@@ -1,12 +1,12 @@
 <template>
-  <div id="regular-grid" class="bg-white">
+  <div id="regular-grid" class="bg-white dark:bg-darkBg">
     <div
-      class="masonry-1-col md:masonry-2-col lg:masonry-5-col xl:masonry-5-col 2xl:masonry-6-col bg-white container mx-auto py-[3rem] pb-[4rem]"
+      class="masonry-1-col md:masonry-2-col lg:masonry-5-col xl:masonry-5-col 2xl:masonry-6-col bg-white dark:bg-darkBg container mx-auto py-[3rem] pb-[4rem]"
     >
       <div
         v-for="item in cards"
         :key="item"
-        class="break-inside shadow-md rounded-b mb-5 duration-300 ease-in-out cursor-pointer"
+        class="break-inside shadow-md mb-5 duration-300 ease-in-out cursor-pointer dark:bg-cardBg"
       >
         <div class="portfolio-image relative">
           <img
@@ -40,18 +40,18 @@
               :style="getColor()"
             ></div>
             <h4
-              class="text-[10px] md:text-xs font-semibold font-aileron text-gray-600 m-0"
+              class="text-[10px] md:text-xs font-semibold font-aileron text-gray-600 dark:text-darkMuted m-0"
             >
               {{ item.from }}
             </h4>
           </div>
           <!-- title -->
           <h3
-            class="text-[14px] md:text-[14px] font-aileron text-[#181819] font-semibold mb-0 mt-3 px-3"
+            class="text-[14px] md:text-[14px] font-aileron text-[#181819] dark:text-white font-semibold mb-0 mt-3 px-3"
           >
             {{ item.title }}
           </h3>
-          <p class="text-grey font-aileron px-3 text-[12px] my-1">
+          <p class="text-grey dark:text-darkWhite font-aileron px-3 text-[12px] my-1">
             {{ item.description }}
           </p>
           <!-- tags -->
@@ -59,7 +59,7 @@
             <p
               v-for="tag in item.tags"
               :key="tag"
-              class="font-aileron text-[#7E7E7E] text-[10px] md:text-xs flex mt-1"
+              class="font-aileron text-[#7E7E7E] dark:text-darkMuted text-[10px] md:text-xs flex mt-1"
             >
               #{{ tag }} &nbsp;
             </p>
@@ -99,11 +99,11 @@
               />
               <div class="px-2">
                 <h4
-                  class="text-[#504E4E] font-aileron font-semibold text-sm mb-0 mt-0"
+                  class="text-[#504E4E] dark:text-white font-aileron font-semibold text-sm mb-0 mt-0"
                 >
                   {{ item.owner }}
                 </h4>
-                <p class="capitalize text-[#7E7E7E] font-aileron text-xs">
+                <p class="capitalize text-[#7E7E7E] dark:text-darkMuted font-aileron text-xs">
                   {{ item.category }}
                 </p>
               </div>

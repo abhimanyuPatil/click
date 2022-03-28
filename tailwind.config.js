@@ -3,6 +3,7 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   mode: "jit",
+  darkMode: 'class',
   purge: ["./src/**/*.vue"],
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
@@ -36,19 +37,35 @@ module.exports = {
         light: "#B163E2",
         orange: "#EA5E5D",
         pink: "#ED4E94",
-        grey: "#ECEFF4"
+        grey: "#ECEFF4",
+        darkBg: "#02040A",
+        cardBg: "#0E1117",
+        dropdownBg: "#30363C"
       },
       borderColor: {
         primary: "#6317A7",
         secondary: "#6317A7",
-        grey: "#707070"
+        grey: "#707070",
+        darkBorder: "#30363d"
       },
       textColor: {
         primary: "#6317A7",
         black: "#2A2A2A",
         light: "#B163E2",
         orange: "#EA5E5D",
-        grey: '#878787'
+        grey: '#878787',
+        darkMuted: "#8b949e",
+        darkWhite: "#CBD5E0"
+      },
+      fill: {
+        lightGrey: "#5e5c5c",
+        darkMuted: "#8b949e",
+        darkWhite: "#CBD5E0"
+      },
+      stroke: {
+        lightGrey: "#5e5c5c",
+        darkMuted: "#8b949e",
+        darkWhite: "#CBD5E0"
       },
       colors: {
         gray: {

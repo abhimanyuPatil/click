@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex justify-between items-center flex-wrap bg-white fixed bottom-0 w-full z-[999] px-3 py-3 gap-3 md:hidden border-t-[1px] border-gray-400"
+    class="flex justify-between items-center flex-wrap bg-white dark:bg-cardBg fixed bottom-0 w-full z-[999] px-3 py-3 gap-3 md:hidden border-t-[1px] border-gray-400"
   >
     <div class="flex flex-col items-center justify-center text-center">
       <svg
@@ -14,7 +14,7 @@
           d="m21.743 12.331-9-10c-.379-.422-1.107-.422-1.486 0l-9 10a.998.998 0 0 0-.17 1.076c.16.361.518.593.913.593h2v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h2a.998.998 0 0 0 .743-1.669z"
         ></path>
       </svg>
-      <p class="text-gray-900 font-aileron text-sm font-bold">Home</p>
+      <p class="text-gray-900 dark:text-darkWhite font-aileron text-sm font-bold">Home</p>
     </div>
     <div class="flex flex-col items-center justify-center text-center">
       <svg
@@ -30,7 +30,7 @@
           clip-rule="evenodd"
         />
       </svg>
-      <p class="text-gray-900 font-aileron text-sm font-bold">Collections</p>
+      <p class="text-gray-900 dark:text-darkWhite font-aileron text-sm font-bold">Collections</p>
     </div>
     <div class="flex flex-col items-center justify-center text-center">
       <svg
@@ -43,7 +43,7 @@
           d="M4 11h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zM4 21h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1zm10 0h6a1 1 0 0 0 1-1v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1z"
         ></path>
       </svg>
-      <p class="text-gray-900 font-aileron text-sm font-bold">Applications</p>
+      <p class="text-gray-900 dark:text-darkWhite font-aileron text-sm font-bold">Applications</p>
     </div>
     <div class="flex flex-col items-center justify-center text-center">
       <svg
@@ -56,7 +56,7 @@
           d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM14 11a1 1 0 011 1v1h1a1 1 0 110 2h-1v1a1 1 0 11-2 0v-1h-1a1 1 0 110-2h1v-1a1 1 0 011-1z"
         />
       </svg>
-      <p class="text-gray-900 font-aileron text-sm font-bold">Projects</p>
+      <p class="text-gray-900 dark:text-darkWhite font-aileron text-sm font-bold">Projects</p>
     </div>
     <div class="flex flex-col items-center justify-center text-center">
       <svg
@@ -70,12 +70,12 @@
           clip-rule="evenodd"
         />
       </svg>
-      <p class="text-gray-900 font-aileron text-sm font-bold">Profile</p>
+      <p class="text-gray-900 dark:text-darkWhite font-aileron text-sm font-bold">Profile</p>
     </div>
   </div>
 
   <footer
-    class="bg-white border-t-[1px] border-[#707070] py-1 lg:fixed lg:bottom-0 w-full"
+    class="bg-white dark:bg-darkBg border-t-[1px] border-[#707070] dark:border-darkBorder py-1 hidden lg:fixed lg:bottom-0 w-full"
   >
     <div class="container sm:container mx-auto">
       <div
@@ -84,11 +84,18 @@
         <div class="grid-1">
           <div class="flex items-center gap-6">
             <img
+            v-if="theme==='light'"
               class="h-10 w-15 object-cover"
               src="../../../resources/Cllct-black.png"
               alt="black-logo"
             />
-            <p class="text-black text-xs font-poppins">
+             <img
+            v-if="theme==='dark'"
+              class="h-10 w-15 object-cover"
+              src="../../../resources/logo/Cllct-Logo-White.svg"
+              alt="black-logo"
+            />
+            <p class="text-black dark:text-white text-xs font-poppins">
               © {{ new Date().getFullYear() }} Cllct. All rights reserved.
             </p>
           </div>
@@ -97,22 +104,22 @@
           <div class="flex items-center">
             <ul class="md:flex block items-center justify-between gap-6">
               <li>
-                <a class="text-black text-xs font-poppins cursor-pointer"
+                <a class="text-black dark:text-white text-xs font-poppins cursor-pointer"
                   >About Us</a
                 >
               </li>
               <li>
-                <a class="text-black text-xs font-poppins cursor-pointer"
+                <a class="text-black dark:text-white text-xs font-poppins cursor-pointer"
                   >Help</a
                 >
               </li>
               <li>
-                <a class="text-black text-xs font-poppins cursor-pointer"
+                <a class="text-black dark:text-white text-xs font-poppins cursor-pointer"
                   >Terms of Service</a
                 >
               </li>
               <li>
-                <a class="text-black text-xs font-poppins cursor-pointer"
+                <a class="text-black dark:text-white text-xs font-poppins cursor-pointer"
                   >Privacy Policy</a
                 >
               </li>
@@ -252,11 +259,14 @@
   </footer>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
+import {  mapState } from "vuex";
 export default defineComponent({
   name: "FooterComponent",
-  props: {},
   components: {},
+  computed: mapState({
+    theme: (state:any) => state.layout.theme,
+  }),
 });
 </script>

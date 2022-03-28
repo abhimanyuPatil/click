@@ -4,15 +4,15 @@
       <PopoverButton
         :class="[
           open ? 'text-gray-900' : 'text-gray-500',
-          'group bg-white font-medium hover:text-gray-900 focus:outline-none text-right',
+          'group bg-white dark:bg-transparent font-medium hover:text-gray-900 focus:outline-none text-right',
         ]"
       >
         <div
-          class="flex justify-end pr-1 font-aileron text-xs text-grey font-light cursor-pointer text-right"
+          class="flex justify-end pr-1 font-aileron text-xs text-grey dark:text-darkMuted font-light cursor-pointer text-right"
           >{{ label }}</div
         >
         <p
-          class="cursor-pointer items-center text-grey font-aileron flex text-[14px] font-bold mt-2"
+          class="cursor-pointer items-center text-grey dark:text-white font-aileron flex text-[14px] font-bold mt-2"
         >
           {{ selected.label }}
           <svg
@@ -41,13 +41,13 @@
         leave-to-class="opacity-0 translate-y-1"
       >
         <PopoverPanel
-          class="absolute bg-white z-10 left-1/2 transform -translate-x-1/2 mt-3 w-28 text-center flex justify-center flex-col px-3"
+          class="absolute bg-white dark:bg-dropdownBg z-10 left-1/2 transform -translate-x-1/2 mt-3 w-28 text-center flex justify-center flex-col px-3"
         >
           <PopoverButton
             @click="$emit('onChange', item)"
             v-for="item in options"
             :key="item"
-            class="cursor-pointer text-black font-aileron my-2 text-sm"
+            class="cursor-pointer text-black dark:text-white font-aileron my-2 text-sm"
           >
             <p>
               {{ item.label }}

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] border md:flex"
+    class="flex items-center justify-between w-full h-11 rounded-3xl border-[#9B9B9B] dark:border-darkBorder border md:flex"
   >
     <div class="flex basis-3/5 items-center w-full gap-3 h-11">
       <div class="flex items-center ml-4">
@@ -30,10 +30,10 @@
         >
           <div
             v-if="isOpen"
-            class="absolute w-full bg-white rounded z-10 px-3 shadow-md mt-2"
+            class="absolute w-full bg-white dark:bg-dropdownBg rounded z-10 px-3 shadow-md mt-2"
           >
             <p
-              class="font-poppins text-black my-2 cursor-pointer"
+              class="font-poppins text-black dark:text-darkWhite my-2 cursor-pointer"
               v-for="person in filteredPeople"
               :key="person.id"
             >
@@ -43,17 +43,30 @@
         </TransitionRoot>
       </div>
     </div>
-    <div class="flex basis-2/5 md:hidden h-full border-l-2">
+    <div
+      class="flex basis-2/5 md:hidden h-full border-l-2 dark:border-darkBorder"
+    >
       <Listbox v-model="selectedType">
         <div class="relative mt-1 w-full">
           <ListboxButton
             class="relative font-aileron w-full py-2 pl-3 pr-10 text-left bg-transparent rounded-lg cursor-default focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 text-sm"
           >
-            <span class="block truncate text-black">{{ selectedType }}</span>
+            <span class="block truncate text-black dark:text-white">{{
+              selectedType
+            }}</span>
             <span
               class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                class="fill-black dark:fill-white"
+              >
+                <path
+                  d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+                ></path>
+              </svg>
             </span>
           </ListboxButton>
 
@@ -66,7 +79,7 @@
             leave-to-class="transform scale-95 opacity-0"
           >
             <ListboxOptions
-              class="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white rounded-md ring-1 ring-black ring-opacity-5 focus:outline-none"
+              class="z-10 absolute w-full py-1 mt-1 overflow-auto text-sm bg-white dark:bg-dropdownBg rounded-md ring-1 ring-black ring-opacity-5 focus:outline-none"
             >
               <ListboxOption
                 v-slot="{ active, selected }"
@@ -77,7 +90,9 @@
               >
                 <li
                   :class="[
-                    active ? 'text-amber-900 bg-primary' : 'text-gray-900',
+                    active
+                      ? 'text-amber-900 bg-primary'
+                      : 'text-gray-900 dark:text-darkWhite',
                     'cursor-default select-none relative py-2 pl-10 pr-4',
                   ]"
                 >
@@ -92,7 +107,7 @@
                     v-if="selected"
                     class="absolute inset-y-0 left-0 flex items-center pl-3 text-white"
                   >
-                    <CheckIcon class="w-5 h-5" aria-hidden="true" />
+                    <CheckIcon class="w-5 h-5 text-white" aria-hidden="true" />
                   </span>
                 </li>
               </ListboxOption>
@@ -116,6 +131,8 @@ import {
   ListboxOptions,
   ListboxOption,
 } from "@headlessui/vue";
+import { CheckIcon } from "@heroicons/vue/solid";
+
 import { useRouter } from "vue-router";
 const types = ["All", "Projects", "Collections"];
 const people = [
@@ -138,6 +155,7 @@ export default defineComponent({
     ListboxButton,
     ListboxOptions,
     ListboxOption,
+    CheckIcon,
   },
   data() {
     const selectedType = ref(types[0]);

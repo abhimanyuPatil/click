@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-white" id="square-grid">
-    <div class="container mx-auto bg-white pb-[4rem] pt-2">
+  <div class="bg-white dark:bg-darkBg" id="square-grid">
+    <div class="container mx-auto bg-white dark:bg-darkBg pb-[4rem] pt-2">
       <div
         class="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:md:grid-cols-2 gap-4"
       >
         <div
-          class="mb-0 pb-[2%] portfolio-box rounded hover:scale-105 duration-300 ease-in-out cursor-pointer sm:mb-5 sm:pt-2 sm:pb-0"
+          class="dark:bg-cardBg mb-0 pb-[2%] portfolio-box rounded hover:scale-105 duration-300 ease-in-out cursor-pointer sm:mb-5 sm:pt-2 sm:pb-0"
           v-for="item in cards"
           :key="item"
         >
@@ -21,7 +21,7 @@
                 ></span>
 
                 <p
-                  class="font-aileron text-gray-600 text-sm font-semibold truncate font-bold"
+                  class="font-aileron text-gray-600 dark:text-darkWhite text-sm font-semibold truncate font-bold"
                 >
                   {{ item.from }}
                 </p>
