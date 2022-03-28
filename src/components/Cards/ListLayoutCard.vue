@@ -137,11 +137,17 @@
             id="list-view-act-views"
             class="flex justify-center items-center w-2/12 h-6 bg-[#ECEFF4] dark:bg-dropdownBg shadow-md rounded-2xl mb-2 px-1 sm:w-fit lg:basis-2/12 cursor-pointer lg:m-0 lg:h-7"
           >
-            <img
-              class="h-3 w-3 object-fit"
-              src="../../../public/assets/icon/eye-icon.svg"
-              alt="views-icon"
-            />
+            <svg
+              class="fill-grey dark:fill-darkWhite h-3 w-3 object-fit"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 23.214 13"
+            >
+              <path
+                id="eye"
+                d="M11.607,7.04C3.991,7.04,0,12.648,0,13.54s3.991,6.5,11.607,6.5,11.607-5.611,11.607-6.5-3.993-6.5-11.607-6.5Zm0,11.5a5.081,5.081,0,0,1-5.159-5,5.083,5.083,0,0,1,5.159-5,5.081,5.081,0,0,1,5.158,5,5.08,5.08,0,0,1-5.158,5Zm0-5c-.472-.519.77-2.5,0-2.5a2.5,2.5,0,1,0,2.58,2.5c0-.635-2.179.44-2.58,0Z"
+                transform="translate(0 -7.04)"
+              />
+            </svg>
             <p class="text-xs text-[#5E5C5C] dark:text-darkWhite font-aileron">
               &nbsp; {{ formatViews(item.views) }}
             </p>

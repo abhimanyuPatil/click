@@ -75,7 +75,7 @@
   </div>
 
   <footer
-    class="bg-white dark:bg-darkBg border-t-[1px] border-[#707070] dark:border-darkBorder py-1 lg:fixed lg:bottom-0 w-full"
+    class="bg-white dark:bg-darkBg border-t-[1px] border-[#707070] dark:border-darkBorder py-1 hidden lg:fixed lg:bottom-0 w-full"
   >
     <div class="container sm:container mx-auto">
       <div
