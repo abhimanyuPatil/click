@@ -1,5 +1,5 @@
-export const baseURL = `http://3.16.105.232:3001/api`;
-export const toastConfig = {
+export const baseURL:string = `http://3.16.105.232:3001/api`;
+export const toastConfig:Object = {
     position: "top-right",
     timeout: 5000,
     closeOnClick: true,

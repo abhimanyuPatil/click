@@ -113,14 +113,13 @@
   </div>
 </template>
 <script>
+import toastConfig, { baseURL } from  "../../constants";
 import useVuelidate from "@vuelidate/core";
 import { email, minLength, required } from "@vuelidate/validators";
-import { defineComponent } from "vue";
-import AppInput from "../UI/Input.vue";
-import { useToast } from "vue-toastification";
-import toastConfig, { baseURL } from "@/constants/index";
-import HTTP from "@/axiosService/axiosService";
 import axios from "axios";
+import { defineComponent } from "vue";
+import { useToast } from "vue-toastification";
+import AppInput from "../UI/Input.vue";
 export default defineComponent({
   name: "RegisterComponent",
   components: {
@@ -155,7 +154,6 @@ export default defineComponent({
         this.toast.error("Please accept the terms and conditions", toastConfig);
       } else {
         if (!this.v$.$error) {
-          this.toast.info("I'm an info toast!");
           const payload = {
             email: this.email,
             userName: this.username,
@@ -164,7 +162,11 @@ export default defineComponent({
           };
           console.log("payload", payload);
           axios
-            .post(`${baseURL}/auth/registration`, payload)
+            .post(`${baseURL}/auth/registration`, payload, {
+              headers: {
+                "Access-Control-Allow-Origin": "*",
+              },
+            })
             .then((res) => {
               console.log("res", res.data);
             })

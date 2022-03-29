@@ -105,7 +105,7 @@ import useVuelidate from "@vuelidate/core";
 import { email, minLength, required } from "@vuelidate/validators";
 import AppInput from "@/components/UI/Input.vue";
 import { useToast } from "vue-toastification";
-import { baseURL, toastConfig } from "@/constants/index";
+import { baseURL } from "../../constants";
 import axios from "axios";
 
 export default defineComponent({
