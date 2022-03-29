@@ -13,25 +13,11 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col justify-center px-8 lg:px-0">
+    <div class="flex flex-col justify-start px-8 lg:px-0 pt-6">
       <AppInput
         @onChange="(value) => (this.name = value)"
         name="name"
         v-model="name"
-        :placeholder="'Enter Name'"
-        label="Name"
-      />
-      <AppInput
-        @onChange="(value) => (this.username = value)"
-        name="username"
-        v-model="username"
-        :placeholder="UserName"
-        label="User Name"
-      />
-      <AppInput
-        @onChange="(value) => (this.email = value)"
-        name="email"
-        v-model="email"
         :placeholder="Email"
         label="Email"
       />
@@ -47,19 +33,16 @@
       class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4"
     >
       <div class="py-2">
-        <div class="flex items-center mr-4 mb-2">
+        <div class="flex items-center mr-4 mb-2 cursor-pointer">
           <input
             type="checkbox"
             id="A3-yes"
             name="A3-confirmation"
             value="yes"
             class="opacity-0 absolute h-8 w-8"
-            required
-            :checked="this.tcChecked"
-            @input="this.tcChecked = !this.tcChecked"
           />
           <div
-            class="bg-white border-2 rounded-md border-blue-400 w-4 h-4 lg:w-6 lg:h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
+            class="cursor-pointer bg-white border-2 rounded-md border-blue-400 w-4 h-4 lg:w-6 lg:h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500"
           >
             <svg
               class="fill-current hidden w-3 h-3 text-blue-600 pointer-events-none"
@@ -82,47 +65,51 @@
           </div>
           <label
             for="A3-yes"
-            class="font-aileron select-none text-black text-xs lg:text-sm"
-            >Creating an account means you’re okay with our
-            <span class="font-aileron text-orange">Terms of Service</span>,
-            <span class="font-aileron text-orange">Privacy Policy</span>, and
-            our default Notification Settings.</label
+            class="font-aileron select-none text-black text-xs lg:text-sm cursor-pointer"
+            >Remember Me</label
           >
         </div>
       </div>
+      <button
+        class="lg:mx-0 font-aileron bg-orange text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
+      >
+        Forgot Password?
+      </button>
     </div>
     <div
       class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4 mt-5 lg:mt-0"
     >
       <button
-        @click="submit"
-        class="font-aileron flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
+        @click="login()"
+        class="flex font-aileron flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
       >
-        Register
+        Login
       </button>
       <div
-        @click="$emit('changeAuth')"
         class="font-aileron text-black flex flex-wrap justify-center text-xs mt-2 lg:mt-0"
       >
-        Already a member?
-        <span class="font-aileron text-orange hover:cursor-pointer"
-          >&nbsp; Login?</span
+        Don't have an account?
+        <span
+          @click="$emit('changeAuth')"
+          class="font-aileron text-orange hover:cursor-pointer"
         >
+          &nbsp; Cllct Account?
+        </span>
       </div>
     </div>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from "vue";
 import useVuelidate from "@vuelidate/core";
 import { email, minLength, required } from "@vuelidate/validators";
-import { defineComponent } from "vue";
-import AppInput from "../UI/Input.vue";
+import AppInput from "@/components/UI/Input.vue";
 import { useToast } from "vue-toastification";
-import toastConfig, { baseURL } from "@/constants/index";
-import HTTP from "@/axiosService/axiosService";
+import { baseURL, toastConfig } from "@/constants/index";
 import axios from "axios";
+
 export default defineComponent({
-  name: "RegisterComponent",
+  name: "LoginComponent",
   components: {
     AppInput,
   },
@@ -133,47 +120,33 @@ export default defineComponent({
   data() {
     return {
       v$: useVuelidate(),
-      name: "",
-      username: "",
       email: "",
       password: "",
-      tcChecked: false,
     };
   },
   validations() {
     return {
-      name: { required },
-      username: { required },
       email: { required, email },
       password: { required, minLength: minLength(8) },
     };
   },
   methods: {
-    async submit() {
+    async login() {
       const isFormCorrect = await this.v$.$validate();
-      if (!this.tcChecked) {
-        this.toast.error("Please accept the terms and conditions", toastConfig);
-      } else {
-        if (!this.v$.$error) {
-          this.toast.info("I'm an info toast!");
-          const payload = {
-            email: this.email,
-            userName: this.username,
-            name: this.name,
-            password: this.password,
-          };
-          console.log("payload", payload);
-          axios
-            .post(`${baseURL}/auth/registration`, payload)
-            .then((res) => {
-              console.log("res", res.data);
-            })
-            .catch((error) => {
-              console.log("error", error);
-            });
-        } else {
-          // alert("Form failed validation");
-        }
+      if (!this.v$.$error) {
+        const payload = {
+          email: this.email,
+          password: this.password,
+        };
+        console.log("payload", payload);
+        axios
+          .post(`${baseURL}/auth/login`, payload)
+          .then((res) => {
+            console.log("res", res.data);
+          })
+          .catch((error) => {
+            console.log("error", error);
+          });
       }
     },
   },
