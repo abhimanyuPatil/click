@@ -31,7 +31,9 @@ import { store } from "./store/index";
 import VueCustomTooltip, {
   TooltipOptions,
 } from "@adamdehaven/vue-custom-tooltip";
-
+import Toast from "vue-toastification";
+// Import the CSS or use your own!
+import "vue-toastification/dist/index.css";
 const opt: TooltipOptions = {
   name: "VueCustomTooltip",
   color: "#fff",
@@ -50,6 +52,11 @@ const app = createApp(App)
     color: "rgb(99, 23, 167)",
     failedColor: "red",
     height: "2px",
+  })
+  .use(Toast, {
+    transition: "Vue-Toastification__bounce",
+    maxToasts: 20,
+    newestOnTop: true,
   });
 
 router.isReady().then(() => {

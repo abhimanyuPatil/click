@@ -9,8 +9,9 @@
     </div>
     <input
       type="text"
-      class="font-aileron flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded-2xl lg:rounded-l-none px-3 relative focus:border-0 active:border-0 bg-[#ECECEC] invalid:border-pink-500 invalid:text-pink-600"
+      class="text-black font-aileron flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded-2xl lg:rounded-l-none px-3 relative focus:border-0 active:border-0 bg-[#ECECEC] invalid:border-pink-500 invalid:text-pink-600"
       :placeholder="label"
+      @input="event => $emit('onChange',event.target.value)">
     />
   </div>
 </template>
@@ -20,6 +21,7 @@ export default defineComponent({
   name: "AppInput",
   props: {
     label: String,
+    name:String
   },
 });
 </script>
