@@ -95,6 +95,15 @@
       class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4 mt-5 lg:mt-0"
     >
       <button
+        disabled
+        v-if="loading"
+        @click="submit"
+        class="font-aileron flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-2 px-2 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition duration-300 ease-in-out text-xs disabled:cursor-not-allowed"
+      >
+        <img class="h-6 w-6" src="../../../public/assets/icon/loader.svg" />
+      </button>
+      <button
+        v-if="!loading"
         @click="submit"
         class="font-aileron flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
       >
@@ -113,7 +122,7 @@
   </div>
 </template>
 <script>
-import toastConfig, { baseURL } from  "../../constants";
+import toastConfig, { baseURL } from "../../constants";
 import useVuelidate from "@vuelidate/core";
 import { email, minLength, required } from "@vuelidate/validators";
 import axios from "axios";
@@ -137,12 +146,13 @@ export default defineComponent({
       email: "",
       password: "",
       tcChecked: false,
+      loading: false,
     };
   },
   validations() {
     return {
-      name: { required },
-      username: { required },
+      name: { required, minLength: minLength(5) },
+      username: { required, minLength: minLength(5) },
       email: { required, email },
       password: { required, minLength: minLength(8) },
     };
@@ -154,6 +164,7 @@ export default defineComponent({
         this.toast.error("Please accept the terms and conditions", toastConfig);
       } else {
         if (!this.v$.$error) {
+          this.loading = true;
           const payload = {
             email: this.email,
             userName: this.username,
@@ -169,12 +180,17 @@ export default defineComponent({
             })
             .then((res) => {
               console.log("res", res.data);
+              this.toast.success(
+                "Registration Done! Please login to continue."
+              );
+              this.loading = false;
+              this.$emit("changeAuth");
             })
             .catch((error) => {
-              console.log("error", error);
+              this.loading = false;
+              console.log("error", error.response.data);
+              this.toast.error(error.response.data.error);
             });
-        } else {
-          // alert("Form failed validation");
         }
       }
     },
