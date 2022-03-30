@@ -15,9 +15,9 @@
     </div>
     <div class="flex flex-col justify-start px-8 lg:px-0 pt-6">
       <AppInput
-        @onChange="(value) => (this.name = value)"
-        name="name"
-        v-model="name"
+        @onChange="(value) => (this.email = value)"
+        name="email"
+        v-model="email"
         :placeholder="Email"
         label="Email"
       />
@@ -80,6 +80,15 @@
       class="flex flex-col lg:flex-row justify-between lg:items-center px-10 lg:px-0 lg:pl-4 mt-5 lg:mt-0"
     >
       <button
+        disabled
+        v-if="loading"
+        @click="submit"
+        class="font-aileron flex flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-2 px-2 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition duration-300 ease-in-out text-xs disabled:cursor-not-allowed"
+      >
+        <img class="h-6 w-6" src="../../../public/assets/icon/loader.svg" />
+      </button>
+      <button
+        v-if="!loading"
         @click="login()"
         class="flex font-aileron flex-initial lg:w-5/12 lg:mx-0 bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
       >
@@ -107,6 +116,8 @@ import AppInput from "@/components/UI/Input.vue";
 import { useToast } from "vue-toastification";
 import { baseURL } from "../../constants";
 import axios from "axios";
+import { useRouter } from "vue-router";
+import { mapActions } from "vuex";
 
 export default defineComponent({
   name: "LoginComponent",
@@ -115,13 +126,15 @@ export default defineComponent({
   },
   setup() {
     const toast = useToast();
-    return { toast };
+    const router = useRouter();
+    return { toast, router };
   },
   data() {
     return {
       v$: useVuelidate(),
       email: "",
       password: "",
+      loading: false,
     };
   },
   validations() {
@@ -134,21 +147,34 @@ export default defineComponent({
     async login() {
       const isFormCorrect = await this.v$.$validate();
       if (!this.v$.$error) {
+        this.loading = true;
+
         const payload = {
           email: this.email,
           password: this.password,
         };
-        console.log("payload", payload);
         axios
           .post(`${baseURL}/auth/login`, payload)
           .then((res) => {
-            console.log("res", res.data);
+            this.loginReq({ token: res.data.token, userId: res.data.id });
+            localStorage.setItem("user-token", res.data.token);
+            this.toast.success("Welcome to Cllct!");
+            this.router.push("/home");
           })
           .catch((error) => {
+            this.loading = false;
+
             console.log("error", error);
+            this.toast.error(
+              error.response.data.error ??
+                "Something went wrong. Please try again"
+            );
           });
       }
     },
+    ...mapActions("user", {
+      loginReq: "login",
+    }),
   },
 });
 </script>

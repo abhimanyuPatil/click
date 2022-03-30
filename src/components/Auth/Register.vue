@@ -171,7 +171,6 @@ export default defineComponent({
             name: this.name,
             password: this.password,
           };
-          console.log("payload", payload);
           axios
             .post(`${baseURL}/auth/registration`, payload, {
               headers: {

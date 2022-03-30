@@ -278,7 +278,7 @@
                 <h3
                   class="text-[#5E5C5C] dark:text-white text-sm font-semibold font-aileron"
                 >
-                  John Doe
+                  {{user?.name}}
                 </h3>
               </div>
             </PopoverButton>
@@ -305,7 +305,7 @@
                   >
                     <img src="../../../resources/user-icon.svg" alt="" />
                     <p class="font-aileron text-black dark:text-white text-xs">
-                      John Dess
+                      {{user?.name}}
                     </p>
                     <p class="font-aileron text-black dark:text-white text-xs">
                       Mumbai
@@ -409,7 +409,7 @@
                       <p
                         class="text-black dark:text-white text-xs font-aileron"
                       >
-                        John Dess
+                        {{user?.name}}
                       </p>
                       <p
                         class="text-black dark:text-white text-xs font-aileron"
@@ -435,32 +435,32 @@
                           <p
                             class="font-aileron m-0 text-xs text-black dark:text-white"
                           >
-                            johndoe0007 @gmail.com
+                            {{user?.email}}
                           </p>
                         </div>
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             Name
                           </h5>
-                          <p class="font-aileron m-0 text-xs">John Doe</p>
+                          <p class="font-aileron m-0 text-xs text-black dark:text-white">{{user?.name}}</p>
                         </div>
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             User Name
                           </h5>
-                          <p class="font-aileron m-0 text-xs">Qrsedwert</p>
+                          <p class="font-aileron m-0 text-xs text-black dark:text-white"> {{user?.userName}}</p>
                         </div>
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             Gender
                           </h5>
-                          <p class="font-aileron m-0 text-xs">Male</p>
+                          <p class="font-aileron m-0 text-xs text-black dark:text-white">Male</p>
                         </div>
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             About Me
                           </h5>
-                          <p class="font-aileron m-0 text-xs">
+                          <p class="font-aileron m-0 text-xs text-black dark:text-white">
                             Loren Ispusm dssadg adgsadgsagsg
                           </p>
                         </div>
@@ -468,7 +468,7 @@
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             Location
                           </h5>
-                          <p class="font-aileron m-0 text-xs">Mumbai</p>
+                          <p class="font-aileron m-0 text-xs text-black dark:text-white">Mumbai</p>
                         </div>
                       </div>
                     </div>
@@ -888,6 +888,8 @@ import {
   IonButtons,
   IonIcon,
 } from "@ionic/vue";
+import axios from "axios";
+import { baseURL } from "@/constants";
 const people = [
   { id: 1, name: "Wade Cooper" },
   { id: 2, name: "Arlene Mccoy" },
@@ -958,6 +960,9 @@ export default defineComponent({
       changeSort: "changeSort",
       toggleTheme: "toggleTheme",
     }),
+    ...mapActions("user", {
+      setUserDetails: "setUserDetails",
+    }),
     isMobile() {
       if (
         /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -972,6 +977,8 @@ export default defineComponent({
   },
   computed: mapState({
     isLoggedIn: (state: any) => state.user.isLoggedIn,
+    token: (state: any) => state.user.token,
+    user: (state: any) => state.user.user,
     layout: (state: any) => state.layout.layout,
     zoom: (state: any) => state.layout.zoom,
     sort: (state: any) => state.layout.sort,
@@ -1021,6 +1028,19 @@ export default defineComponent({
     return { router, selected, query, filteredPeople, isOpen };
   },
   mounted() {
+    if (this.isLoggedIn) {
+      console.log("fetch user details");
+      axios
+        .get(`${baseURL}/user/profile`, {
+          headers: { Authorization: `Bearer ${this.token}` },
+        })
+        .then((res) => {
+          this.setUserDetails(res.data);
+        })
+        .catch((error) => {
+          console.log("error", error);
+        });
+    }
     this.localTheme = this.theme;
     if (!this.isMobile()) {
       let input = <HTMLInputElement>document?.getElementById("dropdown");
