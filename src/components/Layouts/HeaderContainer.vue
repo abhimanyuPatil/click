@@ -742,11 +742,18 @@
                 </svg>
               </a>
             </div>
-            <div class="flex">
+            <div v-if="!isLoggedIn" @click="this.router.push('/auth')" class="flex">
               <a
                 class="border border-gray-500 rounded-full py-[5px] px-6 font-aileron text-gray-700 dark:text-darkWhite dark:bg-dropdownBg dark:border-darkBorder font-bold"
               >
                 Login
+              </a>
+            </div>
+             <div v-if="isLoggedIn" @click="this.router.push('/auth')" class="flex">
+              <a
+                class="py-[5px] px-6 font-aileron text-black dark:text-darkWhite bg-transparent dark:bg-transparent font-bold"
+              >
+                {{user.name}}
               </a>
             </div>
           </div>
@@ -793,6 +800,13 @@
             >
           </div>
           <div class="flex flex-wrap gap-3 py-6 absolute bottom-0">
+            <div v-if="isLoggedIn" class="flex">
+              <a
+                class="w-[200px] flex border border-gray-500 rounded-full justify-center py-2 px-3 font-aileron text-gray-700 dark:text-darkWhite dark:bg-dropdownBg dark:border-darkBorder font-bold"
+              >
+                Logout
+              </a>
+            </div>
             <button
               class="flex items-center justify-center gap-1 bg-[#6317A7] px-3 py-2 rounded-full text-white w-[200px]"
             >

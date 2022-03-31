@@ -158,12 +158,22 @@ export default defineComponent({
           .then((res) => {
             this.loginReq({ token: res.data.token, userId: res.data.id });
             localStorage.setItem("user-token", res.data.token);
-            this.toast.success("Welcome to Cllct!");
-            this.router.push("/home");
+            axios
+              .get(`${baseURL}/user/profile`, {
+                headers: { Authorization: `Bearer ${res.data.token}` },
+              })
+              .then((res) => {
+                this.setUserDetails(res.data);
+                this.toast.success("Welcome to Cllct!");
+                this.router.push("/home");
+              })
+              .catch((error) => {
+                console.log("error", error);
+                this.toast.error("Something went wrong. Please try again");
+              });
           })
           .catch((error) => {
             this.loading = false;
-
             console.log("error", error);
             this.toast.error(
               error.response.data.error ??
@@ -174,6 +184,7 @@ export default defineComponent({
     },
     ...mapActions("user", {
       loginReq: "login",
+      setUserDetails: "setUserDetails",
     }),
   },
 });
