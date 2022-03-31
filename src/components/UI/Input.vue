@@ -13,7 +13,6 @@
       :placeholder="label"
       @input="(event) => $emit('onChange', event.target.value)"
     />
-    />
   </div>
 </template>
 <script lang="ts">
