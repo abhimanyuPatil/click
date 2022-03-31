@@ -7,6 +7,7 @@
         v-model="name"
         :placeholder="Email"
         label="Email"
+        type="email"
       />
       <div class="flex flex-col pl-4 justify-center">
         <span class="font-aileron text-black"

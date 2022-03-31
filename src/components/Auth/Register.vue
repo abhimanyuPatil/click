@@ -20,6 +20,7 @@
         v-model="name"
         :placeholder="'Enter Name'"
         label="Name"
+        type="text"
       />
       <AppInput
         @onChange="(value) => (this.username = value)"
@@ -27,6 +28,7 @@
         v-model="username"
         :placeholder="UserName"
         label="User Name"
+        type="text"
       />
       <AppInput
         @onChange="(value) => (this.email = value)"
@@ -34,6 +36,7 @@
         v-model="email"
         :placeholder="Email"
         label="Email"
+        type="email"
       />
       <AppInput
         @onChange="(value) => (this.password = value)"
@@ -41,6 +44,7 @@
         v-model="password"
         :placeholder="Password"
         label="Password"
+        type="password"
       />
     </div>
     <div

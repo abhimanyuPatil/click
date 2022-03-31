@@ -28,10 +28,10 @@ const mutations = {
     state.userId = data.userId;
   },
   SET_USER(state: any, data: any) {
-    console.log("data of user",data);
     state.user = data.data;
   },
   LOGOUT(state: any) {
+    localStorage.clear();
     state.isLoggedIn = false;
   },
 };

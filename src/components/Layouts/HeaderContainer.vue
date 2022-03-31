@@ -278,7 +278,7 @@
                 <h3
                   class="text-[#5E5C5C] dark:text-white text-sm font-semibold font-aileron"
                 >
-                  {{user?.name}}
+                  {{ user?.name }}
                 </h3>
               </div>
             </PopoverButton>
@@ -305,7 +305,7 @@
                   >
                     <img src="../../../resources/user-icon.svg" alt="" />
                     <p class="font-aileron text-black dark:text-white text-xs">
-                      {{user?.name}}
+                      {{ user?.name }}
                     </p>
                     <p class="font-aileron text-black dark:text-white text-xs">
                       Mumbai
@@ -409,7 +409,7 @@
                       <p
                         class="text-black dark:text-white text-xs font-aileron"
                       >
-                        {{user?.name}}
+                        {{ user?.name }}
                       </p>
                       <p
                         class="text-black dark:text-white text-xs font-aileron"
@@ -435,32 +435,46 @@
                           <p
                             class="font-aileron m-0 text-xs text-black dark:text-white"
                           >
-                            {{user?.email}}
+                            {{ user?.email }}
                           </p>
                         </div>
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             Name
                           </h5>
-                          <p class="font-aileron m-0 text-xs text-black dark:text-white">{{user?.name}}</p>
+                          <p
+                            class="font-aileron m-0 text-xs text-black dark:text-white"
+                          >
+                            {{ user?.name }}
+                          </p>
                         </div>
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             User Name
                           </h5>
-                          <p class="font-aileron m-0 text-xs text-black dark:text-white"> {{user?.userName}}</p>
+                          <p
+                            class="font-aileron m-0 text-xs text-black dark:text-white"
+                          >
+                            {{ user?.userName }}
+                          </p>
                         </div>
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             Gender
                           </h5>
-                          <p class="font-aileron m-0 text-xs text-black dark:text-white">Male</p>
+                          <p
+                            class="font-aileron m-0 text-xs text-black dark:text-white"
+                          >
+                            Male
+                          </p>
                         </div>
                         <div class="profile-details-item mb-3">
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             About Me
                           </h5>
-                          <p class="font-aileron m-0 text-xs text-black dark:text-white">
+                          <p
+                            class="font-aileron m-0 text-xs text-black dark:text-white"
+                          >
                             Loren Ispusm dssadg adgsadgsagsg
                           </p>
                         </div>
@@ -468,7 +482,11 @@
                           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
                             Location
                           </h5>
-                          <p class="font-aileron m-0 text-xs text-black dark:text-white">Mumbai</p>
+                          <p
+                            class="font-aileron m-0 text-xs text-black dark:text-white"
+                          >
+                            Mumbai
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -742,18 +760,26 @@
                 </svg>
               </a>
             </div>
-            <div v-if="!isLoggedIn" @click="this.router.push('/auth')" class="flex">
+            <div
+              v-if="!isLoggedIn"
+              @click="this.router.push('/auth')"
+              class="flex"
+            >
               <a
                 class="border border-gray-500 rounded-full py-[5px] px-6 font-aileron text-gray-700 dark:text-darkWhite dark:bg-dropdownBg dark:border-darkBorder font-bold"
               >
                 Login
               </a>
             </div>
-             <div v-if="isLoggedIn" @click="this.router.push('/auth')" class="flex">
+            <div
+              v-if="isLoggedIn"
+              @click="this.router.push('/auth')"
+              class="flex"
+            >
               <a
                 class="py-[5px] px-6 font-aileron text-black dark:text-darkWhite bg-transparent dark:bg-transparent font-bold"
               >
-                {{user.name}}
+                {{ user.name }}
               </a>
             </div>
           </div>
@@ -800,7 +826,7 @@
             >
           </div>
           <div class="flex flex-wrap gap-3 py-6 absolute bottom-0">
-            <div v-if="isLoggedIn" class="flex">
+            <div @click="logoutReq()" v-if="isLoggedIn" class="flex">
               <a
                 class="w-[200px] flex border border-gray-500 rounded-full justify-center py-2 px-3 font-aileron text-gray-700 dark:text-darkWhite dark:bg-dropdownBg dark:border-darkBorder font-bold"
               >
@@ -976,6 +1002,7 @@ export default defineComponent({
     }),
     ...mapActions("user", {
       setUserDetails: "setUserDetails",
+      logoutReq: "logout",
     }),
     isMobile() {
       if (
