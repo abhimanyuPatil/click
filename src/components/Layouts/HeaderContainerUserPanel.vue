@@ -110,7 +110,7 @@
 				</div>
 				<div class="flex items-center gap-7 hidden md:flex">
 					<div
-						class="relative font-aileron flex items-center justify-center rounded-md dark:bg-dropdownBg hover:bg-[#101010] dark:hover:bg-[#6317A7] cursor-pointer fill-white w-10 h-10 group transition ease-out duration-200 border"
+						class="relative font-aileron flex items-center justify-center rounded-md dark:bg-dropdownBg hover:bg-grey dark:hover:bg-[#6317A7] cursor-pointer fill-white w-10 h-10 group transition ease-out duration-200 border"
 					>
 						<img
 							src="../../../public/assets/icon/equalizer.svg"
@@ -120,7 +120,7 @@
 						/>
 					</div>
 					<div
-						class="relative font-aileron flex items-center justify-center rounded-md dark:bg-dropdownBg hover:bg-[#101010] dark:hover:bg-[#6317A7] cursor-pointer fill-white w-10 h-10 group transition ease-out duration-200 border"
+						class="relative font-aileron flex items-center justify-center rounded-md dark:bg-dropdownBg hover:bg-grey dark:hover:bg-[#6317A7] cursor-pointer fill-white w-10 h-10 group transition ease-out duration-200 border"
 					>
 						<img
 							src="../../../public/assets/icon/spinner4.svg"

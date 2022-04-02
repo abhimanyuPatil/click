@@ -109,7 +109,7 @@
 										<button
 											:class="[
 												'w-full py-2.5 text-md leading-5 font-bold rounded-lg',
-												'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
+												'focus:outline-none ring-offset-blue-400 ring-white ring-opacity-60',
 												selected
 													? 'bg-[#e1b4fe] text-white shadow '
 													: 'text-[#515053] hover:bg-[#e1b4fe]hover:text-white',
@@ -126,7 +126,7 @@
 										:key="idx"
 										:class="[
 											'bg-white rounded-xl p-3',
-											'focus:outline-none focus:ring-2 ring-offset-2 ring-offset-blue-400 ring-white ring-opacity-60',
+											'focus:outline-none ring-white ring-opacity-60',
 										]"
 									>
 										<ul>
