@@ -42,6 +42,7 @@ export default defineComponent({
         })
         .catch((error) => {
           console.log("error", error);
+          this.logoutReq()
         });
     }
   },
@@ -49,6 +50,7 @@ export default defineComponent({
     ...mapActions("user", {
       loginReq: "login",
       setUserDetails: "setUserDetails",
+      logoutReq: "logout",
     }),
   },
   name: "App",
