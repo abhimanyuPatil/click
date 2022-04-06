@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "@ionic/vue-router";
 import { RouteRecordRaw } from "vue-router";
 import Auth from "../views/Auth.vue";
 import Home from "../views/Home.vue";
+import ResetPassword from "../views/ResetPassword.vue";
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
@@ -14,7 +15,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/home",
     component: Home,
-  }
+  },
+  {
+    path: "/forgotPassword/:token",
+    component: ResetPassword,
+  },
 ];
 
 const router = createRouter({
