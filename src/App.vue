@@ -15,6 +15,9 @@ body {
 <script lang="ts">
 import { IonApp, IonRouterOutlet } from "@ionic/vue";
 import { defineComponent, getCurrentInstance } from "vue";
+import axios from "axios";
+import { baseURL } from "./constants";
+import { mapActions } from "vuex";
 
 export default defineComponent({
   setup() {
@@ -24,6 +27,29 @@ export default defineComponent({
     setTimeout(() => {
       internalInstance?.appContext.config.globalProperties.$Progress.finish();
     }, 3500);
+  },
+  mounted() {
+    const token = localStorage.getItem("user-token");
+    const id = localStorage.getItem("user-id");
+    if (!!token) {
+      this.loginReq({ token: token, userId: id });
+      axios
+        .get(`${baseURL}/user/profile`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          this.setUserDetails(res.data);
+        })
+        .catch((error) => {
+          console.log("error", error);
+        });
+    }
+  },
+  methods: {
+    ...mapActions("user", {
+      loginReq: "login",
+      setUserDetails: "setUserDetails",
+    }),
   },
   name: "App",
   components: {

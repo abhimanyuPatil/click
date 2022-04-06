@@ -317,7 +317,7 @@
                     <div class="ml-4 pr-4">
                       <p
                         @click="toggleProfile('profileView')"
-                        class="font-aileron text-base font-medium text-gray-900 dark:text-white"
+                        class="font-aileron text-base font-medium text-gray-900 dark:text-white cursor-pointer"
                       >
                         Profile
                       </p>
@@ -328,7 +328,7 @@
                   >
                     <div class="ml-4 pr-4">
                       <p
-                        class="font-aileron text-base font-medium text-gray-900 dark:text-white"
+                        class="font-aileron text-base font-medium text-gray-900 dark:text-white cursor-pointer"
                       >
                         Subscription
                       </p>
@@ -339,7 +339,7 @@
                   >
                     <div class="ml-4 pr-4">
                       <p
-                        class="font-aileron text-base font-medium text-gray-900 dark:text-white"
+                        class="font-aileron text-base font-medium text-gray-900 dark:text-white cursor-pointer"
                       >
                         Payment
                       </p>
@@ -350,7 +350,7 @@
                   >
                     <div class="ml-4 pr-4">
                       <p
-                        class="font-aileron text-base font-medium text-gray-900 dark:text-white"
+                        class="font-aileron text-base font-medium text-gray-900 dark:text-white cursor-pointer"
                       >
                         Langugae
                       </p>
@@ -361,7 +361,7 @@
                   >
                     <div class="ml-4 pr-4">
                       <p
-                        class="font-aileron text-base font-medium text-gray-900"
+                        class="font-aileron text-base font-medium text-gray-900 cursor-pointer cursor-pointer"
                       >
                         Settings
                       </p>
@@ -379,11 +379,10 @@
                   <div
                     class="profile-nav-back flex justify-between items-center p-2 text-center border-b dark:border-darkBorder"
                   >
-                    <p @click="toggleProfile('nav')">
+                    <p class="text-black" @click="toggleProfile('nav')">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         class="h-6 w-6 flex-0 fill-black dark:fill-white cursor-pointer"
-                        fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
@@ -401,101 +400,18 @@
                       Profile
                     </h5>
                   </div>
-                  <div class="profile-menu-content-wrap">
-                    <div
-                      class="relative bg-white dark:bg-cardBg px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center"
-                    >
-                      <img src="../../../resources/user-icon.svg" alt="" />
-                      <p
-                        class="text-black dark:text-white text-xs font-aileron"
-                      >
-                        {{ user?.name }}
-                      </p>
-                      <p
-                        class="text-black dark:text-white text-xs font-aileron"
-                      >
-                        Mumbai
-                      </p>
-                    </div>
-                    <div class="edit-profile-btn text-center">
-                      <button
-                        class="font-aileron inline-block lg:mx-0 bg-[#707070] text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
-                      >
-                        Edit Profile
-                      </button>
-                    </div>
-                    <div class="proile-details p-3">
-                      <div
-                        class="profile-details-wrap p-4 bg-[#EFEFEF] dark:bg-cardBg rounded-md"
-                      >
-                        <div class="profile-details-item mb-3">
-                          <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
-                            Email
-                          </h5>
-                          <p
-                            class="font-aileron m-0 text-xs text-black dark:text-white"
-                          >
-                            {{ user?.email }}
-                          </p>
-                        </div>
-                        <div class="profile-details-item mb-3">
-                          <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
-                            Name
-                          </h5>
-                          <p
-                            class="font-aileron m-0 text-xs text-black dark:text-white"
-                          >
-                            {{ user?.name }}
-                          </p>
-                        </div>
-                        <div class="profile-details-item mb-3">
-                          <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
-                            User Name
-                          </h5>
-                          <p
-                            class="font-aileron m-0 text-xs text-black dark:text-white"
-                          >
-                            {{ user?.userName }}
-                          </p>
-                        </div>
-                        <div class="profile-details-item mb-3">
-                          <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
-                            Gender
-                          </h5>
-                          <p
-                            class="font-aileron m-0 text-xs text-black dark:text-white"
-                          >
-                            Male
-                          </p>
-                        </div>
-                        <div class="profile-details-item mb-3">
-                          <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
-                            About Me
-                          </h5>
-                          <p
-                            class="font-aileron m-0 text-xs text-black dark:text-white"
-                          >
-                            Loren Ispusm dssadg adgsadgsagsg
-                          </p>
-                        </div>
-                        <div class="profile-details-item mb-3">
-                          <h5 class="font-aileron text-[#7630B4] text-sm mb-1">
-                            Location
-                          </h5>
-                          <p
-                            class="font-aileron m-0 text-xs text-black dark:text-white"
-                          >
-                            Mumbai
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <ProfileView
+                    :about="user?.about"
+                    :email="user?.email"
+                    :gender="user?.gender"
+                    :location="user?.location"
+                    :name="user?.name"
+                    :userName="user?.userName"
+                  />
                 </div>
-
                 <!--====================================================================
-                        PROFILE VIEW END
-                        =====================================================================-->
+                  PROFILE VIEW END
+                =====================================================================-->
               </PopoverPanel>
             </transition>
           </Popover>
@@ -909,6 +825,7 @@ import { useRouter } from "vue-router";
 import { mapActions, mapState } from "vuex";
 import ViewDropdown from "../ViewLayoutDropdowns/Flex.vue";
 import MobileSearch from "../Responsive/MobileSearch.vue";
+import ProfileView from "../ProfileView.vue";
 const categories = [
   "All",
   "Location",
@@ -1050,6 +967,7 @@ export default defineComponent({
     Switch,
     SwitchGroup,
     SwitchLabel,
+    ProfileView,
   },
   setup() {
     const router = useRouter();

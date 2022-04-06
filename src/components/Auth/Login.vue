@@ -166,6 +166,7 @@ export default defineComponent({
           .then((res) => {
             this.loginReq({ token: res.data.token, userId: res.data.id });
             localStorage.setItem("user-token", res.data.token);
+            localStorage.setItem("user-id", res.data.id);
             axios
               .get(`${baseURL}/user/profile`, {
                 headers: { Authorization: `Bearer ${res.data.token}` },
