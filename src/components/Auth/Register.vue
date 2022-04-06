@@ -162,6 +162,12 @@ export default defineComponent({
     };
   },
   methods: {
+    resetState() {
+      this.name = "";
+      this.username = "";
+      this.email = "";
+      (this.password = ""), (this.tcChecked = false);
+    },
     async submit() {
       const isFormCorrect = await this.v$.$validate();
       if (!this.tcChecked) {
@@ -187,6 +193,7 @@ export default defineComponent({
                 "Registration Done! Please login to continue."
               );
               this.loading = false;
+              this.resetState();
               this.$emit("changeAuth");
             })
             .catch((error) => {

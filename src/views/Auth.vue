@@ -29,7 +29,12 @@
         <div
           class="container flex lg:flex-1 md:flex-1 justify-center items-start lg:items-stretch lg:p-10 lg:pb-32 md:p-10 mx-auto"
         >
+          <ForgotPassword
+            v-if="state === 'forgot'"
+            @changeState="state = 'auth'"
+          />
           <div
+            v-if="state !== 'forgot'"
             class="bg-white 2xl:w-[600px] xl:w-[600px] lg:w-3/4 md:w-3/4 w-full rounded-3xl lg:p-5 py-10 h-auto flex flex-col justify-evenly self-center lg:self-stretch"
           >
             <div
@@ -59,7 +64,6 @@
             </div>
             <!-- social icons -->
             <div
-              v-if="authType === 'login' || authType === 'otp'"
               class="flex lg:justify-start justify-center px-4 lg:p-0 lg:pt-3"
             >
               <img
@@ -98,6 +102,7 @@
             />
             <!-- login form -->
             <LoginComponent
+              @changeState="state = 'forgot'"
               @changeAuth="toggleAuth('register')"
               v-if="authType === 'login'"
             />
@@ -126,6 +131,7 @@ import { ArrowLeftIcon } from "@heroicons/vue/outline";
 import AppInput from "@/components/UI/Input.vue";
 import RegisterComponent from "@/components/Auth/Register.vue";
 import LoginComponent from "@/components/Auth/Login.vue";
+import ForgotPassword from "@/components/Auth/ForgotPassword.vue";
 import OtpLogin from "@/components/Auth/OtpLogin.vue";
 import { mapActions } from "vuex";
 import { useRouter } from "vue-router";
@@ -142,10 +148,12 @@ export default defineComponent({
     RegisterComponent,
     LoginComponent,
     OtpLogin,
+    ForgotPassword,
   },
   data() {
     return {
       authType: "login",
+      state: "auth",
     };
   },
   methods: {

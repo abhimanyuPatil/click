@@ -73,6 +73,7 @@
         </div>
       </div>
       <button
+        @click="$emit('changeState')"
         class="lg:mx-0 font-aileron bg-orange text-white font-bold rounded-full py-3 px-4 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out text-xs"
       >
         Forgot Password?
@@ -146,6 +147,11 @@ export default defineComponent({
     };
   },
   methods: {
+    resetState() {
+      this.email = "";
+      this.password = "";
+      this.loading = false;
+    },
     async login() {
       const isFormCorrect = await this.v$.$validate();
       if (!this.v$.$error) {
@@ -165,6 +171,7 @@ export default defineComponent({
                 headers: { Authorization: `Bearer ${res.data.token}` },
               })
               .then((res) => {
+                this.resetState();
                 this.setUserDetails(res.data);
                 this.toast.success("Welcome to Cllct!");
                 this.router.push("/home");
