@@ -7,3 +7,4 @@ declare module "*.vue" {
 declare module "vue3-virtual-scroller";
 declare module "@aacassandra/vue3-progressbar";
 declare module "vuex-toast"
+declare module "firebase"

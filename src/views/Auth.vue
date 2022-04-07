@@ -67,10 +67,12 @@
               class="flex lg:justify-start justify-center px-4 lg:p-0 lg:pt-3"
             >
               <img
+              @click="facebookSignIn"
                 class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/facebook-with-circle.png"
               />
               <img
+              @click="twitterSignIn"
                 class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/twitter-with-circle.png"
               />
@@ -79,6 +81,7 @@
                 src="../../resources/linkedin-with-circle.png"
               />
               <img
+                @click="googleSignIn"
                 class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/google-with-circle.png"
               />
@@ -135,6 +138,8 @@ import ForgotPassword from "@/components/Auth/ForgotPassword.vue";
 import OtpLogin from "@/components/Auth/OtpLogin.vue";
 import { mapActions } from "vuex";
 import { useRouter } from "vue-router";
+import * as firebase from "firebase/auth";
+import "firebase/auth"; // 👈 this could also be in your `firebase.js` file
 
 export default defineComponent({
   name: "AuthView",
@@ -157,6 +162,39 @@ export default defineComponent({
     };
   },
   methods: {
+    twitterSignIn(){
+      let provider = new firebase.TwitterAuthProvider();
+      firebase
+        .signInWithPopup(firebase.getAuth(), provider)
+        .then((res: any) => {
+          console.log("twi res", res);
+        })
+        .catch((error: any) => {
+          console.log("twi errr", error);
+        });
+    },
+    facebookSignIn(){
+      let provider = new firebase.FacebookAuthProvider();
+      firebase
+        .signInWithPopup(firebase.getAuth(), provider)
+        .then((res: any) => {
+          console.log("facebook res", res);
+        })
+        .catch((error: any) => {
+          console.log("google errr", error);
+        });
+    },
+    googleSignIn() {
+      let provider = new firebase.GoogleAuthProvider();
+      firebase
+        .signInWithPopup(firebase.getAuth(), provider)
+        .then((res: any) => {
+          console.log("google res", res);
+        })
+        .catch((error: any) => {
+          console.log("google errr", error);
+        });
+    },
     toggleAuth(state: string) {
       this.authType = state;
     },
