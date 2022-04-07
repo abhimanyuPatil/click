@@ -1,13 +1,13 @@
 <template>
   <div class="profile-menu-content-wrap">
     <div
-      class="relative bg-white dark:bg-cardBg px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center"
+      class="relative bg-white dark:bg-darkBg md:dark:bg-cardBg px-2 py-2 sm:gap-2 sm:p-4 flex flex-col justify-center items-center text-center"
     >
-      <img src="../../resources/user-icon.svg" alt="" />
-      <p class="text-black dark:text-white text-xs font-aileron">
+      <img src="../../../resources/user-icon.svg" alt="" />
+      <p class="text-black dark:text-white text-lg md:text-xs font-aileron">
         {{ name }}
       </p>
-      <p class="text-black dark:text-white text-xs font-aileron">
+      <p class="text-black dark:text-white text-xs font-aileron mt-2 md:mt-0">
         {{ location ?? "NA" }}
       </p>
     </div>
@@ -21,7 +21,7 @@
     </div>
     <div class="proile-details p-3">
       <div
-        class="profile-details-wrap p-4 bg-[#EFEFEF] dark:bg-cardBg rounded-md"
+        class="profile-details-wrap p-4 bg-[#EFEFEF] dark:bg-darkBg md:dark:bg-cardBg rounded-md"
       >
         <div class="profile-details-item mb-3">
           <h5 class="font-aileron text-[#7630B4] text-sm mb-1">Email</h5>
@@ -30,7 +30,7 @@
             disabled
             v-model="editEmail"
             type="email"
-            class="bg-[#ECECEC] text-xs text-black border border-grey w-full px-2 py-2 rounded-xl font-poppins disabled:bg-zinc-400 disabled:cursor-not-allowed"
+            class="bg-[#ECECEC] text-xs text-black border border-grey w-full px-2 py-2 rounded-xl font-poppins disabled:cursor-not-allowed"
           />
           <p
             v-if="mode === 'view'"
@@ -180,7 +180,7 @@
           @click="submit"
           class="font-aileron flex flex-initial w-full bg-primary uppercase text-white text-center justify-center font-bold rounded-full py-2 px-2 lg:px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition duration-300 ease-in-out text-xs disabled:cursor-not-allowed"
         >
-          <img class="h-6 w-6" src="../../public/assets/icon/loader.svg" />
+          <img class="h-6 w-6" src="../../../public/assets/icon/loader.svg" />
         </button>
         <button
           v-if="!loading && mode === 'edit'"
@@ -205,7 +205,7 @@ import axios from "axios";
 import { defineComponent, ref } from "vue";
 import { useToast } from "vue-toastification";
 import { mapActions, mapState } from "vuex";
-import Input from "./UI/Input.vue";
+import Input from "../UI/Input.vue";
 const genders = ["Male", "Female", "Other"];
 
 export default defineComponent({

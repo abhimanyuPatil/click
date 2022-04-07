@@ -3,7 +3,7 @@
     <PopoverButton
       :class="[
         open ? 'text-gray-900' : 'text-gray-500',
-        'flex w-full py-3 justify-center items-center flex-col bg-grey dark:bg-cardBg font-medium hover:text-gray-900 focus:outline-none text-center',
+        'flex w-full py-2 border-r-2 border-neutral-800 justify-center items-center flex-col bg-grey dark:bg-cardBg font-medium hover:text-gray-900 text-center',
       ]"
     >
       <p
@@ -13,7 +13,7 @@
       </p>
       <div class="cursor-pointer flex items-center text-[#404040] mt-2">
         <p
-          class="text-center font-aileron text-base font-bold mr-2 dark:text-darkWhite"
+          class="text-center font-aileron text-sm font-bold mr-2 dark:text-darkWhite"
         >
           {{ selected.label }}
         </p>

@@ -591,7 +591,7 @@
 
   <div
     v-if="isMobile()"
-    class="border-[#DEDEDE] bg-white dark:bg-darkBg pt-2 pb-4"
+    class="border-[#DEDEDE] border-b-2 bg-white dark:bg-darkBg pt-2 pb-4"
   >
     <div class="container md:container md:mx-auto flex flex-col mx-auto">
       <div class="flex flex-wrap items-center justify-between">
@@ -695,7 +695,7 @@
               <a
                 class="py-[5px] px-6 font-aileron text-black dark:text-darkWhite bg-transparent dark:bg-transparent font-bold"
               >
-                {{ user.name }}
+                {{ user?.name }}
               </a>
             </div>
           </div>
@@ -704,7 +704,7 @@
             <SwitchGroup class="pb-3">
               <div class="flex items-center">
                 <SwitchLabel
-                  class="mr-4 text-black dark:text-darkWhite font-bold"
+                  class="mr-4 text-black dark:text-darkWhite font-bold font-aileron"
                   >Enable Dark Mode</SwitchLabel
                 >
                 <Switch
@@ -825,7 +825,7 @@ import { useRouter } from "vue-router";
 import { mapActions, mapState } from "vuex";
 import ViewDropdown from "../ViewLayoutDropdowns/Flex.vue";
 import MobileSearch from "../Responsive/MobileSearch.vue";
-import ProfileView from "../ProfileView.vue";
+import ProfileView from "../UserProfile/ProfileView.vue";
 const categories = [
   "All",
   "Location",

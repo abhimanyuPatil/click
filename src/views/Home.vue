@@ -3,7 +3,7 @@
     <ion-content :fullscreen="true">
       <HeaderContainer title="Cllct" />
       <!-- <HeroCard v-if="!isMinimal" /> -->
-      <div class="flex md:hidden">
+      <div v-if="currentScreen === 'home'" class="flex md:hidden">
         <HeroSectionDropdown
           @onChange="changeZoom"
           :selected="zoom"
@@ -35,9 +35,22 @@
           ]"
         />
       </div>
-      <GridView v-if="layout.value === 'card'" :cards="cardsItems" />
-      <ListView v-if="layout.value === 'list'" :cards="cardsItems" />
-      <DetailView v-if="layout.value === 'grid'" :cards="cardsItems" />
+      <GridView
+        v-if="layout.value === 'card' && currentScreen === 'home'"
+        :cards="cardsItems"
+      />
+      <ListView
+        v-if="layout.value === 'list' && currentScreen === 'home'"
+        :cards="cardsItems"
+      />
+      <DetailView
+        v-if="layout.value === 'grid' && currentScreen === 'home'"
+        :cards="cardsItems"
+      />
+      <MobileProfile v-if="currentScreen === 'profile'" />
+      <p v-if="currentScreen === 'projects'">Projects</p>
+      <p v-if="currentScreen === 'applications'">Applications</p>
+      <p v-if="currentScreen === 'collections'">Collections</p>
       <Footer />
       <TransitionRoot appear :show="isOpen" as="template">
         <Dialog as="div" @close="closeModal">
@@ -207,6 +220,7 @@ import {
   RadioGroupOption,
 } from "@headlessui/vue";
 import HeroSectionDropdown from "../components/ViewLayoutDropdowns/Responsive.vue";
+import MobileProfile from "@/components/UserProfile/MobileProfile.vue";
 const views = [
   {
     name: "Normal",
@@ -221,6 +235,9 @@ const views = [
 ];
 export default defineComponent({
   name: "Home",
+  mounted() {
+    this.setCurrentScreen("home");
+  },
   created() {
     this.$Progress.start();
   },
@@ -257,6 +274,7 @@ export default defineComponent({
       changeLayout: "changeLayout",
       changeZoom: "changeZoom",
       changeSort: "changeSort",
+      setCurrentScreen: "setCurrentScreen",
     }),
   },
   components: {
@@ -280,6 +298,7 @@ export default defineComponent({
     RadioGroupDescription,
     RadioGroupOption,
     HeroSectionDropdown,
+    MobileProfile,
   },
   data() {
     return {
@@ -556,6 +575,7 @@ export default defineComponent({
     zoom: (state) => state.layout.zoom,
     sort: (state) => state.layout.sort,
     theme: (state) => state.layout.theme,
+    currentScreen: (state) => state.layout.currentScreen,
   }),
 });
 </script>

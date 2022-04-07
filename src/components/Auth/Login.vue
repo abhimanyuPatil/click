@@ -175,7 +175,7 @@ export default defineComponent({
                 this.resetState();
                 this.setUserDetails(res.data);
                 this.toast.success("Welcome to Cllct!");
-                this.router.push("/home");
+                this.router.replace("/home");
               })
               .catch((error) => {
                 console.log("error", error);
