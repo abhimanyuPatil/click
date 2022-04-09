@@ -3,11 +3,11 @@
     <ion-content>
       <!-- <HeaderContainer title="Cllct" /> -->
       <div
-        class="flex min-h-[100vh] bg-gradient-to-r from-[#6317A7] to-[#320C54]"
+        class="flex md:flex-col lg:flex-row flex-wrap min-h-[100vh] bg-gradient-to-r from-[#6317A7] to-[#320C54]"
       >
         <!-- first section -->
         <div
-          class="hidden lg:flex flex-1 flex-col justify-start items-center p-3"
+          class="hidden md:flex flex-1 flex-col justify-start items-center p-3"
         >
           <ArrowLeftIcon
             @click="() => router.push('/home')"
@@ -27,7 +27,7 @@
         <!--  -->
         <!-- second section -->
         <div
-          class="container flex lg:flex-1 md:flex-1 justify-center items-start lg:items-stretch lg:p-10 lg:pb-32 md:p-10 mx-auto"
+          class="container flex md:flex-1 justify-center items-start lg:items-stretch pt-5 lg:pb-32 md:p-10 mx-auto"
         >
           <ForgotPassword
             v-if="state === 'forgot'"
@@ -202,34 +202,6 @@ export default defineComponent({
       if (state === this.authType) {
         return "bg-primary text-white";
       } else return "border border-solid border-primary text-primary";
-    },
-    keyPress(event: KeyboardEvent, index: any) {
-      let input = <HTMLInputElement>document.getElementById(index);
-      if (event.key === "Backspace") {
-        input?.setAttribute("value", "");
-        if (index !== 1) {
-          let prevIndex: any = index - 1;
-          document.getElementById(prevIndex)?.focus();
-        }
-      } else {
-        if (index === 5 && input.value !== "") {
-          return true;
-        } else if (event.keyCode > 47 && event.keyCode < 58) {
-          input?.setAttribute("value", event.key);
-          if (index !== 5) {
-            let nextindex: any = index + 1;
-            document.getElementById(nextindex)?.focus();
-            event.preventDefault();
-          }
-        } else if (event.keyCode > 64 && event.keyCode < 91) {
-          input?.setAttribute("value", String.fromCharCode(event.keyCode));
-          if (index !== 5) {
-            let nextindex: any = index + 1;
-            document.getElementById(nextindex)?.focus();
-            event.preventDefault();
-          }
-        }
-      }
     },
     ...mapActions(["login"]),
   },

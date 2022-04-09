@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="px-8 lg:pl-4">
+    <div v-if="v$?.$errors" class="px-8 lg:pl-4">
       <div class="rounded p-3">
         <div v-for="error of v$.$errors" :key="error.$uid">
           <p class="text-[#dc3545] font-poppins text-sm capitalize">
