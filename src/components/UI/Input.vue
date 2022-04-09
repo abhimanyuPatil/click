@@ -11,6 +11,7 @@
       :type="type"
       class="text-black font-poppins flex-shrink flex-grow flex-auto leading-normal w-px border h-10 border-grey-light rounded-2xl lg:rounded-l-none px-3 relative focus:border-0 active:border-0 bg-[#ECECEC] invalid:border-pink-500 invalid:text-pink-600"
       :placeholder="label"
+      :disabled="disabled"
       @input="(event) => $emit('onChange', event.target.value)"
     />
   </div>
@@ -23,6 +24,7 @@ export default defineComponent({
     label: String,
     name: String,
     type: String,
+    disabled:Boolean
   },
 });
 </script>
