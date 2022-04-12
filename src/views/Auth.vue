@@ -86,6 +86,7 @@
                 src="../../resources/google-with-circle.png"
               />
               <img
+                @click="githubSignIn"
                 class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/github-with-circle.png"
               />
@@ -189,6 +190,22 @@ export default defineComponent({
         .signInWithPopup(firebase.getAuth(), provider)
         .then((res: any) => {
           console.log("twi res", res);
+          const payload = {
+            email:
+              res.user.email ?? `${res.reloadUserInfo.screenName}@twitter.com`,
+            provider: "twitter",
+            userName: res.reloadUserInfo.screenName,
+            name: res.user.displayName,
+          };
+          axios
+            .post(`${baseURL}/auth/login`, payload)
+            .then((res) => {
+              this.authenticateUser(res.data.token, res.data.id);
+            })
+            .catch((error: any) => {
+              console.log("social auth errr", error);
+              this.toast.error("Something went wrong. Please try again");
+            });
         })
         .catch((error: any) => {
           console.log("twi errr", error);
@@ -198,7 +215,7 @@ export default defineComponent({
       let provider = new firebase.FacebookAuthProvider();
       firebase
         .signInWithPopup(firebase.getAuth(), provider)
-        .then((res: any) => {
+        .then((res) => {
           const payload = {
             email: res.user.email,
             provider: "facebook",
@@ -224,11 +241,53 @@ export default defineComponent({
       let provider = new firebase.GoogleAuthProvider();
       firebase
         .signInWithPopup(firebase.getAuth(), provider)
-        .then((res: any) => {
+        .then((res) => {
           console.log("google res", res);
+          const payload = {
+            email: res.user.email,
+            provider: "google",
+            userName: res.user.displayName,
+            name: res.user.displayName,
+          };
+          axios
+            .post(`${baseURL}/auth/login`, payload)
+            .then((res) => {
+              this.authenticateUser(res.data.token, res.data.id);
+            })
+            .catch((error: any) => {
+              console.log("social auth errr", error);
+              this.toast.error("Something went wrong. Please try again");
+            });
         })
         .catch((error: any) => {
           console.log("google errr", error);
+          this.toast.error("Something went wrong. Please try again");
+        });
+    },
+    githubSignIn() {
+      let provider = new firebase.GithubAuthProvider();
+      firebase
+        .signInWithPopup(firebase.getAuth(), provider)
+        .then((res: any) => {
+          const payload = {
+            email: res.user.providerData[0].email,
+            provider: "github",
+            userName: res.user.reloadUserInfo.screenName,
+            name: res.user.reloadUserInfo.screenName,
+          };
+          axios
+            .post(`${baseURL}/auth/login`, payload)
+            .then((res) => {
+              this.authenticateUser(res.data.token, res.data.id);
+            })
+            .catch((error: any) => {
+              console.log("social auth errr", error);
+              this.toast.error("Something went wrong. Please try again");
+            });
+        })
+        .catch((error) => {
+          console.log("git errr", error);
+          this.toast.error("Something went wrong. Please try again");
         });
     },
     toggleAuth(state: string) {
