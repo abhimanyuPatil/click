@@ -67,12 +67,12 @@
               class="flex lg:justify-start justify-center px-4 lg:p-0 lg:pt-3"
             >
               <img
-              @click="facebookSignIn"
+                @click="facebookSignIn"
                 class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/facebook-with-circle.png"
               />
               <img
-              @click="twitterSignIn"
+                @click="twitterSignIn"
                 class="h-8 w-16 lg:h-10 lg:w-15 object-contain cursor-pointer"
                 src="../../resources/twitter-with-circle.png"
               />
@@ -140,6 +140,9 @@ import { mapActions } from "vuex";
 import { useRouter } from "vue-router";
 import * as firebase from "firebase/auth";
 import "firebase/auth"; // 👈 this could also be in your `firebase.js` file
+import axios from "axios";
+import { baseURL } from "@/constants";
+import { useToast } from "vue-toastification";
 
 export default defineComponent({
   name: "AuthView",
@@ -162,7 +165,25 @@ export default defineComponent({
     };
   },
   methods: {
-    twitterSignIn(){
+    authenticateUser(token: string, id: string) {
+      this.loginReq({ token, userId: id });
+      localStorage.setItem("user-token", token);
+      localStorage.setItem("user-id", id);
+      axios
+        .get(`${baseURL}/user/profile`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((res) => {
+          this.setUserDetails(res.data);
+          this.toast.success("Welcome to Cllct!");
+          this.router.replace("/home");
+        })
+        .catch((error) => {
+          console.log("error", error);
+          this.toast.error("Something went wrong. Please try again");
+        });
+    },
+    twitterSignIn() {
       let provider = new firebase.TwitterAuthProvider();
       firebase
         .signInWithPopup(firebase.getAuth(), provider)
@@ -173,15 +194,30 @@ export default defineComponent({
           console.log("twi errr", error);
         });
     },
-    facebookSignIn(){
+    facebookSignIn() {
       let provider = new firebase.FacebookAuthProvider();
       firebase
         .signInWithPopup(firebase.getAuth(), provider)
         .then((res: any) => {
-          console.log("facebook res", res);
+          const payload = {
+            email: res.user.email,
+            provider: "facebook",
+            userName: res.user.displayName,
+            name: res.user.displayName,
+          };
+          axios
+            .post(`${baseURL}/auth/login`, payload)
+            .then((res) => {
+              this.authenticateUser(res.data.token, res.data.id);
+            })
+            .catch((error: any) => {
+              console.log("social auth errr", error);
+              this.toast.error("Something went wrong. Please try again");
+            });
         })
         .catch((error: any) => {
-          console.log("google errr", error);
+          console.log("fb errr", error);
+          this.toast.error("Something went wrong. Please try again");
         });
     },
     googleSignIn() {
@@ -203,11 +239,15 @@ export default defineComponent({
         return "bg-primary text-white";
       } else return "border border-solid border-primary text-primary";
     },
-    ...mapActions(["login"]),
+    ...mapActions("user", {
+      loginReq: "login",
+      setUserDetails: "setUserDetails",
+    }),
   },
   setup() {
+    const toast = useToast();
     const router = useRouter();
-    return { router };
+    return { toast, router };
   },
 });
 </script>
