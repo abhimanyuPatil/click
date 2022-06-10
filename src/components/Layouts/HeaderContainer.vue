@@ -714,6 +714,7 @@
                   class="relative inline-flex items-center h-6 transition-colors rounded-full w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >
                   <span
+                    @click="changeTheme()"
                     :class="enabled ? 'translate-x-6' : 'translate-x-1'"
                     class="inline-block w-4 h-4 transition-transform transform bg-white rounded-full"
                   />

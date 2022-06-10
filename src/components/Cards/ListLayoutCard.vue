@@ -1,9 +1,9 @@
 <template>
   <div id="list-view" class="bg-white dark:bg-darkBg">
-    <div class="container mx-auto bg-white dark:bg-darkBg pb-[4rem] pt-1">
+    <div class="container mx-auto bg-white dark:bg-darkBg p-[2rem]">
       <div
         id="list-view-header"
-        class="hidden items-center text-center text-white rounded-3xl px-2 mx-8 sm:bg-[#6317A7] sm:h-12 sm:flex sm:mt-8"
+        class="hidden items-center text-center text-white rounded-3xl px-2 mx-8 sm:bg-[#6317A7] sm:h-12 sm:flex"
       >
         <p
           id="list-view-head-category"
@@ -41,6 +41,7 @@
         v-for="item in cards"
         :key="item"
         class="flex flex-wrap items-left text-center mx-8 rounded-3xl my-4 shadow-lg px-2 py-0 xl:py-1 lg:pr-0"
+        v-on:click="openCardModal(item)"
       >
         <div
           id="list-view-category"

@@ -9,8 +9,9 @@
       >
         <div
           class="flex justify-end pr-1 font-aileron text-xs text-grey dark:text-darkMuted font-light cursor-pointer text-right"
-          >{{ label }}</div
         >
+          {{ label }}
+        </div>
         <p
           class="cursor-pointer items-center text-grey dark:text-white font-aileron flex text-[14px] font-bold mt-2"
         >
@@ -49,7 +50,7 @@
             :key="item"
             class="cursor-pointer text-black dark:text-white font-aileron my-2 text-sm"
           >
-            <p>
+            <p @click="$emit('onChange', item)">
               {{ item.label }}
             </p>
           </PopoverButton>

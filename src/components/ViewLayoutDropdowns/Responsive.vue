@@ -51,7 +51,7 @@
           :key="item"
           class="cursor-pointer text-black dark:text-darkWhite font-aileron my-2 text-sm"
         >
-          <p>
+          <p @click="$emit('onChange', item)">
             {{ item.label }}
           </p>
         </PopoverButton>
