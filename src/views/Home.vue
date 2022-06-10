@@ -244,9 +244,9 @@ export default defineComponent({
   setup() {
     const view = sessionStorage.getItem("view");
     let isOpen = ref(false);
-    if (!view) {
-      isOpen.value = true;
-    }
+    // if (!view) {
+    //   isOpen.value = true;
+    // }
     let selectedView = ref(views[0]);
     return {
       isOpen,

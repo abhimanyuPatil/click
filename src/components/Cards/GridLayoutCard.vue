@@ -124,7 +124,7 @@
     </div>
   </div>
   <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="closeModal" class="relative z-10">
+    <Dialog as="div" @close="closeModal" class="relative z-10 hidden md:block">
       <TransitionChild
         as="template"
         enter="duration-300 ease-out"
@@ -429,15 +429,29 @@ export default defineComponent({
       }
     },
     openCardModal(item: any) {
-      console.log("item", item);
-      this.currentItem = item;
-      this.openModal();
+      if (this.isMobile()) {
+        alert("navigate to new screen");
+      } else {
+        this.currentItem = item;
+        this.openModal();
+      }
     },
     closeModal() {
       this.isOpen = false;
     },
     openModal() {
       this.isOpen = true;
+    },
+    isMobile() {
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 });
