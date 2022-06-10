@@ -134,7 +134,9 @@
         leave-from="opacity-100"
         leave-to="opacity-0"
       >
-        <div class="fixed inset-0 bg-black bg-opacity-25" />
+        <div
+          class="fixed inset-0 bg-black dark:bg-white bg-opacity-25 dark:bg-opacity-25"
+        ></div>
       </TransitionChild>
 
       <div class="fixed inset-0 overflow-y-auto">
@@ -149,7 +151,7 @@
             leave-to="opacity-0 scale-95"
           >
             <DialogPanel
-              class="w-full max-w-[90%] h-[90vh] transform overflow-hidden rounded-none bg-white align-middle shadow-xl transition-all"
+              class="w-full max-w-[90%] h-[90vh] transform overflow-hidden rounded-none bg-white dark:bg-cardBg align-middle shadow-xl transition-all"
             >
               <div class="flex">
                 <div class="relative flex w-[70%] rounded-none">
@@ -171,7 +173,7 @@
                 </div>
                 <div class="max-w-[30%] flex flex-col justify-between">
                   <div
-                    class="px-4 py-1 text-left flex flex-col basis-[55%] justify-end"
+                    class="px-4 py-0 text-left flex flex-col basis-[55%] justify-end"
                   >
                     <div class="portfolio-title flex items-start px-3">
                       <div
@@ -224,7 +226,7 @@
                       <GlobeIcon class="w-3 h-3 text-gray-600" />
                       <p class="text-[10px] text-gray-600 ml-1">Public</p>
                     </div>
-                    <p class="text-xs px-3 text-grey">
+                    <p class="text-xs px-3 text-grey dark:text-darkWhite">
                       {{ currentItem?.description }}
                     </p>
                     <div class="flex items-center mt-10">
@@ -233,7 +235,7 @@
                         src="../../../resources/dp.png"
                       />
                       <div
-                        class="text-[#686868] font-poppins text-xs flex flex-wrap basis-[50%]"
+                        class="text-[#686868] dark:text-darkMuted font-poppins text-xs flex flex-wrap basis-[50%]"
                       >
                         Sk and
                         <p class="text-orange">&nbsp;136&nbsp;</p>
@@ -285,10 +287,10 @@
                     </div>
                   </div>
                   <div
-                    class="flex flex-col basis-[35%] border-t-[1px] p-3 border-[#707070] overflow-y-scroll bg-white"
+                    class="flex flex-col basis-[35%] border-t-[1px] p-3 border-[#707070] overflow-y-scroll bg-white dark:bg-cardBg"
                   >
                     <div
-                      class="border-[1px] border-[#B96AFF] bg-[#FAF5FF] text-[#6317A7] text-xs py-3 text-center rounded-lg"
+                      class="border-[1px] border-[#B96AFF] bg-[#FAF5FF] dark:bg-[#6317A7] text-[#6317A7] dark:text-white text-xs py-3 text-center rounded-lg"
                     >
                       Verified user only can comment on this post
                     </div>
@@ -298,11 +300,17 @@
                         src="../../../resources/dp.png"
                       />
                       <div class="text-left pl-3">
-                        <h4 class="font-aileron text-[#343434]">
+                        <h4
+                          class="font-aileron text-[#343434] dark:text-darkWhite"
+                        >
                           Alex Philips
                         </h4>
-                        <p class="text-xs text-[#9B9B9B]">@alex</p>
-                        <p class="text-[#6A6868] text-sm">Amazing work</p>
+                        <p class="text-xs text-[#9B9B9B] dark:text-darkMuted">
+                          @alex
+                        </p>
+                        <p class="text-[#6A6868] dark:text-darkWhite text-sm">
+                          Amazing work
+                        </p>
                         <div class="flex items-center">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -330,7 +338,7 @@
                     </div>
                   </div>
                   <div
-                    class="p-2 bg-[#F3F3F3] flex justify-between basis-[8%] items-center"
+                    class="p-2 bg-[#F3F3F3] dark:bg-cardBg dark:border-t-[0.5px] flex justify-between basis-[8%] items-center"
                   >
                     <div class="flex items-center">
                       <img
