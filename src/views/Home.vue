@@ -195,7 +195,7 @@
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
 import DetailView from "@/components/Cards/GridLayoutCard.vue";
 import GridView from "@/components/Cards/CardLayoutCard.vue";
 import HeroCard from "@/components/Hero-Card.vue";
@@ -244,9 +244,9 @@ export default defineComponent({
   setup() {
     const view = sessionStorage.getItem("view");
     let isOpen = ref(false);
-    // if (!view) {
-    //   isOpen.value = true;
-    // }
+    if (!view) {
+      isOpen.value = true;
+    }
     let selectedView = ref(views[0]);
     return {
       isOpen,
@@ -261,7 +261,7 @@ export default defineComponent({
     };
   },
   methods: {
-    selectView(view) {
+    selectView(view: string) {
       sessionStorage.setItem("view", view);
       if (view === "minimal") {
         // set isminimal in store
@@ -570,12 +570,12 @@ export default defineComponent({
     };
   },
   computed: mapState({
-    layout: (state) => state.layout.layout,
-    isMinimal: (state) => state.layout.isMinimal,
-    zoom: (state) => state.layout.zoom,
-    sort: (state) => state.layout.sort,
-    theme: (state) => state.layout.theme,
-    currentScreen: (state) => state.layout.currentScreen,
+    layout: (state: any) => state.layout.layout,
+    isMinimal: (state: any) => state.layout.isMinimal,
+    zoom: (state: any) => state.layout.zoom,
+    sort: (state: any) => state.layout.sort,
+    theme: (state: any) => state.layout.theme,
+    currentScreen: (state: any) => state.layout.currentScreen,
   }),
 });
 </script>

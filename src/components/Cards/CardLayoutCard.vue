@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white dark:bg-darkBg" id="square-grid">
-    <div class="container mx-auto bg-white dark:bg-darkBg p-[2rem]">
+    <div class="container mx-auto bg-white dark:bg-darkBg p-[2rem] pb-16">
       <div
         class="grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-5 md:grid-cols-4 sm:md:grid-cols-2 gap-4"
       >

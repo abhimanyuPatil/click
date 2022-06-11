@@ -2,7 +2,10 @@
   <div
     class="flex justify-between items-center flex-wrap bg-white dark:bg-cardBg fixed bottom-0 w-full z-[999] px-3 py-3 gap-3 md:hidden border-t-[1px] border-gray-400"
   >
-    <div @click="setCurrentScreen('home')" class="flex flex-col items-center justify-center text-center">
+    <div
+      @click="setCurrentScreen('home')"
+      class="flex flex-col items-center justify-center text-center"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-5 w-5 fill-purple-700"
@@ -107,7 +110,7 @@
   </div>
 
   <footer
-    class="bg-white dark:bg-darkBg border-t-[1px] border-[#707070] dark:border-darkBorder py-1 hidden lg:fixed lg:bottom-0 w-full"
+    class="bg-white dark:bg-darkBg border-t-[1px] border-[#707070] dark:border-darkBorder py-1 hidden md:block lg:fixed lg:bottom-0 w-full"
   >
     <div class="container sm:container mx-auto">
       <div
