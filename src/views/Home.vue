@@ -195,7 +195,7 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script>
 import DetailView from "@/components/Cards/GridLayoutCard.vue";
 import GridView from "@/components/Cards/CardLayoutCard.vue";
 import HeroCard from "@/components/Hero-Card.vue";
@@ -261,7 +261,7 @@ export default defineComponent({
     };
   },
   methods: {
-    selectView(view: string) {
+    selectView(view) {
       sessionStorage.setItem("view", view);
       if (view === "minimal") {
         // set isminimal in store
@@ -570,12 +570,12 @@ export default defineComponent({
     };
   },
   computed: mapState({
-    layout: (state: any) => state.layout.layout,
-    isMinimal: (state: any) => state.layout.isMinimal,
-    zoom: (state: any) => state.layout.zoom,
-    sort: (state: any) => state.layout.sort,
-    theme: (state: any) => state.layout.theme,
-    currentScreen: (state: any) => state.layout.currentScreen,
+    layout: (state) => state.layout.layout,
+    isMinimal: (state) => state.layout.isMinimal,
+    zoom: (state) => state.layout.zoom,
+    sort: (state) => state.layout.sort,
+    theme: (state) => state.layout.theme,
+    currentScreen: (state) => state.layout.currentScreen,
   }),
 });
 </script>
